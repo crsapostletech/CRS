@@ -12,15 +12,14 @@ trigger CRSClaimTrigger on Opportunity (before insert, before update,after inser
     
     if(settings!= null && settings.isActive__c && Trigger.isBefore && (Trigger.isInsert || Trigger.isUpdate))
     {
-        system.debug(settings+'git testing123');
         ClaimTriggerHandler.setOwnerAsRelationshipManager(Trigger.new,trigger.oldMap);
         ClaimTriggerHandler.CRSAccountNameTrigger(Trigger.new);                     
     }
     
     else if(settings!= null && settings.isActive__c && Trigger.isAfter)
     {
-       system.debug(settings+'Entry1');
         if(Trigger.isInsert){
+        	system.debug('******787');
             ClaimTriggerHandler.THATaskCreation(Trigger.new);
          ClaimTriggerHandler.claimFollow(Trigger.New, Trigger.oldMap);
         
