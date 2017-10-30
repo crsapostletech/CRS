@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Holds the information related to a Hotel Booking.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Average_Room_Rate_Without_Taxes_and_Fees__c</fullName>
+        <externalId>false</externalId>
+        <label>Average Room Rate Without Taxes and Fees</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Avg_Cost_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Avg Cost Rate</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Avg_Price_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Avg Price Rate</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BAR_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>BAR Rate</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Billed_Through_Date__c</fullName>
+        <description>The date that this hotel room has been billed through</description>
+        <externalId>false</externalId>
+        <label>Billed Through Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Complete__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( CheckOut__c =  Billed_Through_Date__c, &apos;TRUE&apos;,&apos;FALSE&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Complete</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Booking_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Booking Status</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CRS_Room_Rate_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>CRS Room Rate Price</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CRS_Room_Rate__c</fullName>
+        <externalId>false</externalId>
+        <formula>(((IF(ISPICKVAL( Parking_Fee_Type__c , &quot;Daily&quot;), Parking_Fee_Amount__c, 0)) *  Itemized_Tax__c )   +  ((IF(ISPICKVAL( Pet_Fee_Type__c , &quot;Daily&quot;), Pet_Fee_Amount__c, 0)) *  Itemized_Tax__c )   +  ((IF(ISPICKVAL( Other_Fee_Type__c , &quot;Daily&quot;), Other_Fee_Amount__c, 0))  *  Itemized_Tax__c )  + (IF(ISPICKVAL( Parking_Fee_Type__c , &quot;Daily&quot;), Parking_Fee_Amount__c, 0))  +  (IF(ISPICKVAL( Pet_Fee_Type__c , &quot;Daily&quot;), Pet_Fee_Amount__c, 0)) + (IF(ISPICKVAL( Other_Fee_Type__c , &quot;Daily&quot;), Other_Fee_Amount__c, 0))) + (Hotel_Nightly_Rate__c * Itemized_Tax__c ) + Hotel_Nightly_Rate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The quote basis plus daily fees.</inlineHelpText>
+        <label>CRS Room Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cancellation_del__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancellation #</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CheckOut__c</fullName>
+        <externalId>false</externalId>
+        <label>Check-Out Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Check_In__c</fullName>
+        <externalId>false</externalId>
+        <label>Check-In Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Confirmation__c</fullName>
+        <externalId>false</externalId>
+        <label>Confirmation #</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Created_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <label>Created Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Check_Out_Date__c</fullName>
+        <description>The current estimated check-out date</description>
+        <externalId>false</externalId>
+        <label>Estimated Check-Out Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Checkout_Date_MM_DD__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(MONTH(Estimated_Check_Out_Date__c)) &amp; &quot;/&quot; &amp; TEXT(DAY(Estimated_Check_Out_Date__c))</formula>
+        <label>Estimated Checkout Date MM/DD</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hotel_Discount_Used__c</fullName>
+        <externalId>false</externalId>
+        <label>Hotel Discount Used</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CAT Rate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Customer Discounted Rate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Negotiated Discount Rate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Walk In Rate</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Hotel_Nightly_Rate__c</fullName>
+        <description>The night rate not including tax.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The hotel nightly rate not including tax.</inlineHelpText>
+        <label>Hotel Nightly Rate</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>IATA_Collected__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>IATA Collected</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>IATA_Expected__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Average_Room_Rate_Without_Taxes_and_Fees__c * Nights_In_Room__c) * 0.10</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IATA Expected</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Itemized_Tax__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the hotel&apos;s tax rate percent.</inlineHelpText>
+        <label>Itemized Tax Percentage</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Kitchen_Features__c</fullName>
+        <externalId>false</externalId>
+        <label>Kitchen Features</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Full Kitchen</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kitchenette</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Microwave/Refrigerator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Microwave Only</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No Cooking Facilities</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Refrigerator Only</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Migration_PTID__c</fullName>
+        <externalId>false</externalId>
+        <label>Migration_PTID</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Nights_In_Room__c</fullName>
+        <description>Calculate the number of nights stayed</description>
+        <externalId>false</externalId>
+        <formula>IF(LEN(TEXT(CheckOut__c)) &gt;0 , CheckOut__c - Check_In__c , Estimated_Check_Out_Date__c - Check_In__c)</formula>
+        <label>Est. Nights</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Extensions__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Number of Extensions</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>One_Time_Fees_Taxable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>One-Time Fees Taxable</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>One_Time_Other_Fees_Taxable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>One Time Other Fees Taxable</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>One_Time_Parking_Fees_Taxable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>One Time Parking Fees Taxable</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>One_Time_Pet_Fees_Taxable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>One Time Pet Fees Taxable</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Original_Check_In_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Original Check-In Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Original_Check_Out_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Original Check-Out Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Original_Estimated_Check_Out_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Original Estimated Check-Out Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Other_Fee_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Fee Amount</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Other_Fee_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Fee Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Other_Fee_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Fee Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Other_Fee_cb__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Daily</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>One-time</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>Daily</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>One-time</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Other_Fee_cb__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Other Fee</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Parking_Fee_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Parking Fee Amount</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Parking_Fee_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Parking Fee Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Parking_Fee_cb__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Daily</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>One-time</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>Daily</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>One-time</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Parking_Fee_cb__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Parking Fee</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Status</label>
+        <length>3</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pet_Fee_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Pet Fee Amount</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Pet_Fee_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Pet Fee Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Pet_Fee_cb__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Daily</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>One-time</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>Daily</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>One-time</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pet_Fee_cb__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Pet Fee</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Placement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Placement</label>
+        <referenceTo>Placement__c</referenceTo>
+        <relationshipLabel>Hotel Rooms</relationshipLabel>
+        <relationshipName>Hotel_Rooms</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Policyholder_Mobile_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Placement__r.Opportunity__r.Policyholder__r.MobilePhone</formula>
+        <label>Policyholder Text To Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Policyholder__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Policyholder</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Hotel Rooms</relationshipLabel>
+        <relationshipName>Hotel_Rooms</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Previous_Estimated_Check_Out_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Previous Estimated Check-Out Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>RC_Last_Modified_By_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>RC Last Modified By Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RC_Last_Modified_By__c</fullName>
+        <externalId>false</externalId>
+        <label>RC Last Modified By</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Room_Number__c</fullName>
+        <description>The actual hotel room number</description>
+        <externalId>false</externalId>
+        <label>Room Number</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Room_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Room Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>One Bedroom Suite</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pet Boarding</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Standard Double</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Standard King</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Standard Queen</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Studio Suite</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Three Bedroom Suite</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Two Bedroom Suite</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vacation Rental</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Send_Text_Email_Notifications__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Send Text/Email</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Service_Request__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Service Request</label>
+        <referenceTo>ServiceRequest__c</referenceTo>
+        <relationshipName>Hotels</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Total_Credit_Needed__c</fullName>
+        <externalId>false</externalId>
+        <formula>Avg_Cost_Rate__c * (Estimated_Check_Out_Date__c - Check_In__c) +  Total_One_Time_Fees__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Credit Needed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_One_Time_Fees__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Pet_Fee_Type__c, &apos;Daily&apos;) &amp;&amp; ISPICKVAL(Parking_Fee_Type__c, &apos;Daily&apos;) &amp;&amp; ISPICKVAL(Other_Fee_Type__c, &apos;Daily&apos;),Pet_Fee_Amount__c + Parking_Fee_Amount__c + Other_Fee_Amount__c,
+IF(ISPICKVAL(Pet_Fee_Type__c, &apos;Daily&apos;) &amp;&amp; ISPICKVAL(Parking_Fee_Type__c, &apos;Daily&apos;) &amp;&amp;  NOT(ISPICKVAL(Other_Fee_Type__c, &apos;Daily&apos;)),Pet_Fee_Amount__c + Parking_Fee_Amount__c,
+IF(ISPICKVAL(Pet_Fee_Type__c, &apos;Daily&apos;) &amp;&amp; NOT(ISPICKVAL(Parking_Fee_Type__c, &apos;Daily&apos;)) &amp;&amp;  ISPICKVAL(Other_Fee_Type__c, &apos;Daily&apos;),Pet_Fee_Amount__c + Other_Fee_Amount__c,
+IF(NOT(ISPICKVAL(Pet_Fee_Type__c, &apos;Daily&apos;)) &amp;&amp; ISPICKVAL(Parking_Fee_Type__c, &apos;Daily&apos;) &amp;&amp;  ISPICKVAL(Other_Fee_Type__c, &apos;Daily&apos;),Parking_Fee_Amount__c + Other_Fee_Amount__c,
+IF(ISPICKVAL(Pet_Fee_Type__c, &apos;Daily&apos;) &amp;&amp; NOT(ISPICKVAL(Parking_Fee_Type__c, &apos;Daily&apos;)) &amp;&amp;  NOT(ISPICKVAL(Other_Fee_Type__c, &apos;Daily&apos;)),Pet_Fee_Amount__c,
+IF(NOT(ISPICKVAL(Pet_Fee_Type__c, &apos;Daily&apos;)) &amp;&amp; ISPICKVAL(Parking_Fee_Type__c, &apos;Daily&apos;) &amp;&amp;  NOT(ISPICKVAL(Other_Fee_Type__c, &apos;Daily&apos;)),Parking_Fee_Amount__c,
+IF(NOT(ISPICKVAL(Pet_Fee_Type__c, &apos;Daily&apos;)) &amp;&amp; NOT(ISPICKVAL(Parking_Fee_Type__c, &apos;Daily&apos;)) &amp;&amp;  ISPICKVAL(Other_Fee_Type__c, &apos;Daily&apos;),Other_Fee_Amount__c,0)))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total One Time Fees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Unbilled__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Unbilled</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Hotel Room</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Room-{00000}</displayFormat>
+        <label>Hotel Room</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Hotel Rooms</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Placement__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Check_In__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Parking_Fee_Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Pet_Fee_Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Other_Fee_Amount__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

@@ -1,0 +1,23 @@
+<apex:page standardController="StatementParams__c" extensions="StatementController"  >
+
+  <apex:form > 
+    <apex:pageBlock title="Enter Statement Parameters" mode="edit">
+      <apex:pageBlockSection title="Statement Parameters" columns="1"> 
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="Placement Id" for="placementId"/>
+          <apex:inputField value="{!sp.Placement_Id__c}" id="placementId"/> 
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="Begin Date" for="beginDate"/>
+          <apex:inputField value="{!sp.Begin_Date__c}" id="beginDate"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="End Date" for="endDate"/>
+          <apex:inputField value="{!sp.End_Date__c}" id="endDate"/>
+        </apex:pageBlockSectionItem> 
+        <apex:commandButton action="{!runStatement}" value="Get Statement" id="theButton"/>
+      </apex:pageBlockSection> 
+    </apex:pageBlock>
+  </apex:form>
+
+</apex:page>

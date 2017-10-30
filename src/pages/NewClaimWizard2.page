@@ -1,0 +1,114 @@
+<apex:page standardController="Opportunity" extensions="NewClaimWizard" tabStyle="Opportunity" title="New Claim Wizard - Step 2">
+    <script src="{!URLFOR($Resource.jquery)}"/>
+    <link type="text/css" rel="stylesheet" href="{!URLFOR($Resource.NewClaimWizardCss)}" />
+    <script type="text/javascript">
+    jQuery.noConflict();
+    
+    jQuery(document).ready(function() {
+    });
+    
+    function checkInitialServiceRequest()
+    {
+		if (jQuery('[id$=initialSR]').val() == "FRV" || jQuery('[id$=initialSR]').val() == "Finders Fees") 
+		{
+			if (jQuery('[id$=damagedPropAddress]').val() == '')
+			{
+				jQuery('[id$=damagedPropAddress]').val('No Address Given');  
+			}
+			if (jQuery('[id$=damagedPropCity]').val() == '')
+			{
+				jQuery('[id$=damagedPropCity]').val('No City');   
+			}
+			if (jQuery('[id$=damagedPropZip]').val() == '')
+			{
+				jQuery('[id$=damagedPropZip]').val('00000');  
+			}
+			if (jQuery('[id$=damagedPropType]').val() == '')
+			{
+				jQuery('[id$=damagedPropType]').val('House');
+			}
+		}
+	}
+    
+    </script>  
+    <apex:sectionHeader title="New Claim Wizard" subtitle="Step 2 of 3" />
+    <apex:form >
+        <apex:pageMessages id="pagemessages" />
+        
+        <apex:pageblock id="pageblock" mode="edit">
+            <apex:pageblockButtons location="bottom">
+                <apex:commandButton action="{!step1}" value="Previous" />
+                <apex:commandButton action="{!step3}" value="Next"/>
+            </apex:pageblockButtons>
+            <apex:pageblockSection title="Initial Service Request" columns="1" >
+                <apex:inputField value="{!claim.Initial_Service_Request__c}" id="initialSR" required="true" onchange="checkInitialServiceRequest()"/>
+            </apex:pageblockSection>
+            <apex:pageblockSection title="Damaged Property Details" collapsible="false" />
+            <div class="columns">
+                <apex:pageblockSection id="damagedPropertyPBS" columns="1" >
+                    <apex:inputField value="{!claim.Damaged_Property_Address__c}" id="damagedPropAddress" required="true" />
+                    <apex:inputField value="{!claim.Damaged_Property_City__c}" id="damagedPropCity" required="true" />
+                    <apex:inputField value="{!claim.Damaged_Property_State__c}" id="damagedPropState" required="true" />
+                    <apex:inputField value="{!claim.Damaged_Property_Zip__c}" id="damagedPropZip" required="true" />
+                    <apex:inputField value="{!claim.Damaged_Property_Country__c}" id="damagedPropCountry" required="true" />
+                </apex:pageblockSection>
+                <apex:pageblockSection columns="1" >
+                    <apex:inputField value="{!claim.Damaged_Property_Type__c}" id="damagedPropType" required="true"/>
+                    <apex:inputField value="{!claim.Damaged_Property_Sq_Ft__c}" />
+                    <apex:inputField value="{!claim.Damaged_Property_BR__c}" />
+                    <apex:inputField value="{!claim.Damaged_Property_BTH__c}" />
+                    <apex:inputField value="{!claim.Year_Home_Was_Built__c}"/>
+                </apex:pageblockSection>
+                <div class="clear"></div>
+            </div>
+            <apex:pageblockSection title="Housing Requirements" collapsible="false" />
+            <div class="columns">
+                <apex:pageblockSection columns="1" >
+                    <apex:inputField value="{!claim.Est_Length_of_Stay_Months__c}"/>
+                    <apex:inputField value="{!claim.Number_of_Adults__c}"/>
+                    <apex:inputField value="{!claim.Adult_Description__c}"/>
+                    <apex:inputField value="{!claim.Number_of_Children__c}"/>
+                    <apex:inputField value="{!claim.Children_s_Ages__c}"/>
+                    <apex:inputField value="{!claim.Number_of_Pets__c}"/>
+                    <apex:inputField value="{!claim.Pet_Type_and_Breed__c}"/>
+                </apex:pageblockSection>
+                <apex:pageblockSection columns="1" >
+                    <apex:inputField value="{!claim.Number_of_Bedrooms__c}"/>
+                    <apex:inputField value="{!claim.Number_of_Bathrooms__c}"/>
+                    <apex:inputField value="{!claim.Housewares_Needed__c}"/>
+                    <apex:inputField value="{!claim.Furniture_Needed__c}"/>                    
+                </apex:pageblockSection>
+                <div class="clear"></div>
+            </div>
+            <apex:pageblockSection title="Hotel Requirements" collapsible="false" />
+            <div class="columns">
+                <apex:pageblockSection columns="1" >
+                	<apex:inputField value="{!claim.Estimated_Check_In__c}"/>
+                	<apex:inputField value="{!claim.Estimated_Check_Out__c}"/>
+                    <apex:inputField value="{!claim.Number_of_Rooms__c}"/>                    
+                </apex:pageblockSection>
+                <apex:pageblockSection columns="1" >
+                    <apex:inputField value="{!claim.Already_in_Hotel__c}"/>
+                    <apex:inputField value="{!claim.Name_of_Hotel__c}"/>
+                    <apex:inputField value="{!claim.Hotel_Phone__c}"/>
+                    <apex:inputField value="{!claim.Current_Daily_Rate__c}"/>
+                </apex:pageblockSection>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <apex:pageblockSection title="Amenities Approved" collapsible="false"/>
+            <div class="columns">
+            	<apex:pageblockSection columns="1" >
+                	<apex:inputField value="{!claim.Microwave_Fridge__c}"/>
+	            	<apex:inputField value="{!claim.Full_Kitchen__c}"/>	            	
+	            </apex:pageblockSection>
+		            <apex:pageblockSection columns="1" >
+		            <apex:inputField value="{!claim.Pet_Friendly__c}"/>
+		            <apex:inputField value="{!claim.Parking__c}"/>
+		            <apex:inputField value="{!claim.Internet__c}"/>
+		       	</apex:pageblockSection>
+           </div>		
+           <div class="clear"></div>
+    	</apex:pageblock>
+    </apex:form>
+</apex:page>

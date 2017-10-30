@@ -1,0 +1,3 @@
+<apex:page standardController="Searches__c">
+   <apex:detail inlineEdit="true" />
+</apex:page>

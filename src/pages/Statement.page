@@ -1,0 +1,8 @@
+<apex:page standardController="StatementParams__c" extensions="StatementController" action="{!checkParams}">
+  <apex:pageBlock >
+    <apex:pageBlockSection >
+      
+      <apex:outputText value="{!xml}" />
+    </apex:pageBlockSection>
+  </apex:pageBlock>
+</apex:page>

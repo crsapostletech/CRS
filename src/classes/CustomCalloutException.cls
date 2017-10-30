@@ -1,0 +1,1 @@
+public class CustomCalloutException extends Exception {}

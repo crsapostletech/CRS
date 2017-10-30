@@ -1,0 +1,74 @@
+<apex:page controller="CRSAggrementFormController" showHeader="True" sidebar="true" renderAs="Pdf" standardStylesheets="false">
+   <html> 
+   <head>
+      <c:dynapdfcomponent type="header">
+          <div > <apex:image url="{!$Resource.CRSHousingLogo}"  WIDTH="180" HEIGHT="55" style="float:right;"/> </div>
+    </c:dynapdfcomponent>
+   </head>     
+   
+    <body>  
+        <div class="content">
+        <b>Hotel and Temporary Housing Agreement and Direct Payment/Endorsement Authorization</b><br/>
+        <p>This Hotel and Temporary Housing Agreement and Direct Payment/Endorsement Authorization (the “Agreement”), dated&nbsp;<apex:outputText value="{0,date,MM/dd/yy}"> <apex:param value="{!Today()}" /> </apex:outputText> is made between Temporary Housing Inc., an Arizona corporation, dba CRS Temporary Housing (“CRS”), and the following policyholder(s) {!claimRec.Policyholder__r.Name} </p>
+        <ol>
+           <li><p>CRS is hereby appointed to serve as facilitator and intermediary for Client's temporary housing needs.
+             Subject to the provisions of this Agreement, CRS will process directly for Client any applicable hotel room, property and/or furniture rental payments, to include any applicable deposits and fees related to the services provided, on behalf of Client as approved by Client's insurer. Client hereby authorizes CRS to direct bill Client's insurer for any and all approved costs associated with a hotel room and/or temporary housing and furniture rental payments for which CRS is paying on behalf of Client. In the event funds for services provided by CRS are sent directly to Client, Client shall immediately forward such payments to CRS.
+           </p></li>
+           <li>
+              <p> <u><b>Should a hotel room be provided as part of the temporary housing services, the services that CRS pays for only include ROOM AND TAXES.</b></u> Client is fully responsible for incidentals by providing a credit card or cash payment upon check in. Incidentals include, but are not limited to: meals, mini bar, movies, video games, long distance, valet parking, laundry/dry cleaning, room damage, and/or late check outs.<u><b>Client understands that check out must occur with a front desk staff member at the hotel.</b></u> Any additional nights charged due to Client’s failure to physically checkout will be the responsibility of the Client. <u><b>For services to be covered, CRS must receive this signed Agreement within 24 hours of check in.</b></u> Client shall notify CRS at least 24 hours prior to the scheduled
+    check out date at 800-968-0848 for any necessary extensions</p>
+           </li>
+           <li>
+             <p>Should rental housing (the "Premises") be provided as part of the temporary housing service, Client will read and comply with, as the tenant, any applicable Premises lease. Client authorizes CRS to communicate with the landlord as representative of the Client with respect to matters arising under the Premise lease.</p>
+           </li>
+           <li>
+             <p>Should any combination of rental furniture, housewares, and/or appliances (collectively "Leased Property") be provided as part of the temporary housing services, Client acknowledges that CRS will act as Client's agent for the sole purpose of renting such Leased Property, and in its capacity as Client's agent for such purpose, CRS is authorized to sign any applicable rental contracts on behalf of Client. Within 72 hours after receipt of the Leased Property, Client will notify CRS of any damages, defects, or insect infestations. Otherwise, Leased Property shall be deemed satisfactory and any damages, defects, or insect infestations will be the Client's sole responsibility. Client shall maintain all Leased Property in good condition and cleanliness. Client will not alter, modify in any way, nor remove from the Premises any and all Leased Property. Client assumes all risk of damage to and theft of Leased Property, including but not limited to, risk of insect infestation. In the event of damage to Leased Property, Client shall reimburse CRS for the cost of repair or, if cost of repair is impractical, any and all replacement costs. Client is solely responsible for their own personal belongings and should be present for all deliveries, adjustments, and pick-ups of Leased Property.</p>
+           </li>
+           <li>
+             <p>Clients that hold a renter's policy and/or are responsible for any portion of services provided by CRS shall pre-pay CRS directly for any deductible and/or rental abatement (typically Client's monthly rental amount). Funds must be received prior to services being provided by CRS.</p>
+           </li>
+           <li>
+             <p>Client understands that as a hotel guest or the occupant of the Premises or recipient of any Leased Property, as applicable, Client is primarily responsible for all payments associated with benefits provided by CRS, including labor and services. Any billable costs not covered by Client's insurer will become the responsibility of the Client to issue payment directly to CRS.</p>
+           </li>
+           <li>
+             <p>Client shall indemnify, protect, defend, and hold CRS and its affiliates harmless for, from, and against any and all claims, damages,liabilities, harm, losses, and/or costs arising in connection with any of Client's actions or inactions, use of the Leased Property, breach of this Agreement, the Premises lease, and Client's occupancy of the Premises. Should any third-party institute legal proceedings pertaining Client’s occupancy of the Premises or this Agreement, CRS shall be entitled to recover from Client all damages, costs, expenses, and attorneys' fees incurred as a result of such action.</p>
+           </li>
+           <li>
+             <p>This agreement shall be governed by the laws of the State of Arizona.I/We hereby agree to the foregoing terms and conditions and authorize my/our insurance company,to make  direct  payments  to  CRS  Temporary  Housing  (“CRS”)  at  PO  Box  29073,   Phoenix,   AZ 85038-9073. Authorization includes payments to  CRS  for  any  and  all  additional  living  expenses  associated with  hotel  and housing services arranged or paid for by CRS.</p>
+           </li>
+       </ol>
+       
+       <p>I/We certify that all information is true and correct to the best of my/our knowledge. I/We hereby give CRS the authority to verify my/our identity and policy coverage.</P>
+       
+       Executed on: <br/> 
+       <table>   
+        <tr>  
+         <td> 
+             Client 1:<br/>       
+             Sign: ______________ <br/>
+             Print:_______________<br/> 
+             SSN# (Social Security Number): ____________________ <br/>
+             Birth Date: ___________________ <br/>
+             Date: ______________________<br/>
+          </td>
+          <td>
+             Client 2:<br/>       
+             Sign: ______________ <br/>
+             Print:_______________<br/> 
+             SSN# (Social Security Number): ____________________ <br/>
+             Birth Date: ___________________ <br/>
+             Date: ______________________<br/>
+          </td>   
+         </tr>
+       </table>
+        <p>Agreed and Accepted:
+   Temporary Housing Inc., dba CRS Temporary Housing (Federal Tax ID Number 20-8134444)</p><br/><br/>
+       Sign:__________________ <br/>
+       Print:___________________<br/>
+       Date:___________________<br/>
+       Ref: {!claimRec.Name}<br/>
+      </div>
+    </body>
+    <br/><br/>   
+   </html>
+</apex:page>

@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Adjust LL, Adjuster costs and fees related to placement rent &amp; property. (No Furniture Adjustments!)</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Adjustment_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Adjustment Description</label>
+        <length>55</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Adjustment_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date the recurring billing adjustment is effective. This is required for monthly billing adjustments.</inlineHelpText>
+        <label>Adjustment Effective Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Adjustment__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the amount the recurring billing should change.</inlineHelpText>
+        <label>Billing Adjustment</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Description__c</fullName>
+        <description>Text will appear on the invoice for the credit line item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This will appear on the invoice.</inlineHelpText>
+        <label>Credit Description</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fee_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Fee Frequency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Daily</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>One Time</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Hotel_Adjustment_Fee__c</fullName>
+        <externalId>false</externalId>
+        <label>Hotel Adjustment Fee</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Hotel_Fee_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Hotel Fee Effective Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Hotel_Fee_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Hotel Fee Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Parking Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pet Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other Fee</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Hotel_Rate_Adjustment__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the new daily rate.</inlineHelpText>
+        <label>Hotel Rate Adjustment</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Hotel_Room_Lookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Hotel Room Lookup</label>
+        <referenceTo>Hotel_Room__c</referenceTo>
+        <relationshipLabel>Adjustments</relationshipLabel>
+        <relationshipName>Adjustments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Housing_Adjustment_Fee__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the one time fee amount.</inlineHelpText>
+        <label>Housing Adjustment Fee</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Housing_Credit_Proposed_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the requested credit amount and submit for approval.</inlineHelpText>
+        <label>Housing Credit Proposed Amount</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Housing_Fee_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the effedtive date for the housing fee.</inlineHelpText>
+        <label>Housing Fee Effective Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Housing_Fee_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Housing Fee Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Application Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Broker Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Break Lease Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Late Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cancellation Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pick-Up Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Delivery Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Security Deposit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Credit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other Fee</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Other_Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the description when Other is chosen as the Fee Type.</inlineHelpText>
+        <label>Other Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Other_Fee_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Fee Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Placement_Lookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Placement Lookup</label>
+        <referenceTo>Placement__c</referenceTo>
+        <relationshipLabel>Adjustments</relationshipLabel>
+        <relationshipName>Adjustments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Proposed_Credit_Amount_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This should be a negative number.</inlineHelpText>
+        <label>Proposed Credit Amount Approved</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Prorate_Variance__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The difference, in dollars, between the CRS standard prorate and prorate amount the landlord prefers.</inlineHelpText>
+        <label>Prorate Variance</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Rate_Adjustment_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate Adjustment Effective Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Rent_Adjustment_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Rent Adjustment Effective Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Rent_Adjustment__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the amount the recurring rent is changing.</inlineHelpText>
+        <label>Rent Adjustment</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Trailer_Mobile_Home__c</fullName>
+        <externalId>false</externalId>
+        <label>Trailer-Mobile Home Fee</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Delivery Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dozer Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Electric Hookup Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Set-Up Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Site Inspection Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Skirting Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Utility Pole Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Winterization Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other Fee</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>X18_Char_ID_HotelRoom__c</fullName>
+        <description>Created to convert the 15 character id to 18 characters.</description>
+        <externalId>false</externalId>
+        <label>X18_Char_ID_HotelRoom</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Adjustment</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Placement_Lookup__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Adj-{00000}</displayFormat>
+        <label>Adjustment Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Adjustments</pluralLabel>
+    <recordTypes>
+        <fullName>Billing_Adjustment</fullName>
+        <active>false</active>
+        <description>An adjustment that changes the amount invoiced to the adjuster.</description>
+        <label>Billing Adjustment</label>
+        <picklistValues>
+            <picklist>Fee_Frequency__c</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One Time</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hotel_Fee_Type__c</picklist>
+            <values>
+                <fullName>Other Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parking Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Fee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Housing_Fee_Type__c</picklist>
+            <values>
+                <fullName>Application Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Break Lease Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancellation Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Late Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pick-Up Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Deposit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Trailer_Mobile_Home__c</picklist>
+            <values>
+                <fullName>Delivery Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dozer Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electric Hookup Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set-Up Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site Inspection Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skirting Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utility Pole Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Winterization Fee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Cost_Adjustment</fullName>
+        <active>true</active>
+        <description>An adjustment that changes the amount paid to the landlord i.e. rent &amp; property specific fees. (No Furniture Adjustments).</description>
+        <label>Cost Adjustment</label>
+        <picklistValues>
+            <picklist>Fee_Frequency__c</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One Time</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hotel_Fee_Type__c</picklist>
+            <values>
+                <fullName>Other Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parking Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Fee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Housing_Fee_Type__c</picklist>
+            <values>
+                <fullName>Application Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Break Lease Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancellation Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Late Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pick-Up Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Deposit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Trailer_Mobile_Home__c</picklist>
+            <values>
+                <fullName>Delivery Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dozer Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electric Hookup Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set-Up Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site Inspection Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skirting Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utility Pole Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Winterization Fee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Placement_Lookup__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Hotel_Fee_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Housing_Fee_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Placement_Lookup__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Hotel_Room_Lookup__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Hotel_Fee_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Housing_Fee_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Placement_Lookup__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Hotel_Room_Lookup__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CREATED_DATE</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Hotel_Fee_Type__c</searchFilterFields>
+        <searchFilterFields>Housing_Fee_Type__c</searchFilterFields>
+        <searchFilterFields>Hotel_Room_Lookup__c</searchFilterFields>
+        <searchFilterFields>Placement_Lookup__c</searchFilterFields>
+        <searchResultsAdditionalFields>Placement_Lookup__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Hotel_Room_Lookup__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Hotel_Fee_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Housing_Fee_Type__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Adjustment_Date_Valildation_ApvdThruDate</fullName>
+        <active>false</active>
+        <description>Ensures the Date entered by the user is less than the Approved Through Date</description>
+        <errorConditionFormula>Adjustment_Effective_Date__c  &gt;  Placement_Lookup__r.Approved_Through_Date__c</errorConditionFormula>
+        <errorMessage>The Adjustment Effective Date cannot be greater than the Approved Through Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Adjustment_Date_Valildation_MoveIn</fullName>
+        <active>false</active>
+        <description>Ensures the Date entered by the user is greater than the Move In Date</description>
+        <errorConditionFormula>Adjustment_Effective_Date__c  &lt;  Placement_Lookup__r.Move_In_Date__c</errorConditionFormula>
+        <errorMessage>The Adjustment Effective Date cannot be less than the Move-In Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Effective_Date_Validation</fullName>
+        <active>false</active>
+        <description>The effective Date can not be be greater than the Approved Through Date</description>
+        <errorConditionFormula>Adjustment_Effective_Date__c &gt;  Placement_Lookup__r.Approved_Through_Date__c</errorConditionFormula>
+        <errorMessage>The Adjustment Effective Date cannot be greater than the Approved Through Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Hotel_Fee_Effective_Date</fullName>
+        <active>false</active>
+        <description>If one of the following fields contains data, then Hotel_Fee_Effective_Date must have a date:
+Hotel_Fee_Type__c
+Fee_Frequency__c
+Hotel_Adjustment_Fee__c
+Other_Fee_Description__c</description>
+        <errorConditionFormula>AND( $RecordType.Name=&quot;Cost Adjustment&quot;,
+IF(AND(Other_Fee_Description__c&lt;&gt;null,
+LEN(TEXT(Hotel_Fee_Effective_Date__c))=0) ,
+true,
+OR(
+IF(AND(LEN(TEXT(Hotel_Adjustment_Fee__c))&lt;&gt;0,
+LEN(TEXT(Hotel_Fee_Effective_Date__c))=0) ,
+true,
+IF(AND(LEN(TEXT(Fee_Frequency__c))&lt;&gt;0,
+LEN(TEXT(Hotel_Fee_Effective_Date__c))=0) ,
+true,
+OR(
+IF(AND(LEN(TEXT(Hotel_Fee_Type__c))&lt;&gt;0,
+LEN(TEXT(Hotel_Fee_Effective_Date__c))=0) ,
+true, false
+)))))))</errorConditionFormula>
+        <errorDisplayField>Hotel_Fee_Effective_Date__c</errorDisplayField>
+        <errorMessage>Must have a Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Hotel_Room_Lookup</fullName>
+        <active>true</active>
+        <description>Must have Hotel Room</description>
+        <errorConditionFormula>AND( $RecordType.Name=&quot;Cost Adjustment&quot;,
+IF(AND(Other_Fee_Description__c&lt;&gt;null,
+Hotel_Room_Lookup__c=null) ,
+true,
+OR(
+IF(AND(LEN(TEXT(Hotel_Adjustment_Fee__c))&lt;&gt;0,
+Hotel_Room_Lookup__c=null) ,
+true,
+IF(AND(LEN(TEXT(Fee_Frequency__c))&lt;&gt;0,
+Hotel_Room_Lookup__c=null),
+true,
+OR(
+IF(AND(LEN(TEXT(Hotel_Fee_Type__c))&lt;&gt;0,
+Hotel_Room_Lookup__c=null),
+true,
+OR(
+IF(AND(LEN(TEXT(Rate_Adjustment_Effective_Date__c))&lt;&gt;0,
+Hotel_Room_Lookup__c=null),true,
+IF(AND(LEN(TEXT(Hotel_Rate_Adjustment__c))&lt;&gt;0,
+Hotel_Room_Lookup__c=null),
+true,false
+))))))))))</errorConditionFormula>
+        <errorDisplayField>Hotel_Room_Lookup__c</errorDisplayField>
+        <errorMessage>Must have Hotel Room</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Housing_Adjustment_Credit_Negative_Amt</fullName>
+        <active>false</active>
+        <description>Ensure that Housing Fee Credit adjustments (proposed and approved) have a negative housing fee amount.</description>
+        <errorConditionFormula>AND (
+ ISPICKVAL( Housing_Fee_Type__c  , &apos;Credit&apos;), 
+OR (Housing_Adjustment_Fee__c &gt;0,  Housing_Credit_Proposed_Amount__c  &gt; 0))</errorConditionFormula>
+        <errorMessage>The Housng Credit  Adjustment and Proposed Amounts must be a negative amount.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Housing_Credit_Adjustment_Fee_Approval</fullName>
+        <active>false</active>
+        <description>If the Housing Adjustment is for a Credit, and the Fee is &lt; $-5.00, then inform the user to enter the fee amount in the Proposed Credit Fee amount field, and submit the adjustment for approval.</description>
+        <errorConditionFormula>AND (
+ISPICKVAL( Housing_Fee_Type__c  , &apos;Credit&apos;), 
+Housing_Adjustment_Fee__c &lt; -5, 
+Proposed_Credit_Amount_Approved__c =FALSE
+)</errorConditionFormula>
+        <errorDisplayField>Housing_Adjustment_Fee__c</errorDisplayField>
+        <errorMessage>Housing Credit Adjustment Fees exceeding -$5 must be approved.
+Remove the amount from the Housing Adjustment Fee and enter the amount into the Housing Credit Proposed Amount, save the changes.  Submit for approval.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rate_Adjustment_Effective_Date</fullName>
+        <active>true</active>
+        <description>Hotel_Rate_Adjustment__c contains data then date can not be null</description>
+        <errorConditionFormula>AND( $RecordType.Name=&quot;Cost Adjustment&quot;,
+IF(AND(LEN(TEXT(Hotel_Rate_Adjustment__c))&lt;&gt;0,
+LEN(TEXT(Rate_Adjustment_Effective_Date__c))=0) ,
+true, false))</errorConditionFormula>
+        <errorDisplayField>Rate_Adjustment_Effective_Date__c</errorDisplayField>
+        <errorMessage>Must Have a Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>v_no_hotel_fields_for_housing_cost_adj</fullName>
+        <active>false</active>
+        <description>Does not allow hotel fields to be entered if the record type is housing.</description>
+        <errorConditionFormula>AND( $RecordType.Name=&quot;Cost Adjustment&quot;,
+IF(OR(LEN(TEXT(Housing_Fee_Effective_Date__c) )&lt;&gt;0,
+LEN(TEXT(Housing_Adjustment_Fee__c))&lt;&gt;0,
+LEN(Other_Description__c )&lt;&gt;null,
+LEN(TEXT(Rent_Adjustment__c ) )&lt;&gt;0,
+LEN(TEXT(Rent_Adjustment_Effective_Date__c ) )&lt;&gt;0,
+LEN(TEXT(Prorate_Variance__c) ) &lt;&gt;0,
+LEN(TEXT(Housing_Credit_Proposed_Amount__c) )&lt;&gt;0,
+LEN(TEXT( Trailer_Mobile_Home__c))&lt;&gt;0,
+LEN(TEXT( Housing_Fee_Type__c)) &lt;&gt;0
+),
+true,
+false),
+AND(
+IF(OR(LEN(TEXT( Hotel_Fee_Effective_Date__c ))&lt;&gt;0,
+LEN(TEXT( Hotel_Rate_Adjustment__c ) )&lt;&gt;0,
+LEN(Hotel_Room_Lookup__c )&lt;&gt;0,
+LEN( Other_Fee_Description__c )&lt;&gt;0,
+LEN(TEXT( Rate_Adjustment_Effective_Date__c ) )&lt;&gt;0,
+LEN(TEXT( Hotel_Fee_Type__c))&lt;&gt;0 ,
+LEN(TEXT( Fee_Frequency__c))&lt;&gt;0
+), true, false)
+))</errorConditionFormula>
+        <errorMessage>You cannot enter Housing and Hotel information on the same adjustment. Please review the type of Adjustment and remove the incorrect fields.</errorMessage>
+    </validationRules>
+</CustomObject>

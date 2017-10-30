@@ -1,0 +1,6 @@
+<apex:page standardController="ServiceRequest__c" 
+  extensions="ServiceRequestDispatcherExtension"
+  action="{!getNewServiceRequest}"
+  >
+
+</apex:page>

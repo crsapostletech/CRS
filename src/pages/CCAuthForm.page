@@ -1,0 +1,160 @@
+<apex:page controller="CreditCardAuthorizationAPICall" renderAs="PDF" action="{!callServiceMethod}" > 
+    <html> 
+    <!--   
+        <center>
+            <b><u>Temporary Housing Inc. dba CRS Temporary Housing "CRS"</u></b>
+            <b><u>Credit Card Authorization and Release Form</u></b>
+        </center>
+    -->
+    <center>
+        <b><u><apex:outputText value="{!resData.Header}" escape="false" /></u></b>
+    </center>    
+    <br/>
+    <!-- <apex:outputText value="{!resData.Header}" style="font-size: 10pt;"/><apex:outputText rendered="{!if(resData.Header!=null,true,false)}"> <br/></apex:outputText>  -->   
+    <apex:outputText value="{!resData.Today}" style="font-family: 'Times New Roman'; font-size: 10pt;"/><apex:outputText rendered="{!if(resData.Today!=null,true,false)}"> <br/></apex:outputText>
+    <br/>
+    <apex:outputText value="{!resData.Account.Name}" style="font-family: 'Times New Roman'; font-size: 10pt;"/><apex:outputText rendered="{!if(resData.Account.Name!=null,true,false)}"> <br/></apex:outputText>    
+    <apex:outputText value="{!resData.Account.BillingStreet}" style="font-family: 'Times New Roman'; font-size: 10pt;"/><apex:outputText rendered="{!if(resData.Account.BillingStreet!=null,true,false)}"> <br/></apex:outputText>    
+    <span>
+    <apex:outputText value="{!resData.Account.City}" style="font-family: 'Times New Roman'; font-size: 10pt;"/> <apex:outputText rendered="{!if(resData.Account.City!=null && resData.Account.City!='' ,true,false)}">,&nbsp;</apex:outputText><apex:outputText value="{!resData.Account.State}" style="font-family: 'Times New Roman'; font-size: 10pt;"/>  &nbsp;<apex:outputText value="{!resData.Account.ZipCode}" style="font-family: 'Times New Roman'; font-size: 10pt;"/><br/>        
+    </span>
+    <apex:outputText value="{!resData.Account.Phone}" style="font-family: 'Times New Roman'; font-size: 10pt;"/> <apex:outputText rendered="{!if(resData.Account.Phone!=null,true,false)}"> <br/></apex:outputText>        
+    <apex:outputText value="{!resData.Account.Fax}" style="font-family: 'Times New Roman'; font-size: 10pt;"/><apex:outputText style="font-family: 'Times New Roman'; font-size: 10pt;" rendered="{!if(resData.Account.Fax!=null,true,false)}"> (Fax) <br/><br/></apex:outputText>        
+    <p style="font-family: 'Times New Roman'; font-size: 10pt;">
+        Re:  <apex:outputText value="{!resData.PolicyHolderName}"/>  &nbsp;CRS ID# <apex:outputText value="{!resData.CRSID}"/>:<br/> <br/>  
+        Attention Front Desk/Accounting:<br/> <br/>      
+        This notice shall serve as authorization for hotel guest: <apex:outputText value="{!resData.PolicyHolderName}"/>.<br/><br/>
+        
+        <apex:variable var="authCnt" value="{!1}"/>
+        <table>
+            <apex:repeat value="{!resData.AuthorizationPointsDummy}" var="r">
+                <tr>
+                    <td valign="top">
+                        {!authCnt}. 
+                        <apex:variable var="authCnt" value="{!authCnt+1}"/>
+                    </td>
+                    <td><apex:outputText value="{!r}" escape="false"/>
+                  </td>
+                </tr>
+            </apex:repeat>
+        </table>
+        
+        <br/>
+        
+        <b>Account Information:</b><br/><br/>
+        <apex:outputText value="{!resData.CreditCardInformation}"  escape="false"/> <br/><br/>
+        CRS will only be responsible for charges billed upon or after check-in by the guest up to the check-out date(s)  listed below. <br/><br/>
+        By charging our account, you are agreeing to the following terms:<br/>
+    </p>
+    
+    <apex:variable var="roomCnt" value="{!1}"/>
+    
+    <apex:repeat value="{!resData.HotelRooms}" var="hRoom">
+    
+        <table border="1" class="list" cellspacing="0" cellpadding="5" style="font-family: 'Times New Roman'; font-size: 10pt;">
+            <tr class="headerRow">
+                <td><b>Room</b></td>
+                <td><b>Confirmation Number</b></td>
+                <td><b>Check-In</b></td>
+                <td><b>Check-Out</b></td>
+                <td><b>Daily Rate</b></td>
+                <td><b>Tax</b></td>
+                <td><b>Daily Pet Fee</b></td>
+                <td><b>Daily Parking Fee</b></td>
+                <td><b>Daily Other Fee</b></td>
+                <td>
+                    <b>Total Daily Rate</b>                    
+                </td>
+                
+            </tr>
+            <apex:repeat value="{!hRoom.Segments}" var="s">
+                <tr>
+                    <td>{!roomCnt}</td>
+                    <td>{!hRoom.ConfirmationNumber}</td>
+                    <td>{!s.CheckInDateFormated}</td>
+                    <td>{!s.CheckOutDateFormated}</td>
+                    <td>
+                    <apex:outputText value="{0, number, Currency}">
+                        <apex:param value="{!s.DailyRate}" />
+                        </apex:outputText>
+                    </td>
+                    <td>{!s.Tax}%</td>
+                    <td>
+                    <apex:outputText value="{0, number, Currency}">
+                        <apex:param value="{!s.PetFee}" />
+                        </apex:outputText>
+                    </td>
+                    <td>
+                    <apex:outputText value="{0, number, Currency}">
+                        <apex:param value="{!s.ParkingFee}" />
+                        </apex:outputText>
+                    </td>
+                    <td>
+                    <apex:outputText value="{0, number, Currency}">
+                        <apex:param value="{!s.OtherFee}" />
+                        </apex:outputText>
+                    </td>
+                    <td>
+                    <apex:outputText value="{0, number, Currency}">
+                        <apex:param value="{!s.TotalNightlyRate}" />
+                        </apex:outputText>
+                    </td>
+                </tr>
+            </apex:repeat>
+        </table>     
+    
+        <p style="font-family: 'Times New Roman'; font-size: 11pt;"><b>One-Time Fee(s):</b></p>
+        <apex:outputLabel value="None" rendered="{!IF(hRoom.ParkingFee != null || hRoom.PetFee != null || hRoom.OtherFee != null, false, true)}" style="font-size: 10pt;"/>
+        <table>
+             <apex:outputPanel rendered="{!IF(hRoom.ParkingFee != null, true, false)}">
+                 <tr>
+                    <td style="font-family: 'Times New Roman'; font-size: 11pt;"><b>Parking Fee &nbsp;</b></td>
+                    <td style="font-family: 'Times New Roman'; font-size: 11pt;"><b><apex:outputText value="{0, number, Currency}">
+                        <apex:param value="{!hRoom.ParkingFee}" />
+                        </apex:outputText></b>
+                    </td>
+                 </tr>
+             </apex:outputPanel>  
+             <apex:outputPanel rendered="{!IF(hRoom.PetFee != null, true, false)}">
+                 <tr>
+                    <td style="font-family: 'Times New Roman'; font-size: 11pt;"><b>Pet Fee &nbsp;</b></td>
+                    <td style="font-family: 'Times New Roman'; font-size: 11pt;"><b><apex:outputText value="{0, number, Currency}">
+                        <apex:param value="{!hRoom.PetFee}" />
+                        </apex:outputText></b>
+                    </td>
+                 </tr>
+             </apex:outputPanel>
+             <apex:outputPanel rendered="{!IF(hRoom.OtherFee != null, true, false)}">
+                 <tr>
+                    <td style="font-family: 'Times New Roman'; font-size: 11pt;"><b>Other Fee &nbsp;</b></td>
+                    <td style="font-family: 'Times New Roman'; font-size: 11pt;"><b><apex:outputText value="{0, number, Currency}">
+                        <apex:param value="{!hRoom.OtherFee}" />
+                        </apex:outputText></b>
+                    </td> 
+                 </tr>
+             </apex:outputPanel>  
+        </table>
+        
+        <apex:variable var="roomCnt" value="{!roomCnt+1}"/>
+        
+    </apex:repeat>
+        <!--
+            <apex:pageBlockTable value="{!resData.HotelRooms}" var="par" rendered="IF(par.)" >
+                <apex:column headerValue="{!parking.ParkingFee}" value="{!hr.ConfirmationNumber}"/>
+                <apex:column headerValue="Check-In" value="{!hr.Segments.CheckInDate}"/>    
+            
+            </apex:pageBlockTable>
+        -->    
+    
+    <p style="font-family: 'Times New Roman'; font-size: 10pt;">
+        <b style="font-family: 'Times New Roman'; font-size: 9pt;">Incidentals including Food, Beverages, Movies and Damages are the guest’s responsibility. Please collect a form of payment from the guest upon check-in.</b><br/><br/>
+        The daily rate will be guaranteed by your hotel for the length of the stay.<br/><br/>
+        Best Regards, <br/><br/>
+        CRS Temporary Housing <br/>
+        800-968-0848 <br/>
+        10851 N. Black Canyon Hwy,Ste.700
+    </p>
+    <!-- <address style="font-size: 10pt;"> -->
+         
+    </html>
+</apex:page>

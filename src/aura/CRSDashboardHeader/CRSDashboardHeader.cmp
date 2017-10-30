@@ -1,0 +1,121 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="showPopup" type="Boolean" default="false"/>
+    <aura:attribute name="selectedRecordType" type="String" default=""/>
+    <aura:attribute name="cs" type="sObject" default="{}"/>
+    <header class="slds-global-header_container"><a href="javascript:void(0);" class="slds-assistive-text slds-assistive-text--focus">Skip to Navigation</a><a href="javascript:void(0);" class="slds-assistive-text slds-assistive-text--focus">Skip to Main Content</a>
+        <div class="slds-global-header slds-grid slds-grid--align-spread" data-aura-rendered-by="173:0">
+            <div class="slds-global-header__item" data-aura-rendered-by="174:0">
+                <div style="width: 100px;" class="slds-global-header__logo" data-aura-rendered-by="175:0"><a href="/s/" data-aura-rendered-by="176:0"><img src="{!$Resource.crsthlogo}" data-aura-rendered-by="177:0"/></a></div>
+            </div>
+            <div class="slds-global-header__item slds-global-header__item--search cDashboardSearch" data-aura-rendered-by="180:0" data-aura-class="cDashboardSearch">
+                <div class="slds-form-element slds-lookup" data-aura-rendered-by="181:0">
+                    <label class="slds-assistive-text" for="global-search-01" data-aura-rendered-by="182:0">Search..</label>
+                    <div class="slds-form-element__control lookup__search-control slds-input-has-icon slds-input-has-icon--left" data-aura-rendered-by="184:0">
+                        <input class="slds-input slds-lookup__search-input input uiInput uiInputText uiInput--default uiInput--input" type="text" aria-describedby="" placeholder="Search" id="192:0" data-aura-rendered-by="196:0" data-aura-class="uiInput uiInputText uiInput--default uiInput--input" data-interactive-lib-uid="2"/><!--render facet: 199:0-->
+                    </div>
+                </div>
+            </div>
+            <ul class="slds-global-header__item slds-grid slds-grid--vertical-align-center" data-aura-rendered-by="200:0">
+                <li class="slds-dropdown-trigger slds-dropdown-trigger--hover slds-p-horizontal--xxx-small" data-aura-rendered-by="202:0">
+                    <button class="slds-button slds-button--icon slds-button--icon-small slds-button--icon-container slds-global-header__button--icon" aria-haspopup="true" title="Global Actions" data-aura-rendered-by="203:0">
+                        <c:svgIcon svgPath="{! $Resource.SLDS212 +'/assets/icons/utility-sprite/svg/symbols.svg#chevrondown'}" class="slds-icon" category="custom" size="x-small" name="chevrondown"/>
+                        <span class="slds-assistive-text" data-aura-rendered-by="211:0">Global Actions</span>
+                    </button>
+                    <div class="slds-dropdown slds-dropdown--right slds-nubbin--top-right" data-aura-rendered-by="213:0">
+                        <ul class="slds-dropdown__list" role="menu" data-aura-rendered-by="214:0">
+                            <li class="slds-dropdown__item" role="presentation" data-aura-rendered-by="218:0" onclick="{!c.createAdjusterTransfer}">
+                                <a href="javascript:void(0)" role="menuitem" tabindex="0" data-aura-rendered-by="219:0">
+                                    <span class="slds-truncate" data-aura-rendered-by="220:0">
+                                        Adjuster Transfer	
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="slds-dropdown__item" role="presentation" data-aura-rendered-by="230:0" onclick="{!c.createClaimSubmission}">
+                                <a href="javascript:void(0)" role="menuitem" tabindex="-1" data-aura-rendered-by="231:0">
+                                    <span class="slds-truncate" data-aura-rendered-by="232:0">
+                                        Claim Submission	
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="slds-dropdown__item" role="presentation" data-aura-rendered-by="241:0" onclick="{!c.createHotelExtension}">
+                                <a href="javascript:void(0)" role="menuitem" tabindex="-1" data-aura-rendered-by="242:0">
+                                    <span class="slds-truncate" data-aura-rendered-by="243:0">
+                                        Hotel Extension	
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="slds-dropdown__item" role="presentation" data-aura-rendered-by="241:0" onclick="{!c.createHousingExtension}">
+                                <a href="javascript:void(0)" role="menuitem" tabindex="-1" data-aura-rendered-by="242:0">
+                                    <span class="slds-truncate" data-aura-rendered-by="243:0">
+                                        Housing Extension		
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="slds-dropdown__item" role="presentation" data-aura-rendered-by="241:0" onclick="{!c.createNewCase}">
+                                <a href="javascript:void(0)" role="menuitem" tabindex="-1" data-aura-rendered-by="242:0">
+                                    <span class="slds-truncate" data-aura-rendered-by="243:0">
+                                        New Case	
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="slds-context-bar">
+            <div class="slds-context-bar__primary slds-context-bar__item--divider-right">
+                <div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger--click slds-no-hover">
+                    <div class="slds-context-bar__icon-action">
+                        <a href="javascript:void(0);" class="slds-icon-waffle_container slds-context-bar__button">
+                            <div class="slds-icon-waffle">
+                                <div class="slds-r1"></div>
+                                <div class="slds-r2"></div>
+                                <div class="slds-r3"></div>
+                                <div class="slds-r4"></div>
+                                <div class="slds-r5"></div>
+                                <div class="slds-r6"></div>
+                                <div class="slds-r7"></div>
+                                <div class="slds-r8"></div>
+                                <div class="slds-r9"></div>
+                            </div>
+                            <span class="slds-assistive-text">9</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <nav class="slds-context-bar__secondary" role="navigation">
+                <ul class="slds-grid">
+                    <li class="slds-context-bar__item">
+                        <a href="/crs/s/casedetailpage" class="slds-context-bar__label-action" title="Home">
+                            <span class="slds-truncate">Cases</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>                                          
+    </header>
+    <div class="{!v.showPopup ? 'demo-only slds-show' : 'demo-only slds-hide'}" style="height: 640px;" >
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Modal Header</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p>Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis. Cillum sunt ad dolore
+                        quis aute consequat ipsum magna exercitation reprehenderit magna. Tempor cupidatat consequat elit dolor adipisicing.
+                    </p>
+                    <p>Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit incididunt nisi consectetur esse laborum eiusmod pariatur proident. Eiusmod et adipisicing culpa deserunt nostrud
+                        ad veniam nulla aute est. Labore esse esse cupidatat amet velit id elit consequat minim ullamco mollit enim excepteur ea.
+                    </p>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick="{!c.closePopup}">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick="{!c.saveCase}">Save</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+</aura:component>

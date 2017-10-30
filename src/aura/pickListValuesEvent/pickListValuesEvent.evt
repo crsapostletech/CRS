@@ -1,0 +1,5 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="pickedValue" type="String"/>
+    <aura:attribute name="eventFired" type="boolean"/>
+    <aura:attribute name="pickListType" type="String"/> 
+</aura:event>

@@ -1,0 +1,133 @@
+<apex:page controller="AdjusterConfirmationAPICall" action="{!callServiceMethod}" renderAs="pdf">
+  <apex:image url="{!$Resource.CRSHousingLogo}" width="175" height="50" style="float:right;"/>
+  <html>    
+        <br/><br/><br/>
+        <center>
+            <b><apex:outputText style="font-size: 14pt;" value="Hotel Confirmation" /></b>
+        </center>  
+        <br/><br/>    
+          <apex:outputText style="font-size: 10pt;" value="{!resData.Today}"/> <br/><br/>
+             <table style="width:100%">                
+                  <tr>
+                      <td> <apex:outputText style="font-size: 10pt;" value="To:" /> </td>    
+                      <td style="width:45%"><apex:outputText style="font-size: 10pt;" value="{!resData.To}"/></td>
+                      <td> <apex:outputText style="font-size: 10pt;" value="From:" /> </td>
+                      <td> <apex:outputText style="font-size: 10pt;" value="{!resData.From1}"/></td>
+                  </tr>
+                  <tr>
+                      <td> <apex:outputText style="font-size: 10pt;" value="Company:" /> </td>    
+                      <td style="width:45%"><apex:outputText style="font-size: 10pt;" value="{!resData.Company}"/></td>
+                      <td> <apex:outputText style="font-size: 10pt;" value="Phone:" /> </td>
+                      <td><apex:outputText style="font-size: 10pt;" value="{!resData.Phone}"/></td>
+                  </tr>
+                  <tr>
+                      <td><apex:outputText style="font-size: 10pt;" value="Fax:" /> </td>    
+                      <td style="width:45%"><apex:outputText style="font-size: 10pt;" value="{!resData.ToFax}"/></td>
+                      <td><apex:outputText style="font-size: 10pt;" value="Fax:" /> </td>
+                      <td><apex:outputText style="font-size: 10pt;" value="{!resData.FromFax}"/></td>
+                  </tr>
+                  <tr>
+                      <td><apex:outputText style="font-size: 10pt;" value="Email:" /> </td>    
+                      <td style="width:45%"><apex:outputText style="font-size: 10pt;" value="{!resData.ToEmail}"/></td>
+                      <td><apex:outputText style="font-size: 10pt;" value="Email:" /> </td>
+                      <td><apex:outputText style="font-size: 10pt;" value="{!resData.FromEmail}"/></td>
+                  </tr>                
+            </table>
+              <br/><br/>  
+              <apex:outputText style="font-size: 10pt;" value="Regarding:" /> &nbsp; <apex:outputText style="font-size: 10pt;" value="{!resData.Regarding}"/>  <br/>
+              <apex:outputText style="font-size: 10pt;" value="Claim #:" />  &nbsp; <apex:outputText style="font-size: 10pt;" value="{!resData.ClaimNumber}"/>  <br/>
+              <apex:outputText style="font-size: 10pt;" value="CRS ID:" />  &nbsp; <apex:outputText style="font-size: 10pt;" value="{!resData.CRSID}"/>  <br/> <br/>
+              
+              <apex:outputText style="font-size: 10pt;" value="Per your request, we have located a hotel for {!resData.Regarding} at:" />  <br/><br/>
+              
+              <apex:outputText style="font-size: 10pt;" value="{!resData.HotelName}"/><br/>
+              <apex:outputText style="font-size: 10pt;" value="{!resData.Address}"/><br/>
+              <apex:outputText style="font-size: 10pt;" value="{!resData.City}" />,&nbsp;<apex:outputText style="font-size: 10pt;" value="{!resData.State}" />,&nbsp;<apex:outputText style="font-size: 10pt;" value="{!resdata.Zip}" /> <br/>
+              <apex:outputText style="font-size: 10pt;" value="Phone:" /> &nbsp; <apex:outputText style="font-size: 10pt;" value="{!resData.HotelPhone}"/> <br/>  
+              <apex:outputText style="font-size: 10pt;" value="Fax:" /> &nbsp; <apex:outputText style="font-size: 10pt;" value="{!resData.HotelFax}"/><br/><br/>
+              
+            <apex:variable var="roomCnt" value="{!1}"/>
+             <table style="width:100%">
+                    <tr class="headerRow">
+                        <td><u><apex:outputText style="font-size: 10pt;" value="Room No" /></u></td>
+                        <td><u><apex:outputText style="font-size: 10pt;" value="Check-In" /></u></td>
+                        <td><u><apex:outputText style="font-size: 10pt;" value="Estimated Check-Out" /></u></td>
+                        <td><u><apex:outputText style="font-size: 10pt;" value="Daily Rate" /></u></td>
+                        <td><u><apex:outputText style="font-size: 10pt;" value="Room Type" /></u></td>                        
+                        <td><u><apex:outputText style="font-size: 10pt;" value="Kitchen Features" /></u></td>
+                   </tr>       
+                   <apex:repeat value="{!resData.rooms}" var="room">
+                         <tr>
+                                <td width="10%"><apex:outputText style="font-size: 10pt;" value="{!roomCnt}" /> <apex:variable var="roomCnt" value="{!roomCnt+1}"/> </td>
+                                <td width="12%"><apex:outputText style="font-size: 10pt;" value="{!room.CheckInDateFormated}" /></td>
+                                <td width="18%"><apex:outputText style="font-size: 10pt;" value="{!room.EstimatedCheckoutFormated}" /></td>
+                                <td width="14%"><apex:outputText style="font-size: 10pt;" value="{!room.DailyRate}" /></td> 
+                                <td width="25%"><apex:outputText style="font-size: 10pt;" value="{!room.RoomType}" /></td>                   
+                                <td width="25%"><apex:outputText style="font-size: 10pt;" value="{!room.KitchenFeatures}" /></td>                    
+                         </tr>
+                         <tr>
+                             <td colspan="6">
+                                 <b> <u><apex:outputText style="font-size: 10pt;" value="Total One-Time Charges Fee Type" /> </u></b>
+                                 <br/>
+                                 <apex:outputText value="None" style="font-size: 10pt;" rendered="{!IF(room.ParkingFee != null || room.PetFee != null || room.OtherFee != null, false, true)}" />
+                             </td>
+                         </tr>    
+                         <tr>
+                              <td colspan="6"> 
+                                 <table>
+                                     <tr>
+                                         <td>
+                                             <apex:outputPanel rendered="{!IF(room.ParkingFee != null, true, false)}">                                             
+                                                <apex:outputText style="font-size: 10pt;" value="Parking Fee" />                                                
+                                             </apex:outputPanel>
+                                         </td>
+                                         <td>
+                                             <apex:outputPanel rendered="{!IF(room.ParkingFee != null, true, false)}"> 
+                                                <apex:outputText style="font-size: 10pt;" value="{!room.ParkingFee}" />
+                                             </apex:outputPanel>
+                                         </td>
+                                         
+                                     </tr>       
+                                     <tr>
+                                         <td>
+                                             <apex:outputPanel rendered="{!IF(room.PetFee != null, true, false)}">                                             
+                                                <apex:outputText style="font-size: 10pt;" value="Pet Fee" />  &nbsp;                                                                                           
+                                             </apex:outputPanel>
+                                         </td>
+                                         <td>
+                                             <apex:outputPanel rendered="{!IF(room.PetFee != null, true, false)}"> 
+                                                <apex:outputText style="font-size: 10pt;" value="{!room.PetFee}" />                                             
+                                             </apex:outputPanel>
+                                         </td>
+                                     </tr>                                        
+                                     <tr>
+                                         <td>
+                                             <apex:outputPanel rendered="{!IF(room.OtherFee != null, true, false)}">
+                                                 <apex:outputText style="font-size: 10pt;" value="Other Fee" />                                                  
+                                             </apex:outputPanel>     
+                                         </td>
+                                         <td>
+                                             <apex:outputPanel rendered="{!IF(room.OtherFee != null, true, false)}">                                                  
+                                                 <apex:outputText style="font-size: 10pt;" value="{!room.OtherFee}" />
+                                             </apex:outputPanel>     
+                                         </td>
+                                     </tr>   
+                                          
+                                 </table>
+                               </td>       
+                         </tr>
+                    </apex:repeat>             
+                 
+           </table>   <br/>
+        
+        <apex:outputText style="font-size: 10pt;" escape="false" value="<b>This is not an invoice.</b> The actual invoice will follow and reflect the CRS hotel management fee. CRS will automatically bill at the end of the hotel
+        stay or monthly should the stay exceed 30 days. Payment is due upon receipt of invoice and payments must be made directly to CRS Temporary
+        Housing. CRS cannot coordinate this hotel stay if payment is not being received directly from {!resData.Company}." /> <br/><br/>
+        
+        <apex:outputText style="font-size: 10pt;" escape="false" value="Courtesy reminder: Should the policyholder require a stay for more than 14 days, it is likely that CRS could locate temporary housing which is
+        typically more cost effective. <b>Please contact us immediately to grant your approval in order to take advantage of this cost savings.</b>" /> <br/><br/>
+        
+        <apex:outputText style="font-size: 10pt;" escape="false" value="Cancellation fees may apply if the reservation isn't fulfilled or cancelled less than 24 hours prior to check-in." />
+    
+  </html> 
+</apex:page>

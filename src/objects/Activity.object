@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ComposeGmail</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>LogCall</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MailMerge</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>RequestUpdate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SendEmail</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewAll</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Completed Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Name For Portal</label>
+        <length>120</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_NTV_Was_Sent__c</fullName>
+        <externalId>false</externalId>
+        <label>Date NTV was sent</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Document_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Subject = &apos;Send Credit Card Authorization (CCA)&apos;, HYPERLINK(&apos;/apex/CCAuthFormPreviewPage?reqId=&apos;&amp; WhatId &amp; &apos;&amp;taskId=&apos;&amp; Id, &apos;CC Auth Form&apos;), IF(Subject = &apos;Send Temporary Housing Agreement(THA)&apos;, HYPERLINK(&apos;/apex/THADocumentLanguagePage?whatId=&apos;&amp; WhatId &amp; &apos;&amp;taskId=&apos;&amp; Id , &apos;THA Document&apos;), IF(Subject = &apos;Send Adjuster Confirmation&apos;, HYPERLINK(&apos;/apex/AdjusterConfFormPreviewPage?reqId=&apos;&amp; WhatId &amp; &apos;&amp;taskId=&apos;&amp; Id, &apos;Adjuster Form&apos;), IF(CONTAINS(Subject, &apos;Send NTV&apos;), HYPERLINK(&apos;/apex/NTVDocumentPreviewPage?reqId=&apos;&amp; WhatId &amp; &apos;&amp;taskId=&apos;&amp; Id, &apos;NTV Document&apos;), &apos;&apos;) ) ) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Document Link</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Fax_Completion_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Fax Completion Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Fax_Result_ID__c</fullName>
+        <description>This field stores reference id of fax document which sent using Interfax</description>
+        <externalId>false</externalId>
+        <label>Fax Result ID</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fax_Sent_User_ID__c</fullName>
+        <description>Field used to know which user sent fax</description>
+        <externalId>false</externalId>
+        <label>Fax Sent User ID</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fax_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Fax Status</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In Process</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Fax_Submit_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Fax Submit Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>InterFAX_URL__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Subject = &apos;Send Credit Card Authorization (CCA)&apos; || Subject = &apos;Send Temporary Housing Agreement(THA)&apos; || Subject = &apos;Send Adjuster Confirmation&apos;, HYPERLINK(&apos;https://secure.interfax.net/Default.aspx?lang=EN&apos;, &quot;Login Link&quot;), &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>InterFAX URL</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NTV_Sent_Receipt__c</fullName>
+        <externalId>false</externalId>
+        <label>NTV Sent Receipt</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Originating_Party__c</fullName>
+        <externalId>false</externalId>
+        <label>Originating Party</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adjuster</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policyholder</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CRS</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Owner_Role__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.UserRole.Name</formula>
+        <label>Owner Role</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Placement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Placement</label>
+        <referenceTo>Placement__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Publish_On_Adjuster_Portal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Publish on Adjuster Portal</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Publish_On_Policyholder_Portal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Publish on Policyholder Portal</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SALESLOGIX_ACTIVITY_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>SALESLOGIX ACTIVITY ID</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SalesLogix_Activity_Record_Owner__c</fullName>
+        <externalId>false</externalId>
+        <label>SalesLogix Activity Record Owner</label>
+        <length>25</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Task__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Sales Task</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Selected_Search__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Selected Search</label>
+        <referenceTo>Searches__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sent_File_Link_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Sent File Link URL</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Sent_File_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Sent_File_Link_URL__c,&apos;View File&apos;)</formula>
+        <label>Sent File Link</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Request__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Service Request</label>
+        <referenceTo>ServiceRequest__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Task_Follow_Up_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Task Follow Up Status</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Attempt -1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Attempt -2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Attempt -3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hotel Options</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Book Hotel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Send Documents</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Time_Message_Received__c</fullName>
+        <description>Note the time the message was received for the Allstate contract.</description>
+        <externalId>false</externalId>
+        <label>Time Message Received</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Time_Message_Returned__c</fullName>
+        <description>Note the time the message was returned per the Allstate contract.</description>
+        <externalId>false</externalId>
+        <label>Time Message Returned</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Time_To_Complete__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Completed_Date__c - CreatedDate) * 1440</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Time To Complete</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>All_Open</fullName>
+        <columns>TASK.TYPE</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.WHO_NAME</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>Placement__c</columns>
+        <columns>Due_Time__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>TASK.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </filters>
+        <label>All Open</label>
+    </listViews>
+    <listViews>
+        <fullName>Brian_s_task_view</fullName>
+        <columns>TASK.TYPE</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.WHO_NAME</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>Placement__c</columns>
+        <columns>Due_Time__c</columns>
+        <columns>TASK.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER_ROLE</field>
+            <operation>equals</operation>
+            <value>Customer Care Specialist,Relationship Manager</value>
+        </filters>
+        <label>Brian&apos;s task view</label>
+        <sharedTo>
+            <group>Fulgurite_Report_Visibility</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Next_7_Days</fullName>
+        <columns>TASK.TYPE</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.WHO_NAME</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>Placement__c</columns>
+        <columns>Due_Time__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>TASK.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>equals</operation>
+            <value>NEXT_N_DAYS:7</value>
+        </filters>
+        <label>Next 7 Days</label>
+    </listViews>
+    <listViews>
+        <fullName>Next_7_Days_Overdue</fullName>
+        <columns>TASK.TYPE</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.WHO_NAME</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>Placement__c</columns>
+        <columns>Due_Time__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>TASK.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>lessOrEqual</operation>
+            <value>NEXT_N_DAYS:7</value>
+        </filters>
+        <label>Next 7 Days + Overdue</label>
+    </listViews>
+    <listViews>
+        <fullName>Overdue</fullName>
+        <columns>TASK.TYPE</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.WHO_NAME</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>Placement__c</columns>
+        <columns>Due_Time__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>TASK.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>lessThan</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Overdue</label>
+    </listViews>
+    <listViews>
+        <fullName>This_Month</fullName>
+        <columns>TASK.TYPE</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.WHO_NAME</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>Placement__c</columns>
+        <columns>Due_Time__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>TASK.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>This Month</label>
+    </listViews>
+    <listViews>
+        <fullName>Today</fullName>
+        <columns>TASK.TYPE</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.WHO_NAME</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>Placement__c</columns>
+        <columns>Due_Time__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TASK.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </filters>
+        <filters>
+            <field>Due_Time__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Today</label>
+    </listViews>
+    <listViews>
+        <fullName>Today_Overdue</fullName>
+        <columns>TASK.TYPE</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.WHO_NAME</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>Placement__c</columns>
+        <columns>Due_Time__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>TASK.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Today + Overdue</label>
+    </listViews>
+    <listViews>
+        <fullName>Tomorrow</fullName>
+        <columns>TASK.TYPE</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.WHO_NAME</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>Placement__c</columns>
+        <columns>Due_Time__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>TASK.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>equals</operation>
+            <value>TOMORROW</value>
+        </filters>
+        <label>Tomorrow</label>
+    </listViews>
+    <searchLayouts>
+        <searchResultsAdditionalFields>TASK.SUBJECT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.WHO_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.WHAT_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.DUE_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

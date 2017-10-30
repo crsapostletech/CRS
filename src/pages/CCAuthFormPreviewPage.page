@@ -1,0 +1,58 @@
+<apex:page controller="CCAuthFormPreviewPageController" showHeader="false" sidebar="false">
+
+     <apex:form >
+     <apex:messages />        
+            
+           <apex:iframe src="/apex/CCAuthForm?placementId={!placementId}&IATAFlag={!displayIATA}"/> 
+     
+     <br/><br/>
+     <apex:pageBlock >      
+           <br/>
+         
+           <center>
+                 <table>
+                   <tr>
+                       <td> <b><apex:outputLabel value="Type"/></b> </td>
+                       <td> &nbsp;&nbsp; 
+                            <apex:selectList value="{!displayIATA}" size="1">
+                               <apex:selectOption itemValue="true" itemLabel="Commissionable"/>
+                               <apex:selectOption itemValue="false" itemLabel="Non Commissionable"/>
+                               <apex:actionSupport event="onchange" action="{!changeCommissionType}" />                                 
+                            </apex:selectList>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td> <b><apex:outputLabel value="Email"/></b> </td>
+                       <td> &nbsp;&nbsp; 
+                           <apex:outputText value="{!toAddress}"/> 
+                           <apex:outputlabel style="color:red;" rendered="{!IF(toAddress == null || toAddress == '', true, false)}">Email not exist</apex:outputlabel>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td> <b><apex:outputLabel value="Fax"/></b> </td>
+                       <td> &nbsp;&nbsp; 
+                           <apex:outputText value="{!faxNumber}"/> 
+                           <apex:outputlabel style="color:red;" rendered="{!IF(faxNumber == null || faxNumber == '', true, false)}">Fax not exist</apex:outputlabel>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td> <b><apex:outputLabel value="Subject"/></b> </td>
+                       <td> &nbsp;&nbsp; <apex:inputText style="width:300px;" value="{!subject}"/> </td>
+                   </tr>
+                   <tr>
+                       <td> <b><apex:outputLabel value="Body"/></b> </td>
+                       <td> &nbsp;&nbsp; <apex:inputTextarea value="{!emailBody}" cols="80" rows="4"/> </td>
+                   </tr>
+               </table>
+           </center>
+           <center>   
+               <apex:commandButton rendered="{!IF(toAddress != null && toAddress != '', true, false)}" value="Send Email" action="{!sendEmail}"/> &nbsp;
+               <apex:commandButton rendered="{!IF(faxNumber != null && faxNumber != '', true, false)}" value="Send Fax" action="{!sendFax}"/> &nbsp;
+               <apex:commandButton value="Cancel" action="{!cancel}"/>
+           </center>
+            
+           
+      </apex:pageBlock>  
+     </apex:form> 
+     
+</apex:page>

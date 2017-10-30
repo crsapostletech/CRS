@@ -1,0 +1,9 @@
+.THIS .errorHigh {
+	background-color: #fff;
+    border-color: #c23934;
+    box-shadow: #c23934 0 0 0 1px inset;
+    background-clip: padding-box;
+}
+.THIS .reqField{    
+    border-left: 4px solid red;
+}

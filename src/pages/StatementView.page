@@ -1,0 +1,117 @@
+<apex:page standardController="StatementParams__c" extensions="StatementController" >
+  <apex:pageBlock title="Statement for Placement {!sv.PlacementId}" mode="detail">
+    
+    <apex:pageBlockSection title="Placement Details" columns="2"> 
+      
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Policyholder"/>
+        <apex:outputText value="{!sv.PolicyHolderName}" />
+      </apex:pageBlockSectionItem>    
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Claim Number"/>
+        <apex:outputText value="{!sv.ClaimNumber}" />
+      </apex:pageBlockSectionItem>    
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="CRS ID"/>
+        <apex:outputText value="{!sv.PlacementId}" />
+      </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Date"/>
+        <apex:outputText value="{0,date,MMMMM dd, yyyy}">
+          <apex:param value="{! TODAY() }"/>
+        </apex:outputText>
+      </apex:pageBlockSectionItem> 
+      
+     </apex:pageBlockSection>
+       
+     <apex:pageBlockSection title="Billing Details" columns="2">
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Adjuster"/>
+        <apex:outputText value="{!sv.AdjusterName}" />
+      </apex:pageBlockSectionItem> 
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Customer ID"/>
+        <apex:outputText value="{!sv.CustomerId}" />
+      </apex:pageBlockSectionItem> 
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Company"/>
+        <apex:outputText value="{!sv.AdjusterCompanyName}" />
+      </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Address"/>
+        <apex:outputText value="{!sv.AdjusterAddress}" />
+      </apex:pageBlockSectionItem>  
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="City, State, Zip"/>
+        <apex:outputText value="{!sv.AdjusterCityState}" />
+      </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Phone"/>
+        <apex:outputText value="{!sv.AdjusterPhone}" />
+      </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Fax"/>
+        <apex:outputText value="{!sv.AdjusterFax}" />
+      </apex:pageBlockSectionItem>
+     </apex:pageBlockSection>
+     
+     <apex:pageBlockSection title="Summary of Activities" columns="2">
+     
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Previous Balance"/>
+        <apex:outputText value="{0,number,currency}">
+          <apex:param value="{!sv.PreviousBalance}"/>
+        </apex:outputText>
+      </apex:pageBlockSectionItem>
+      
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Charges"/>
+        <apex:outputText value="{0,number,currency}">
+          <apex:param value="{!sv.Charges}"/>
+        </apex:outputText>
+      </apex:pageBlockSectionItem>
+      
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Payments"/>
+        <apex:outputText value="{0,number,currency}">
+          <apex:param value="{!sv.Payments}"/>
+        </apex:outputText>
+      </apex:pageBlockSectionItem>
+      
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Credits"/>
+        <apex:outputText value="{0,number,currency}">
+          <apex:param value="{!sv.Credits}"/>
+        </apex:outputText>
+      </apex:pageBlockSectionItem>
+      
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Balance"/>
+        <apex:outputText value="{0,number,currency}">
+          <apex:param value="{!sv.CurrentBalance}"/>
+        </apex:outputText>
+      </apex:pageBlockSectionItem>
+
+    </apex:pageBlockSection>
+    
+    <apex:pageBlockSection title="Activity Detail" columns="1">
+    
+      <apex:pageBlockSection title="Charges" columns="1">
+        <c:InvoiceDisplay invoices="{!sv.InvoicesList}" total="{!sv.Charges}" totalText="Charges" /> 
+      </apex:pageBlockSection>
+
+      <apex:pageBlockSection title="Payments" columns="1">
+       <c:PaymentDisplay invoices="{!sv.PaymentsList}" total="{!sv.Payments}" totalText="Payments" /> 
+      </apex:pageBlockSection>
+      
+      <apex:pageBlockSection title="Credits" columns="1">
+        <c:InvoiceDisplay invoices="{!sv.CreditsList}" total="{!sv.Credits}" totalText="Credits" /> 
+      </apex:pageBlockSection>
+  
+    </apex:pageBlockSection>
+    
+    
+    
+   
+  </apex:pageBlock>
+</apex:page>

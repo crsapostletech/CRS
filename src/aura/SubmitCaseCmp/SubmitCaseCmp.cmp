@@ -1,0 +1,176 @@
+<aura:component controller="SubmitCaseController" implements="force:appHostable,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="caseInfo" type="Case" default="{'sobjectType':'Case',                                                                   
+                                                         'Subject': '', 
+                                                         'Origin': 'Web', 
+                                                         'Status': 'New',
+                                                         'Description': '',
+                                                         'Priority':'',
+                                                         'Reason':' ',
+                                                         'Policy_Type__c': ' ',
+                                                         }"/> 
+    <aura:attribute name="pickValueEventFired" type="boolean" default="false"/>    
+    <aura:attribute name="usrWrap" type="SubmitCaseController.userWrap" default="{}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="c:pickListValuesEvent" action="{!c.getPickListValues}"/>
+    
+    <div aura:id="errDiv" style="width: 60%;margin-left: 13%;" class="slds-notify--alert slds-theme--error slds-theme--alert-texture slds-hide" role="alert">        
+        <h2>Please Provide Required Fields</h2>  
+    </div>
+    
+    <div class="slds-grid">
+        <div class="slds-col" style="width:5%;">
+        </div>
+        
+        <div class="slds-col" style="width:80%;">
+            <div class="slds-col" style="width:90%;">
+                <fieldset class="slds-form--compound">
+                    <div class="slds-form-element__group">
+                        
+                        <div class="slds-section slds-is-open" style="background-color: beige;">
+                            <h3 class="slds-section__title">
+                                <span class="slds-truncate" title="case Information">Policy Holder Information</span>
+                            </h3>
+                        </div>
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label for="fullname">Policy Holder First Name:</label> 
+                                <ui:inputText class="reqField" aura:id="reqObj" required="true" value="{!v.caseInfo.Policy_Holder_First_Name__c}"/>
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label for="fullname">Policy Holder Last Name:</label> 
+                                <ui:inputText class="reqField" aura:id="reqObj" required="true" value="{!v.caseInfo.Policy_Holder_Last_Name__c}"/>
+                            </div>
+                        </div>
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label for="address">Address:</label> 
+                                <ui:inputText class="reqField" aura:id="reqObj" required="true" value="{!v.caseInfo.Damaged_Property_Address__c}"/>
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label for="city">City:</label> 
+                                <ui:inputText class="reqField" aura:id="reqObj" required="true" value="{!v.caseInfo.Damaged_Property_City__c}"/>
+                            </div>
+                        </div>
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label for="state">State:</label>
+                                <c:pickListValues sObjectName="Case" fieldName="Damaged_Property_State_Province__c" fieldStyle="reqField" labelName="state" isRequired="true"/>
+                                <!--<ui:inputSelect aura:id="state" required="true" value="{!v.caseInfo.Damaged_Property_State_Province__c}"/>-->
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-2"> 
+                                <label for="country">Country:</label> 
+                                <c:pickListValues sObjectName="Case" fieldName="Damaged_Property_Country__c" fieldStyle="reqField" labelName="country" isRequired="true"/>
+                                <!--<ui:inputSelect aura:id="country" required="true" value="{!v.caseInfo.Damaged_Property_Country__c}"/>-->
+                            </div>
+                        </div>
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label for="zipcode">Zip/Postal Code:</label> 
+                                <ui:inputText class="reqField" aura:id="reqObj" required="true" value="{!v.caseInfo.Damaged_Property_Zip_Postal_Code__c}"/>
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <ui:inputText label="Abatement Responsibility" value="{!v.caseInfo.Monthly_Rental_Amount__c}" />                                
+                            </div>
+                        </div>
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label for="phone">Phone:</label> 
+                                <ui:inputText updateOn="change" change="{!c.formatREGex}" value="{!v.caseInfo.Policyholder_Phone__c}"/>
+                                
+                                
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-2">
+                                
+                            </div>
+                        </div><br/>
+                        
+                        <div class="slds-section slds-is-open" style="background-color: beige;">
+                            <h3 class="slds-section__title">
+                                <span class="slds-truncate" title="case Information">Other Information</span>
+                            </h3>
+                        </div>                        
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <ui:inputText label="Approved Term" value="{!v.caseInfo.Approved_Term__c}" />
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <ui:inputText label="Claim Number" value="{!v.caseInfo.Claim_Number__c}" />
+                            </div>
+                        </div>
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label for="fullname">Date of Loss:</label> 
+                                <force:inputField aura:id="lossDate" value="{!v.caseInfo.Date_of_Loss__c}"/> 
+                                <!-- <ui:inputDate label="Date of Loss:" class="field" value="{!v.caseInfo.Date_of_Loss__c}" displayDatePicker="true" /> -->
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label for="fullname">Type of Loss:</label> 
+                                <c:pickListValues sObjectName="Case" fieldName="Type_of_Loss__c" fieldStyle="reqField" labelName="typeLoss" isRequired="false"/>
+                                <!--<force:inputField value="{!v.caseInfo.Type_of_Loss__c}"/> -->
+                            </div>
+                        </div>
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label for="fullname">Policy Type:</label> 
+                                <c:pickListValues sObjectName="Case" fieldName="Policy_Type__c" fieldStyle="reqField" labelName="policyType" isRequired="false"/>
+                                <!--<force:inputField required="true" value="{!v.caseInfo.Policy_Type__c}"/>-->
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label for="fullname">ALE Time Limit:</label> 
+                                <ui:inputText required="true" value="{!v.caseInfo.ALE_Time_Limit__c}"/>
+                            </div>
+                        </div>
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label for="fullname">Number of Adults:</label> 
+                                <ui:inputText value="{!v.caseInfo.Number_of_Adults__c}"/>
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label for="fullname">Number of Children:</label> 
+                                <ui:inputText value="{!v.caseInfo.Number_of_Children__c}"/>
+                            </div>
+                        </div>
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <label for="fullname">Number of Pets:</label> 
+                                <ui:inputText value="{!v.caseInfo.Number_of_Pets__c}" keypress="{!c.isNumberKey}"/>
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-2">
+                            </div>
+                        </div>
+                        
+                        <div class="slds-form-element__row">                            
+                            <div class="slds-form-element slds-size_1-of-2" style="height: 55%;">
+                                <label for="service">Service Requested:</label> 
+                                <c:pickListValues sObjectName="Case" fieldName="Services_Requested__c" fieldStyle="" labelName="serviceReq" isRequired="false" multiSelect="true"/>                                
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <ui:inputTextArea label="Special Instructions" value="{!v.caseInfo.Special_Instructions__c}" rows="3"/>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <br/>
+            
+            <div class="slds-box slds-box--small slds-theme--shade slds-text-align--left">
+                <div class="slds-align_absolute-center slds-docked-form-footer  slds-scrollable">
+                    <button class="slds-button slds-button--neutral communityBtn" onclick="{!c.cancelAct}">Cancel</button>
+                    <button class="slds-button slds-button--brand communityBtn" onclick="{!c.createCase}">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-col" style="width:5%;">
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,6 @@
+<apex:page standardController="Opportunity" extensions="ClaimALEAmountChartController">
+    <apex:chart height="150" width="250" data="{!pieData}">
+        <apex:pieSeries dataField="data" labelField="name" colorSet="{!colors}"/>
+        <apex:legend position="right"/>
+    </apex:chart> 
+</apex:page>

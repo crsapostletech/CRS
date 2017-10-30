@@ -1,0 +1,37 @@
+<apex:page controller="THADocumentPreviewController" showHeader="false" sidebar="false">
+    
+    <apex:form >
+         <apex:messages />
+               <apex:iframe rendered="{!IF(language == 'Canada', true, false)}" src="/apex/CRSAggrementFormCanada?claimId={!oppId}"/> 
+               <apex:iframe rendered="{!IF(language == 'English', true, false)}" src="/apex/CRSAggrementFormEnglish?claimId={!oppId}"/> 
+               <apex:iframe rendered="{!IF(language == 'Spanish', true, false)}" src="/apex/CRSAggrementFormSpanish?claimId={!oppId}"/>
+              
+         
+         <br/><br/>
+         <apex:pageBlock >      
+               <br/>
+             
+               <center>
+                     <table>                       
+                       <tr>
+                           <td> <b><apex:outputLabel value="Fax"/></b> </td>
+                           <td> &nbsp;&nbsp; 
+                               <apex:outputText value="{!faxNumber}"/> 
+                               <apex:outputlabel style="color:red;" rendered="{!IF(faxNumber == null || faxNumber == '', true, false)}">Fax not exist</apex:outputlabel>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td> <b><apex:outputLabel value="Subject"/></b> </td>
+                           <td> &nbsp;&nbsp; <apex:inputText style="width:300px;" value="{!subject}"/> </td>
+                       </tr>                       
+                   </table>
+               </center>
+               <br/>
+               <center> 
+                   <apex:commandButton rendered="{!IF(faxNumber != null && faxNumber != '', true, false)}" value="Send Fax" action="{!sendFax}"/> &nbsp;
+                   <apex:commandButton value="Cancel" action="{!cancel}"/>
+               </center>
+               
+          </apex:pageBlock>  
+     </apex:form>         
+</apex:page>

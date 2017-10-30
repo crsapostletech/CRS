@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Email_To_Salesforce</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email To Salesforce</shortDescription>
+        <value>emailtosalesforce@vi5alrdg4z3ptehls6xisiyukgyhggi5kyyt9miysprin9gx2.4d-8llruaa.cs71.le.sandbox.salesforce.com</value>
+    </labels>
+    <labels>
+        <fullName>Pardot_Email</fullName>
+        <categories>We are using the email address for pardot api webservices Calls</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pardot Email</shortDescription>
+        <value>CRS@Apostletech.com</value>
+    </labels>
+    <labels>
+        <fullName>Pardot_Password</fullName>
+        <categories>We are using this password in pardot api calls</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pardot Password</shortDescription>
+        <value>Apostle_602</value>
+    </labels>
+    <labels>
+        <fullName>Pardot_User_Key</fullName>
+        <categories>we are using this key in pardot api calls</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pardot  User Key</shortDescription>
+        <value>22c9c69ca534deceffa5f51862da3d6c</value>
+    </labels>
+    <labels>
+        <fullName>THA_Canada_Template_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>THA Canada Template Id</shortDescription>
+        <value>a0f0R0000005KM1</value>
+    </labels>
+    <labels>
+        <fullName>THA_English_Template_ID</fullName>
+        <categories>Echosign</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>THA English Template ID</shortDescription>
+        <value>a0f7000000DSPNN</value>
+    </labels>
+    <labels>
+        <fullName>THA_Spanish_Template_ID</fullName>
+        <categories>Echosign</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>THA Spanish Template ID</shortDescription>
+        <value>a0f7000000DSPO1</value>
+    </labels>
+    <labels>
+        <fullName>faxPassword</fullName>
+        <categories>Interfax API Call</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>faxPassword</shortDescription>
+        <value>temphousing1@</value>
+    </labels>
+    <labels>
+        <fullName>faxUsername</fullName>
+        <categories>Interfax API Call</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>faxUsername</shortDescription>
+        <value>crssalesforce</value>
+    </labels>
+</CustomLabels>

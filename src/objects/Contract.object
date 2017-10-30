@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Activate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChangeStatus</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Terminate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ActivatedById</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ActivatedDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>BillingAddress</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CompanySignedDate</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CompanySignedId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContractTerm</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CustomerSignedDate</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CustomerSignedId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CustomerSignedTitle</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>EndDate</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Hotel_Only_Invoice_Style__c</fullName>
+        <description>The rate the insurance company is invoiced for Hotel Only placements.</description>
+        <externalId>false</externalId>
+        <label>Hotel Only Invoice Style</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Highest Daily Rate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hotel Portfolio</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Hotel_Rule__c</fullName>
+        <description>List of available rules for hotel placements with a contracted insurance provider.</description>
+        <externalId>false</externalId>
+        <label>Hotel Rule</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bakerloo</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>District</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jubilee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Piccadilly</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Victoria</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Metropolitan</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>White City</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Oxford Circus</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Hotel_into_Housing_Invoice_Style__c</fullName>
+        <description>The rate the insurance company is invoiced for Hotel into Housing placements.</description>
+        <externalId>false</externalId>
+        <label>Hotel into Housing Invoice Style</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Highest Daily Rate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hotel Portfolio</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Housing_Invoice_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Housing Invoice Frequency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Entire Amount</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3 Months</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6 Months</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Housing_Invoice_Style__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select Markup Invoice if the contract should have a separate invoice for markup.</inlineHelpText>
+        <label>Housing Invoice Style</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standard Invoice</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Markup Invoice</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Housing_Rule__c</fullName>
+        <description>List of available rules for housing placements with a contracted insurance provider.</description>
+        <externalId>false</externalId>
+        <label>Housing Rule</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Allstate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>American Reliable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Assurant Lending Solutions</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Baker Street</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bond Street</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Camden Road</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Central</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Circle</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>East London</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Greenford</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hanger Lane</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Harleysville</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Holland Park</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Homesite</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IAS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ISAC/Universal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lancaster Gate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Marble Arch</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Narragansett Bay</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>North Acton</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Northern</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tower Hill Insurance Group</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>West Acton</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>QBE</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Invoice_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Frequency the hotel will send the invoice to CRS.</inlineHelpText>
+        <label>Invoice Frequency</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Markup_Invoice_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The amount should be displayed on the markup invoice.</inlineHelpText>
+        <label>Markup Invoice Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OwnerExpirationNotice</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Terms__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Terms</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>15</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>20</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>30</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>45</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ShippingAddress</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SpecialTerms</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>StartDate</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Exempt_After_30_Days__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check if the hotel is tax exempt after 30 days.</inlineHelpText>
+        <label>Tax Exempt After 30 Days</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Rate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Hotel&apos;s Tax Rate Percentage.</inlineHelpText>
+        <label>Tax Rate</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <listViews>
+        <fullName>AllActivatedContracts</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTRACT.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>A</value>
+        </filters>
+        <label>All Activated Contracts</label>
+    </listViews>
+    <listViews>
+        <fullName>AllDraftContracts</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTRACT.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>D</value>
+        </filters>
+        <label>All Draft Contracts</label>
+    </listViews>
+    <listViews>
+        <fullName>AllInApprovalContracts</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTRACT.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>P</value>
+        </filters>
+        <label>All In Approval Contracts</label>
+    </listViews>
+    <listViews>
+        <fullName>Insurance_Contracts</fullName>
+        <columns>CONTRACT.CONTRACT_NUMBER</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>CONTRACT.STATUS</columns>
+        <columns>Housing_Rule__c</columns>
+        <columns>Hotel_Rule__c</columns>
+        <columns>Hotel_into_Housing_Invoice_Style__c</columns>
+        <columns>Hotel_Only_Invoice_Style__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTRACT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Contract.InsuranceContracts</value>
+        </filters>
+        <label>Insurance Contracts</label>
+    </listViews>
+    <listViews>
+        <fullName>MyActivatedContracts</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CONTRACT.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>A</value>
+        </filters>
+        <label>My Activated Contracts</label>
+    </listViews>
+    <listViews>
+        <fullName>MyDraftContracts</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CONTRACT.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>D</value>
+        </filters>
+        <label>My Draft Contracts</label>
+    </listViews>
+    <listViews>
+        <fullName>MyInApprovalContracts</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CONTRACT.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>P</value>
+        </filters>
+        <label>My In Approval Contracts</label>
+    </listViews>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>HotelContracts</fullName>
+        <active>true</active>
+        <description>These are contracts that CRS has negotiated with hotels</description>
+        <label>Hotel Contracts</label>
+        <picklistValues>
+            <picklist>Hotel_Only_Invoice_Style__c</picklist>
+            <values>
+                <fullName>Highest Daily Rate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Portfolio</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hotel_Rule__c</picklist>
+            <values>
+                <fullName>Bakerloo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>District</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jubilee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Piccadilly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victoria</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hotel_into_Housing_Invoice_Style__c</picklist>
+            <values>
+                <fullName>Highest Daily Rate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Portfolio</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Housing_Invoice_Frequency__c</picklist>
+            <values>
+                <fullName>3 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Entire Amount</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Housing_Invoice_Style__c</picklist>
+            <values>
+                <fullName>Markup Invoice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Invoice</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Housing_Rule__c</picklist>
+            <values>
+                <fullName>Allstate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Camden Road</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Circle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>East London</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Northern</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Terms__c</picklist>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Activated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Approval Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>InsuranceContracts</fullName>
+        <active>true</active>
+        <description>Negotiated contracts with our National Accounts</description>
+        <label>Insurance Contracts</label>
+        <picklistValues>
+            <picklist>Hotel_Only_Invoice_Style__c</picklist>
+            <values>
+                <fullName>Highest Daily Rate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Portfolio</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hotel_Rule__c</picklist>
+            <values>
+                <fullName>Bakerloo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>District</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jubilee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metropolitan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oxford Circus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Piccadilly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victoria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>White City</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hotel_into_Housing_Invoice_Style__c</picklist>
+            <values>
+                <fullName>Highest Daily Rate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Portfolio</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Housing_Invoice_Frequency__c</picklist>
+            <values>
+                <fullName>3 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Entire Amount</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Housing_Invoice_Style__c</picklist>
+            <values>
+                <fullName>Markup Invoice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Invoice</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Housing_Rule__c</picklist>
+            <values>
+                <fullName>Allstate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>American Reliable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assurant Lending Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baker Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bond Street</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Camden Road</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Circle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>East London</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greenford</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hanger Lane</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Harleysville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Holland Park</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Homesite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IAS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISAC%2FUniversal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lancaster Gate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marble Arch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Narragansett Bay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North Acton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Northern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QBE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tower Hill Insurance Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>West Acton</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Payment_Terms__c</picklist>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Activated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Approval Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>CONTRACT.CONTRACT_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTRACT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SALES.ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTRACT.STATUS</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTRACT.CONTRACT_NUMBER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTRACT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CORE.USERS.ALIAS</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTRACT.CONTRACT_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTRACT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.ALIAS</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>CONTRACT.CONTRACT_NUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTRACT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SALES.ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTRACT.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTRACT.START_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTRACT.END_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTRACT_TERM</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <webLinks>
+        <fullName>APXTConga4__Conga_Mail_Merge</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>450</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Conga Merge</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://www.appextremes.com/apps/Conga/PointMerge.aspx?sessionId={!API.Session_ID}&amp;serverUrl={!API.Partner_Server_URL_80}&amp;id={!Contract.Id}</url>
+        <width>625</width>
+    </webLinks>
+    <webLinks>
+        <fullName>APXTConga4__Conga_Merge</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>450</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Conga Merge</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://www.appextremes.com/apps/Conga/PointMerge.aspx?sessionId={!API.Session_ID}&amp;serverUrl={!API.Partner_Server_URL_80}&amp;id={!Contract.Id}</url>
+        <width>625</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Hotel_Contract_Document</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>450</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Hotel Contract Document</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://www.appextremes.com/apps/Conga/PointMerge.aspx?SessionId={!API.Session_ID}
+&amp;ServerUrl={!API.Partner_Server_URL_80}
+&amp;Id={!Contract.Id}
+&amp;ReportId=00OR0000000mgo3?pv0={!Contract.AccountId}
+&amp;ReportId=00OR0000000mgvu?pv0={!Contract.AccountId}
+&amp;TemplateId=01HR00000004Iz6
+&amp;ds4=1
+&amp;ESVisible=1
+&amp;ESContactId={!Contract.CustomerSignedId}
+&amp;ESContractId={!Contract.Id}</url>
+        <width>625</width>
+    </webLinks>
+    <webLinks>
+        <fullName>echosign_dev1__Send_to_EchoSign</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Send for Signature</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/echosign_dev1__AgreementTemplateProcess?masterId={!Contract.Id}</url>
+    </webLinks>
+</CustomObject>

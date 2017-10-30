@@ -1,0 +1,84 @@
+<apex:page controller="CRSAggrementFormController" showHeader="True" sidebar="true" renderAs="Pdf">
+   <html> 
+       <head>
+          <c:dynapdfcomponent type="header" >
+              <div> <apex:image url="{!$Resource.CRSHousingLogo}"  WIDTH="180" HEIGHT="55" style="float:right;"/> </div>
+        </c:dynapdfcomponent>
+       </head>
+       <body>   
+        <b>Acuerdo de Hotel y Vivienda Temporal y Autorización de Pago Directo/Aval</b><br/>
+        <p>Este  Acuerdo  de  Hotel  y  Vivienda  Temporal  y  Autorización  de  Pago  Directo/Aval  (el  "Acuerdo"),  de
+fecha 
+&nbsp;<apex:outputText value="{0,date,MM/dd/yy}"> <apex:param value="{!Today()}" /> </apex:outputText>&nbsp;se celebra entre Temporary Housing Inc., una corporación de Arizona,  haciendo
+negocios como CRS Temporary Housing ( "CRS"), y el siguiente asegurado(s) {!claimRec.Policyholder__r.Name}
+</p>
+        <ol>
+           <li><p>CRS se nombra para servir como facilitador e intermediario para las necesidades de vivienda temporal del Cliente. Sujeto a las disposiciones en el presente Acuerdo, CRS procesará directamente para el Cliente cualquier habitación aplicable de hotel, propiedad y/o pagos de muebles alquilados, que incluye cualquier depósitos y las tarifas aplicables relacionadas con los servicios prestados, por parte del Cliente tal como fue aprobado por el asegurador del Cliente. Cliente autoriza a CRS a directamente dirigir a el asegurador del Clienta la factura de pago de cualquiera y todos los costos aprobados asociados con una habitación de hotel y/o vivienda temporal y muebles alquilados los cuales CRS está pagando en nombre del Cliente. En caso que los pagos por los servicios proporcionados por CRS se envían directamente al Cliente, el Cliente remitirá inmediatamente los pagos a CRS.
+           </p></li>
+           <li>
+              <p><u><b>En caso de una habitación de hotel se proporcione como parte de los servicios de vivienda temporal, los servicios que CRS paga sólo incluyen HABITACIÓN Y IMPUESTOS.</b></u> El Cliente es totalmente responsable por gastos adicionales al proporcionar una tarjeta de crédito o pago en efectivo a registrarse. Gastos adicionales incluyen, pero no están limitados a: comidas, mini bar, películas, juegos de video, llamadas de larga distancia, servicio de estacionamiento valet, servicio de lavandería / limpieza en seco, daño a la habitación y /o salida tarde. <u><b>El Cliente entiende que registro de salida del hotel debe ser con un miembro del personal de recepción en el hotel.</b></u> Cargas por noches adicionales debido a falta del cliente de físicamente presentarse para registro de salida del hotel serán responsabilidad del Cliente. <u><b>Para que los servicios sean cubiertos, CRS debe recibir este Contrato firmado dentro de las 24 horas de registro de entrada.</b></u> Cliente notificará CRS al menos 24 horas antes de la hora programada de salida al 800-968-0848 para cualquier extensión necesaria.</p>
+           </li>
+           <li>
+             <p>En caso de que una vivienda de alquiler (el "Local") se ofrezca como parte del servicio de vivienda temporal, el Cliente deberá leer y cumplir, como el arrendatario, cualquier contrato de arrendamiento del Local. Cliente autoriza a CRS a comunicarse con el arrendador como representante del Cliente con respecto a los asuntos que surjan en virtud del arrendamiento del Local.</p>
+           </li>
+           <li>
+             <p>En caso que cualquier combinación de muebles alquilados, artículos para el hogar, y/o aparatos (colectivamente "Propiedad Arrendada") se ofrezcan como parte de los servicios de vivienda temporal, el Cliente reconoce que CRS actuará como agente del Cliente con el único propósito de alquilar dicha Propiedad Arrendada y, en su capacidad de agente del Cliente para tal fin, CRS está autorizada a firmar cualquier contrato de alquiler en nombre del Cliente. Dentro de las 72 horas siguientes a la recepción de la Propiedad Arrendada, el Cliente notificará CRS de los daños, defectos, o las plagas de insectos. De lo contrario, la Propiedad Arrendada se considerará satisfactoria y los daños, defectos, o infestaciones de insectos serán responsabilidad exclusiva del Cliente. Cliente deberá mantener toda la Propiedad Arrendada en buen estado y limpieza. El Cliente no alterará, modificará de ninguna manera, ni retirará del Local cualquier y toda la Propiedad Arrendada. Cliente asume todo el riesgo de daños y robo de la Propiedad Arrendada, incluyendo pero no limitado a, el riesgo de infestación por insectos. En el caso de daños a la Propiedad Arrendada, el Cliente deberá reembolsar CRS por el costo de la reparación o, si el costo de la reparación es poco práctico, cualquier y todos los costos de reemplazo. El Cliente es el único responsable de sus propias pertenencias personales y debe estar presente en todas entregas, ajustes, y recolección de la Propiedad Arrendada.</p>
+           </li>
+           <li>
+             <p>Los Clientes que posean una póliza de arrendatario y/o son personalmente responsables por cualquier parte de los servicios prestados por CRS deberá pagar por adelantado directamente a CRS para cualquier deducible y/o reducción de alquiler (típicamente importe del alquiler mensual del Cliente). Los fondos deben ser recibidos antes de que CRS proporcione los servicios.</p>
+           </li>
+           <li>
+             <p>El Cliente entiende que como huésped del hotel u ocupante del Local o receptor de cualquier Propiedad Arrendada, según sea el caso, el Cliente es el principal responsable de todos los pagos asociados a los beneficios proporcionados por CRS, incluyendo mano de obra y servicios. Todos los gastos facturables no cubiertos por la aseguradora del Cliente
+pasarán a ser responsabilidad del Cliente y el Cliente hará pagos directamente a CRS.</p>
+           </li>
+           <li>
+             <p>El Cliente deberá indemnizar, proteger, defender y mantener CRS y sus afiliados absueltos por, desde y contra cualquier y todas las reclamaciones, daños, responsabilidades, daños, pérdidas y /o costos que surjan en relación con cualquiera de las acciones o inacciones de los Clientes , el uso de la Propiedad Arrendada, incumplimiento de este Acuerdo, el contrato de arrendamiento del Local, y la ocupación de los Clientes del Local. En caso que algún tercero inicie acciones judiciales relacionados con la ocupación del Cliente del Local o del presente Acuerdo, CRS tendrán derecho a recuperar del Cliente todos los daños, costos, gastos y honorarios de abogados incurridos como resultado de tal acción.</p>
+           </li>
+           <li>
+             <p>Este Acuerdo será gobernado por las leyes del Estado de Arizona.</p>
+           </li>
+           <li>
+             <p>El Cliente entiende que este Acuerdo ha sido traducido al idioma Español y a pesar de dicha traducción, la versión en el idioma Ingles tendrá control sobre la versión en Español.<br/><br/>
+
+Yo/Nosotros estoy de acuerdo a los términos y condiciones anteriores y autorizo a mi/nuestra compañía de seguros,
+Safeco Insurance    N/A <br/>
+para hacer pagos directos a CRS Temporary Housing ("CRS"), PO Box 29073, Phoenix, AZ 85038-9073. Autorización incluye los pagos a los CRS para cualquier y todos los gastos adicionales asociados con servicios de hotel y alojamiento concertada o pagados por CRS.<br/><br/>
+
+Yo/Nosotros certifico que toda la información es verdadera y correcta a lo mejor de mi / nuestro conocimiento. Yo / Nosotros por este medio doy CRS la autoridad para verificar mi / nuestra identidad y la cobertura de la póliza.
+</p>
+           </li>
+       </ol>
+            
+       Ejecudado el: <br/> 
+       <table>   
+        <tr>  
+         <td> 
+             Cliente 1:<br/>       
+             Firma: ______________ <br/>
+             Imprimir Nombre:_______________<br/> 
+             SS # (Número de Seguridad Social):  ____________________ <br/>
+             Fecha de Nacimiento : ___________________ <br/>
+             Fecha: ______________________<br/>
+          </td>
+          <td>
+             Firma:<br/>       
+             Imprimir Nombre:_ ______________ <br/>
+             Print:_______________<br/> 
+             SS # (Número de Seguridad Social): ____________________ <br/>
+             Fecha de Nacimiento : ___________________ <br/>
+             Fecha: ______________________<br/>
+          </td>   
+         </tr>
+       </table>
+        <p>Acordado y Aceptado:<br/>
+Temporary Housing Inc., haciendo negocios como CRS Temporary Housing (Federal Tax ID Number 20-8134444) 
+</p><br/><br/>
+       Firma:__________________ <br/>
+       Imprimir Nombre:___________________<br/>
+       Fecha:___________________<br/>
+       Ref: {!claimRec.Name}<br/>
+      
+    </body>
+    <br/><br/>   
+   </html>
+</apex:page>

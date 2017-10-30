@@ -1,0 +1,81 @@
+<apex:page standardController="Placement__c" extensions="AELinesItem" sidebar="false" tabStyle="Adjustment__c" action="{!CopyOperation}" >
+<style> 
+.dataCell input { 
+width:100px;
+}
+    </style> 
+    <apex:form >
+     <apex:actionFunction status="outStatus" name="sayHello" action="{!recalc}" rerender="table" />
+        <apex:pageBlock title="Edit Adjustment Items" mode="edit" id="table">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value=" Save " />
+                &nbsp;<apex:commandButton action="{!reset}" value=" Reset " rerender="table" />
+                &nbsp;<apex:commandButton action="{!add}"   value=" Add "   rerender="table" /> 
+                &nbsp;<apex:commandButton action="{!cancel}" value=" Cancel " /> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </apex:pageBlockButtons> 
+       
+        <apex:pageBlockSection title="Placement : {!Placement__c.name}" columns="9">
+        
+           <apex:pageBlockTable value="{!adjLineItems}" var="item">
+                <apex:column >
+                    <b><apex:outputLabel value="Adjustment" for="HRName"/></b><br/>
+                    <apex:inputField required="true" value="{!item.name}" onchange="sayHello();" id="HRName"/>
+                </apex:column>
+                
+                <apex:column >
+                    <apex:outputLabel ><b>Adjustment<br/>Effective Date</b><br/></apex:outputLabel>
+                    <apex:inputField value="{!item.Adjustment_Effective_Date__c}" onchange="sayHello();" />
+               
+                </apex:column> 
+                
+                <apex:column >                
+                     <apex:outputLabel ><b>Placement<br/></b><br/> </apex:outputLabel>
+                     <apex:inputField value="{!item.Placement_Lookup__c}" onchange="sayHello();" />
+                </apex:column>
+
+                <apex:column >
+                     <apex:outputLabel ><b>Hotel Room Name<br/></b><br/></apex:outputLabel>
+                     <apex:inputField value="{!item.Hotel_Room_Lookup__c}" onchange="sayHello();"/>
+
+                </apex:column>   
+                              
+                <apex:column breakBefore="true">
+                     <apex:outputLabel ><b>Hotel Fee<br/>Effective Date</b></apex:outputLabel><br/>
+                     <apex:inputField value="{!item.Hotel_Fee_Effective_Date__c}" onchange="sayHello();" />
+                </apex:column> 
+
+                <apex:column >
+                     <apex:outputText ><b>Hotel<br/>Fee Type</b></apex:outputText><br/>
+                     <apex:inputField value="{!item.Hotel_Fee_Type__c}" onchange="sayHello();" />
+                </apex:column> 
+
+                <apex:column >
+                     <apex:outputText ><b>Fee<br/>Frequency</b></apex:outputText><br/>
+                     <apex:inputField value="{!item.Fee_Frequency__c}" onchange="sayHello();" />
+                </apex:column> 
+
+                <apex:column >
+                     <apex:outputText ><b>Other<br/>Fee Description</b></apex:outputText><br/>
+                     <apex:inputField value="{!item.Other_Fee_Description__c}" onchange="sayHello();" />
+                </apex:column> 
+
+                <apex:column >
+                     <apex:outputText ><b>Hotel<br/>Rate Adjustment  </b></apex:outputText><br/>
+                     <apex:inputField value="{!item.Hotel_Rate_Adjustment__c}" onchange="sayHello();" />
+                </apex:column> 
+               
+                <apex:column >                
+                     <apex:outputLabel ><b>Rate Adjustment<br/>Effective Date</b><br/> </apex:outputLabel>
+                     <apex:inputField value="{!item.Rate_Adjustment_Effective_Date__c}" onchange="sayHello();" />
+                </apex:column>
+            
+            <apex:column breakBefore="true" colspan="8">
+                <hr style="color:blue; height:15;  width=100%"/>
+                </apex:column>                                               
+            </apex:pageBlockTable>
+                 
+            </apex:pageBlockSection>                   
+        </apex:PageBlock>           
+    </apex:form>    
+</apex:page>

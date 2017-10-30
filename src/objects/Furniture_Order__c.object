@@ -1,0 +1,4241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Additional_Bedroom_10__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Bedroom</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Twin w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 Twins w/ Headboards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Bed w/ Headboard (Default)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Upgrade to Pillowtop</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Bed w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade w/ Pillowtop</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Home Office</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Additional_Bedroom_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Bedroom</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Twin w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 Twins w/ Headboards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Bed w/ Headboard (Default)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Upgrade to Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Bed w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade with Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Home Office</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Additional_Bedroom_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Bedroom</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Twin w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 Twins w/ Headboards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Bed w/ Headboard (Default)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Upgrade to Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Bed w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade with Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Home Office</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Additional_Bedroom_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Bedroom</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Twin w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 Twins w/ Headboards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Bed w/ Headboard (Default)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Upgrade to Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Bed w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade with Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Home Office</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Additional_Bedroom_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Bedroom</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Twin w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 Twins w/ Headboards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Bed w/ Headboard (Default)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Upgrade to Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Bed w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade with Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Home Office</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Additional_Bedroom_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Bedroom</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Twin w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 Twins w/ Headboards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Bed w/ Headboard (Default)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Upgrade to Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Bed w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade with Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Home Office</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Additional_Bedroom_6__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Bedroom</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Twin w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 Twins w/ Headboards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Bed w/ Headboard (Default)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Upgrade to Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Bed w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade with Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Home Office</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Additional_Bedroom_7__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Bedroom</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Twin w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 Twins w/ Headboards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Bed w/ Headboard (Default)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Upgrade to Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Bed w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade with Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Home Office</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Additional_Bedroom_8__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Bedroom</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Twin w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 Twins w/ Headboards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Bed w/ Headboard (Default)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Upgrade to Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Bed w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade with Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Home Office</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Additional_Bedroom_9__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Bedroom</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Twin w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 Twins w/ Headboards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Bed w/ Headboard (Default)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Upgrade to Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Bed w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade with Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Home Office</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Additional_Dining_Room__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Dining Room</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dining Chairs (2)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dining Chairs (4) (Default)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dining Chairs (6)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dining Chairs (8)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Additional_Living_Room__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Living Room</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Living Room Chair</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Loveseat</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Loveseat or Chair (Default)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Appliance_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Appliance_Cost</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Appliances__c</fullName>
+        <externalId>false</externalId>
+        <label>Appliances</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Bathrooms_Needing_Housewares__c</fullName>
+        <externalId>false</externalId>
+        <label>Bathrooms Needing Housewares</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Housewares__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>0</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>9</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>10</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BedBath_Housewares_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Bed &amp; Bath Housewares Cost</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Bedrooms_Needing_Housewares__c</fullName>
+        <externalId>false</externalId>
+        <label>Bedrooms Needing Housewares</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Housewares__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>0</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>9</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>10</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billable_Party_Appliance_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Billable Party</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adjuster</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policyholder</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billable_Party_BedBath_Housewares_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Billable Party</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adjuster</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policyholder</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billable_Party_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Billable Party</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adjuster</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policyholder</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billable_Party_Delivery_Fee__c</fullName>
+        <externalId>false</externalId>
+        <label>Billable Party</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adjuster</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policyholder</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billable_Party_Deposit__c</fullName>
+        <externalId>false</externalId>
+        <label>Billable Party</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adjuster</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policyholder</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billable_Party_Electronics_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Billable Party</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adjuster</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policyholder</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billable_Party_Furniture_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Billable Party</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adjuster</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policyholder</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billable_Party_Kitchen_Housewares_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Billable Party</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adjuster</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policyholder</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billable_Party_Other_Housewares_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Billable Party</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adjuster</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policyholder</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billable_Party_Pet_Fee__c</fullName>
+        <externalId>false</externalId>
+        <label>Billable Party</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adjuster</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policyholder</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billable_Party_Setup_Fee__c</fullName>
+        <externalId>false</externalId>
+        <label>Billable Party</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adjuster</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policyholder</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Clothes_Dryer__c</fullName>
+        <externalId>false</externalId>
+        <label>Clothes Dryer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Appliances__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Yes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>No</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Clothes_Washer__c</fullName>
+        <externalId>false</externalId>
+        <label>Clothes Washer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Appliances__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Yes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>No</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Created_After_Move_In__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Created After Move-In</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Created_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <label>Created Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_Fee__c</fullName>
+        <externalId>false</externalId>
+        <label>Delivery Fee</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Deposit__c</fullName>
+        <externalId>false</externalId>
+        <label>Deposit</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Dining_Room__c</fullName>
+        <externalId>false</externalId>
+        <label>Dining Room</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dining Chairs (2)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dining Chairs (4)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dining Chairs (4) (Default)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dining Chairs (6) (Default)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dining Chairs (6)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dining Chairs (8)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Dryer_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Dryer Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Clothes_Dryer__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Electric</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Gas</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Electric</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Gas</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Electronics_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Electronics Cost</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Furniture_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Furniture Comments</label>
+        <length>15000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Furniture_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Furniture_Cost</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Furniture_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Furniture Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Level 1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Level 2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Level 3</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Housewares__c</fullName>
+        <externalId>false</externalId>
+        <label>Housewares</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Include_Pictures__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>PH would like pictures included in the order</inlineHelpText>
+        <label>Include Pictures</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_partial_order__c</fullName>
+        <externalId>false</externalId>
+        <label>Is this a partial order?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Kitchen_Housewares_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Kitchen Housewares Cost</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Living_Room__c</fullName>
+        <externalId>false</externalId>
+        <label>Living Room</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Living Room Chair</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Loveseat</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Loveseat or Chair (Default)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Master_Bedroom__c</fullName>
+        <externalId>false</externalId>
+        <label>Master Bedroom</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Twin w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 Twins w/ Headboards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Bed w/ Headboard (Default)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queen Upgrade to Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Bed w/ Headboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Upgrade with Pillow Top</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Microwave__c</fullName>
+        <externalId>false</externalId>
+        <label>Microwave</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Appliances__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Yes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>No</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Migration_PTID__c</fullName>
+        <description>used for linking existing furniture orders to service request</description>
+        <externalId>true</externalId>
+        <label>Migration_PTID</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Housewares_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Housewares Cost</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Pet_Fee__c</fullName>
+        <externalId>false</externalId>
+        <label>Pet Fee</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Placement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Placement</label>
+        <referenceTo>Placement__c</referenceTo>
+        <relationshipLabel>Furniture Orders</relationshipLabel>
+        <relationshipName>Furniture_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Range_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Range Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Range__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Gas</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Electric</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Gas</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Electric</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Range__c</fullName>
+        <externalId>false</externalId>
+        <label>Range</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Appliances__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Yes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>No</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Ready_For_VSS__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When a furniture order is set to completed status and there is a valid search record on the corrisponding service request this field is set to true. Keeps furniture orders from being picked up by VSS without a valid search record.</description>
+        <externalId>false</externalId>
+        <label>Ready For VSS</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Refrigerator__c</fullName>
+        <externalId>false</externalId>
+        <label>Refrigerator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Appliances__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Yes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>No</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Requested_Furniture_Delivery_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Requested Delivery Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Searches__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Search</label>
+        <referenceTo>Searches__c</referenceTo>
+        <relationshipLabel>Furniture Orders</relationshipLabel>
+        <relationshipName>Furniture_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sent_to_VSS__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if this furniture order has been sent to VSS</description>
+        <externalId>false</externalId>
+        <label>Sent to VSS</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Service_Request_Lookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Service Request Lookup</label>
+        <referenceTo>ServiceRequest__c</referenceTo>
+        <relationshipLabel>Furniture Orders</relationshipLabel>
+        <relationshipName>Furniture_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Service_Request__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Service Request</label>
+        <referenceTo>ServiceRequest__c</referenceTo>
+        <relationshipLabel>Furniture Orders (Service Request)</relationshipLabel>
+        <relationshipName>Furniture_Orders1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Setup_Fee__c</fullName>
+        <externalId>false</externalId>
+        <label>Setup Fee</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Working</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Furniture Order</label>
+    <listViews>
+        <fullName>Furniture_Furniture_Order</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Furniture</label>
+        <queue>Furniture</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>FO-{00000}</displayFormat>
+        <label>Furniture Order Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Furniture Orders</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Cancelled_Furniture_Order</fullName>
+        <active>true</active>
+        <description>Cancelled furniture orders</description>
+        <label>Cancelled Furniture Order</label>
+        <picklistValues>
+            <picklist>Additional_Bedroom_10__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade w%2F Pillowtop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillowtop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_1__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_2__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_3__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_4__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_5__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_6__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_7__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_8__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_9__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Dining_Room__c</picklist>
+            <values>
+                <fullName>Dining Chairs %282%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %284%29 %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %286%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %288%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Living_Room__c</picklist>
+            <values>
+                <fullName>Living Room Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loveseat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loveseat or Chair %28Default%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Appliances__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Bathrooms_Needing_Housewares__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Bedrooms_Needing_Housewares__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Appliance_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_BedBath_Housewares_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Delivery_Fee__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Deposit__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Electronics_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Furniture_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Kitchen_Housewares_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Other_Housewares_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Pet_Fee__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Setup_Fee__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Clothes_Dryer__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Clothes_Washer__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dining_Room__c</picklist>
+            <values>
+                <fullName>Dining Chairs %282%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %284%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %284%29 %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %286%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %286%29 %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %288%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dryer_Type__c</picklist>
+            <values>
+                <fullName>Electric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gas</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Furniture_Level__c</picklist>
+            <values>
+                <fullName>Level 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Housewares__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_partial_order__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Living_Room__c</picklist>
+            <values>
+                <fullName>Living Room Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loveseat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loveseat or Chair %28Default%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Master_Bedroom__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Microwave__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Range_Type__c</picklist>
+            <values>
+                <fullName>Electric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gas</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Range__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Refrigerator__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Completed_Furniture_Order</fullName>
+        <active>true</active>
+        <description>Completed furniture orders</description>
+        <label>Completed Furniture Order</label>
+        <picklistValues>
+            <picklist>Additional_Bedroom_10__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade w%2F Pillowtop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillowtop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_1__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_2__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_3__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_4__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_5__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_6__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_7__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_8__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_9__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Dining_Room__c</picklist>
+            <values>
+                <fullName>Dining Chairs %282%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %284%29 %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %286%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %288%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Living_Room__c</picklist>
+            <values>
+                <fullName>Living Room Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loveseat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loveseat or Chair %28Default%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Appliances__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Bathrooms_Needing_Housewares__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Bedrooms_Needing_Housewares__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Appliance_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_BedBath_Housewares_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Delivery_Fee__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Deposit__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Electronics_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Furniture_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Kitchen_Housewares_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Other_Housewares_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Pet_Fee__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Setup_Fee__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Clothes_Dryer__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Clothes_Washer__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dining_Room__c</picklist>
+            <values>
+                <fullName>Dining Chairs %282%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %284%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %284%29 %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %286%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %286%29 %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %288%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dryer_Type__c</picklist>
+            <values>
+                <fullName>Electric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gas</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Furniture_Level__c</picklist>
+            <values>
+                <fullName>Level 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Housewares__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_partial_order__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Living_Room__c</picklist>
+            <values>
+                <fullName>Living Room Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loveseat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loveseat or Chair %28Default%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Master_Bedroom__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Microwave__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Range_Type__c</picklist>
+            <values>
+                <fullName>Electric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gas</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Range__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Refrigerator__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Working_Furniture_Order</fullName>
+        <active>true</active>
+        <description>Working furniture orders</description>
+        <label>Working Furniture Order</label>
+        <picklistValues>
+            <picklist>Additional_Bedroom_10__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade w%2F Pillowtop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillowtop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_1__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_2__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_3__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_4__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_5__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_6__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_7__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_8__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Bedroom_9__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Dining_Room__c</picklist>
+            <values>
+                <fullName>Dining Chairs %282%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %284%29 %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %286%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %288%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Additional_Living_Room__c</picklist>
+            <values>
+                <fullName>Living Room Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loveseat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loveseat or Chair %28Default%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Appliances__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Bathrooms_Needing_Housewares__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Bedrooms_Needing_Housewares__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Appliance_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_BedBath_Housewares_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Delivery_Fee__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Deposit__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Electronics_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Furniture_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Kitchen_Housewares_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Other_Housewares_Cost__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Pet_Fee__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billable_Party_Setup_Fee__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Clothes_Dryer__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Clothes_Washer__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dining_Room__c</picklist>
+            <values>
+                <fullName>Dining Chairs %282%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %284%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %284%29 %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %286%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %286%29 %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dining Chairs %288%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dryer_Type__c</picklist>
+            <values>
+                <fullName>Electric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gas</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Furniture_Level__c</picklist>
+            <values>
+                <fullName>Level 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Housewares__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_partial_order__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Living_Room__c</picklist>
+            <values>
+                <fullName>Living Room Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loveseat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loveseat or Chair %28Default%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Master_Bedroom__c</picklist>
+            <values>
+                <fullName>2 Twins w%2F Headboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Bed w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>King Upgrade with Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Bed w%2F Headboard %28Default%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queen Upgrade to Pillow Top</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Twin w%2F Headboard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Microwave__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Range_Type__c</picklist>
+            <values>
+                <fullName>Electric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gas</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Range__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Refrigerator__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Working</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Requested_Furniture_Delivery_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Service_Request_Lookup__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Requested_Furniture_Delivery_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Service_Request_Lookup__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Cannot_edit_cancelled_furniture_orders</fullName>
+        <active>false</active>
+        <description>Cancelled furniture orders cannot be edited</description>
+        <errorConditionFormula>ISPICKVAL(PRIORVALUE(Status__c), &apos;Cancelled&apos;)</errorConditionFormula>
+        <errorMessage>Cancelled Furniture Orders cannot be edited</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Full_furniture_applianes</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL( Status__c , &apos;Completed&apos;) &amp;&amp; ISPICKVAL(  Is_partial_order__c , &apos;No&apos;) &amp;&amp;  ISPICKVAL( Appliances__c, &apos;&apos;)</errorConditionFormula>
+        <errorDisplayField>Appliances__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Full_furniture_housewares</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL( Status__c , &apos;Completed&apos;) &amp;&amp; ISPICKVAL(  Is_partial_order__c , &apos;No&apos;) &amp;&amp;  ISPICKVAL( Housewares__c, &apos;&apos;)</errorConditionFormula>
+        <errorDisplayField>Housewares__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Full_furniture_order_dining_room</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL( Status__c , &apos;Completed&apos;) &amp;&amp; ISPICKVAL(  Is_partial_order__c , &apos;No&apos;) &amp;&amp;  ISPICKVAL( Dining_Room__c , &apos;&apos;)</errorConditionFormula>
+        <errorDisplayField>Dining_Room__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Full_furniture_order_living_room</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL( Status__c , &apos;Completed&apos;) &amp;&amp; ISPICKVAL(  Is_partial_order__c , &apos;No&apos;) &amp;&amp;  ISPICKVAL( Living_Room__c , &apos;&apos;)</errorConditionFormula>
+        <errorDisplayField>Living_Room__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Full_furniture_order_master_bedroom</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL( Status__c , &apos;Completed&apos;) &amp;&amp; ISPICKVAL(  Is_partial_order__c , &apos;No&apos;) &amp;&amp;  ISPICKVAL( Master_Bedroom__c, &apos;&apos;)</errorConditionFormula>
+        <errorDisplayField>Master_Bedroom__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Partial_furniture_order_comments</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL(Status__c , &apos;Completed&apos;) &amp;&amp; ISPICKVAL(Is_partial_order__c , &apos;Yes&apos;) &amp;&amp;  Furniture_Comments__c  = &apos;&apos;</errorConditionFormula>
+        <errorDisplayField>Furniture_Comments__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Ready_For_VSS_check</fullName>
+        <active>false</active>
+        <description>Makes sure there is a valid search record on the service request that this furniture order is tied to.</description>
+        <errorConditionFormula>IF(Ready_For_VSS__c = false,  IF(ISPICKVAL(Status__c, &apos;Completed&apos;),true,false), false)</errorConditionFormula>
+        <errorMessage>Furniture orders cannot be set to completed status until a valid search record is created</errorMessage>
+    </validationRules>
+</CustomObject>

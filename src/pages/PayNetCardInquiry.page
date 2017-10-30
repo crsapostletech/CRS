@@ -1,0 +1,37 @@
+<apex:page controller="PayNetCardInquiry" showHeader="true" sidebar="true" title="PayNet Inquiry Page">
+<br></br>
+<h1>PayNet Card Inquiry</h1>
+
+<apex:form id="PayNetCardInquiry"> 
+<br></br>
+    <apex:pageBlock id="paynetCardInquiry"> 
+       <apex:pageBlockButtons location="top">
+          <apex:actionStatus id="inquireStatus" startText="Fetching Card Information..." >
+             	<apex:facet name="stop">
+                 	<apex:outputPanel >	    
+                 		 <apex:commandButton value="Inquire" status="inquireStatus" id="btnInquire" rerender="PayNetCardInquiryPBS"/>
+         			</apex:outputPanel>
+            		</apex:facet>
+         		<apex:facet name="start">
+         			<apex:outputPanel >
+         				<apex:image url="{!URLFOR($Resource.ajaxPics, 'smallSpinner.gif')}"></apex:image>
+         				<apex:outputText ><b>Processing...</b></apex:outputText>
+    					</apex:outputPanel>	
+         		</apex:facet>
+          </apex:actionStatus> 
+       </apex:pageBlockButtons>
+       <apex:pageBlockSection id="PayNetCardInquiryPBS" columns="1">
+       <apex:pageBlockSectionItem > 
+           <apex:outputLabel value="Order Id (Placment Id)" for="payNetOrderId"/>
+           <apex:inputText value="{!OrderId}" id="payNetOrderId" style="width:150px"/> 
+       </apex:pageBlockSectionItem>
+       <apex:pageBlockSectionItem >
+           <apex:outputLabel value="Returned XML" for="returnedXML"/>
+           <apex:outputPanel > 
+           		<apex:outputText id="returnedXML" rendered="{!OrderId!=null}" value="{!CreditCardInfo}"/>
+           </apex:outputPanel>  
+       </apex:pageBlockSectionItem>
+       </apex:pageBlockSection> 
+       </apex:pageBlock>
+</apex:form>     
+</apex:page>

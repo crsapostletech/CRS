@@ -1,0 +1,2249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Close</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewTask</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ActivityDate</fullName>
+    </fields>
+    <fields>
+        <fullName>CallDisposition</fullName>
+    </fields>
+    <fields>
+        <fullName>CallDurationInSeconds</fullName>
+    </fields>
+    <fields>
+        <fullName>CallObject</fullName>
+    </fields>
+    <fields>
+        <fullName>CallType</fullName>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>IsRecurrence</fullName>
+    </fields>
+    <fields>
+        <fullName>IsReminderSet</fullName>
+    </fields>
+    <fields>
+        <fullName>IsVisibleInSelfService</fullName>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RecurrenceInterval</fullName>
+    </fields>
+    <fields>
+        <fullName>RecurrenceRegeneratedType</fullName>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TaskSubtype</fullName>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WhatId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>WhoId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <recordTypes>
+        <fullName>Activity</fullName>
+        <active>true</active>
+        <label>Activity</label>
+        <picklistValues>
+            <picklist>Originating_Party__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on Response</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>15 Day Move Out Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24 Hour Adjuster Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45 Day Move Out Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>72 Hour Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90 Day Move Out Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accounts Receivable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accounts Receivable - Current Invoice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accounts Receivable - Past Due Invoice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Fair Rental Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Hotel Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Housing Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Pre-Present Property %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application and Lease Agreements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRS Credit Card Authorization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extension with Date Read</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extension with Date Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extension with Date Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Booking Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Booking Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Credit Card Authorization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Extension Approved by Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Extension Processed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Folio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Initial Call Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Initial Call Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Stay Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Stay Agreement Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Stay Agreement Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel to Housing Conversion Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing Extension Notice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing Initial Call Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing Initial Call Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Final Confirmation Call Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Final Confirmation Call Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Statement of Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Work Order Request Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Work Order Request Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Work Order Request Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Move In Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Move-In Inspection Form Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Move-In Inspection Form Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notice to Vacate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notice to Vacate Read</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notice to Vacate Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notice to Vacate Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Extension Read</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Extension Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Extension Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Accepted Property %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Declined Property %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Final Confirmation Call Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Final Confirmation Call Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Furniture Order Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Presented Property %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search Pad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Deposit Refund Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Deposit Request Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Agreement Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Agreement Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Confirmation Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Confirmation Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Pick-Up Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W9 Form</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Follow_Up_Status__c</picklist>
+            <values>
+                <fullName>Attempt -1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attempt -2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attempt -3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Book Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Options</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Documents</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hold Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial PH Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Literature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Contact Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Placement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated Contact Info</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NTV_Closed</fullName>
+        <active>true</active>
+        <description>Notice to vacate in any closed status</description>
+        <label>NTV Closed</label>
+        <picklistValues>
+            <picklist>Originating_Party__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsent</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Send NTV Via Certified Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send NTV Via Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send NTV Via Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send NTV Via Insured</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Send NTV</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NTV_Sent</fullName>
+        <active>true</active>
+        <label>NTV Sent</label>
+        <picklistValues>
+            <picklist>Originating_Party__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Call Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Made</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Response to Automated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Follow_Up_Status__c</picklist>
+            <values>
+                <fullName>Attempt -1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attempt -2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attempt -3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Book Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Options</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Documents</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>72 hour adjuster follow up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>72 hour policyholder follow up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fup on Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hold Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial PH Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Literature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Contact Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Placement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send NTV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated Contact Info</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NTV_Unsent</fullName>
+        <active>true</active>
+        <description>Notice to vacate task in unsent status</description>
+        <label>NTV Unsent</label>
+        <picklistValues>
+            <picklist>Originating_Party__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsent</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Send NTV Via Certified Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send NTV Via Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send NTV Via Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send NTV Via Insured</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Send NTV</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Portal_Notes</fullName>
+        <active>true</active>
+        <label>Portal Notes</label>
+        <picklistValues>
+            <picklist>Originating_Party__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>15 Day Move Out Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24 Hour Adjuster Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45 Day Move Out Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>72 Hour Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90 Day Move Out Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accounts Receivable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accounts Receivable - Current Invoice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accounts Receivable - Past Due Invoice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Fair Rental Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Hotel Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Housing Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Pre-Present Property %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application and Lease Agreements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRS Credit Card Authorization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extension with Date Read</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extension with Date Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extension with Date Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Booking Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Booking Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Credit Card Authorization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Extension Approved by Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Extension Processed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Folio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Initial Call Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Initial Call Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Stay Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Stay Agreement Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Stay Agreement Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel to Housing Conversion Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing Extension Notice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing Initial Call Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing Initial Call Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Final Confirmation Call Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Final Confirmation Call Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Statement of Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Work Order Request Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Work Order Request Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Work Order Request Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Move In Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Move-In Inspection Form Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Move-In Inspection Form Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notice to Vacate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notice to Vacate Read</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notice to Vacate Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notice to Vacate Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Extension Read</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Extension Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Extension Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Accepted Property %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Declined Property %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Final Confirmation Call Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Final Confirmation Call Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Furniture Order Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Presented Property %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search Pad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Deposit Refund Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Deposit Request Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Agreement Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Agreement Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Confirmation Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Confirmation Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Pick-Up Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W9 Form</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Literature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Contact Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated Contact Info</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Portal_Notes_Completed</fullName>
+        <active>true</active>
+        <label>Portal Notes Completed</label>
+        <picklistValues>
+            <picklist>Originating_Party__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>15 Day Move Out Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24 Hour Adjuster Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45 Day Move Out Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>72 Hour Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90 Day Move Out Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accounts Receivable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accounts Receivable - Current Invoice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accounts Receivable - Past Due Invoice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Fair Rental Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Hotel Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Housing Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Pre-Present Property %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adjuster Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application and Lease Agreements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRS Credit Card Authorization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extension with Date Read</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extension with Date Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extension with Date Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Booking Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Booking Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Credit Card Authorization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Extension Approved by Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Extension Processed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Folio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Initial Call Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Initial Call Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Stay Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Stay Agreement Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Stay Agreement Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel to Housing Conversion Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing Extension Notice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing Initial Call Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing Initial Call Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Final Confirmation Call Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Final Confirmation Call Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Statement of Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Work Order Request Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Work Order Request Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landlord Work Order Request Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Move In Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Move-In Inspection Form Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Move-In Inspection Form Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notice to Vacate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notice to Vacate Read</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notice to Vacate Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notice to Vacate Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Extension Read</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Extension Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Extension Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Accepted Property %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Declined Property %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Final Confirmation Call Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Final Confirmation Call Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Furniture Order Attempt %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Presented Property %23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search Pad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Deposit Refund Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Deposit Request Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Agreement Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Agreement Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Confirmation Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Housing Confirmation Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Pick-Up Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W9 Form</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Literature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Contact Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated Contact Info</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>X24_Hour_Follow_Up</fullName>
+        <active>true</active>
+        <description>24 hours from checkout a task</description>
+        <label>24 Hour Follow Up</label>
+        <picklistValues>
+            <picklist>Originating_Party__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Call Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Made</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Response to Automated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Follow_Up_Status__c</picklist>
+            <values>
+                <fullName>Attempt -1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attempt -2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attempt -3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Book Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Options</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Documents</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>72 hour adjuster follow up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>72 hour policyholder follow up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fup on Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hold Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial PH Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Literature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Contact Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Placement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send NTV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated Contact Info</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>X72_Hour_ADJ_Contact</fullName>
+        <active>true</active>
+        <description>72 hours from check out task to contact adjuster</description>
+        <label>72 Hour ADJ Contact</label>
+        <picklistValues>
+            <picklist>Originating_Party__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on Response</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Call Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Made</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Response to Automated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Follow_Up_Status__c</picklist>
+            <values>
+                <fullName>Attempt -1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attempt -2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attempt -3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Book Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Options</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Documents</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>72 hour adjuster follow up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>72 hour policyholder follow up</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>X72_Hour_PH_Contact</fullName>
+        <active>true</active>
+        <description>72 hours from check out task to contact policyholder</description>
+        <label>72 Hour PH Contact</label>
+        <picklistValues>
+            <picklist>Originating_Party__c</picklist>
+            <values>
+                <fullName>Adjuster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CRS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on Response</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Call Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Made</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Response to Automated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Follow_Up_Status__c</picklist>
+            <values>
+                <fullName>Attempt -1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attempt -2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attempt -3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Book Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel Options</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Documents</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>72 hour policyholder follow up</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Allstate_Message_Received</fullName>
+        <active>true</active>
+        <description>Verify there is a date/time in the Time Message Received field if the subject is Allstate Message Received.</description>
+        <errorConditionFormula>AND(Subject = &quot;Allstate Message Received&quot;, ISBLANK( Time_Message_Received__c ))</errorConditionFormula>
+        <errorDisplayField>Time_Message_Received__c</errorDisplayField>
+        <errorMessage>Please enter the time the message was received.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Allstate_Message_Returned</fullName>
+        <active>true</active>
+        <description>Verify there is a date/time in the Time Message Returned field if the subject is Allstate Message Received.</description>
+        <errorConditionFormula>AND(Subject = &quot;Allstate Message Received&quot;, ISBLANK( Time_Message_Received__c ))</errorConditionFormula>
+        <errorDisplayField>Time_Message_Returned__c</errorDisplayField>
+        <errorMessage>Please enter the time the message was returned.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_edit_Closed_NTV_Tasks</fullName>
+        <active>false</active>
+        <description>Once an NTV Task is closed do not allow editing or deleting</description>
+        <errorConditionFormula>AND(!ISCHANGED( RecordTypeId ) , RecordType.DeveloperName = &apos;NTV_Closed&apos;) &amp;&amp; NOT(OR(ISCHANGED(Fax_Completion_Time__c), ISCHANGED(Fax_Result_ID__c), ISCHANGED(Fax_Sent_User_ID__c), ISCHANGED(Fax_Status__c), ISCHANGED(Fax_Submit_Time__c)))</errorConditionFormula>
+        <errorMessage>You cannot edit Cancelled or Completed NTV tasks</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_edit_Completed_Portal_Note</fullName>
+        <active>true</active>
+        <errorConditionFormula>RecordType.DeveloperName = &apos;Portal_Notes_Completed&apos;</errorConditionFormula>
+        <errorMessage>You cannot edit Completed Portal Notes</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Portal_selected_on_Completed_Portal_Note</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(RecordType.DeveloperName = &apos;Portal_Notes&apos;, ISPICKVAL(Status, &apos;Completed&apos;), Publish_On_Adjuster_Portal__c = FALSE,  Publish_On_Policyholder_Portal__c = FALSE)</errorConditionFormula>
+        <errorMessage>You must select a portal to push to before making the status Completed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Restrict_Completed_Tasks_Status</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(Service_Request__c &lt;&gt; null, NOT(ISPICKVAL(Status, &quot;Completed&quot;)),ISPICKVAL(PRIORVALUE( Status), &quot;Completed&quot;))</errorConditionFormula>
+        <errorMessage>Sorry, you can&apos;t change the status for completed tasks</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Restrict_Completed_Tasks_Type_Update</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(NOT(ISBLANK(Service_Request__c)),ISPICKVAL(PRIORVALUE(Status), &quot;Completed&quot;),ISCHANGED(Type) )</errorConditionFormula>
+        <errorMessage>Restrict the users not to update the type when status is completed for service request tasks</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Task_Related_SR_InitialCallDateCheck</fullName>
+        <active>true</active>
+        <description>Checking the Task Related InitialCallDate Check</description>
+        <errorConditionFormula>AND(ISBLANK( Service_Request__r.Initial_Call_Date__c ),
+ISPICKVAL(Task_Follow_Up_Status__c,&quot;Attempt -1&quot;),
+ISPICKVAL(Status,&quot;Completed&quot;))</errorConditionFormula>
+        <errorMessage>Please Enter Initial Call Date In Service Request</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Follow_Up_Task</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Follow-Up Task</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>var salestask = &quot;{!Task.Sales_Task__c}&quot;;
+var conId = &quot;{!Task.Who}&quot;;
+
+if(salestask == 1){
+
+var xx = &quot;setup/ui/recordtypeselect.jsp?ent=Task&amp;retURL=%2F&quot;+conId+&quot;&amp;00N0g000003MAep=1&amp;save_new_url=%2F00T%2Fe%3Fwho_id%3D&quot;+conId+&quot;%2600N4D000000co6Z%3D1%26retURL%3D%2F&quot;+conId;
+window.open(xx,&quot;_blank&quot;);
+}
+else{
+
+var xx = &quot;setup/ui/recordtypeselect.jsp?ent=Task&amp;retURL=%2F&quot;+conId+&quot;&amp;save_new_url=%2F00T%2Fe%3Fwho_id%3D&quot;+conId+&quot;%2600N4D000000co6Z%3D1%26retURL%3D%2F&quot;+conId;
+window.open(xx,&quot;_blank&quot;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Log_an_Activity_Account</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Log an Activity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/00T/e?title=Activity&amp;what_id={!Account.Id}&amp;followup=1&amp;RecordType=012700000001iNR&amp;retURL=%2F{!Account.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Log_an_Activity_Campaigns</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Log an Activity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/00T/e?title=Activity&amp;what_id={!Campaign.Id }&amp;followup=1&amp;RecordType=012700000001iNR&amp;retURL=%2F{!Campaign.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Log_an_Activity_Claim</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Log an Activity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/00T/e?title=Activity&amp;what_id={!Opportunity.Id}&amp;followup=1&amp;RecordType=012700000001iNR&amp;retURL=%2F{!Opportunity.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Log_an_Activity_Contact</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Log an Activity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/00T/e?title=Activity&amp;who_id={!Contact.Id}&amp;followup=1&amp;RecordType=012700000001iNR&amp;retURL=%2F{!Contact.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Log_an_Activity_Lead</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Log an Activity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/00T/e?title=Activity&amp;who_id={!Lead.Id}&amp;followup=1&amp;RecordType=012700000001iNR&amp;retURL=%2F{!Lead.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Log_an_Activity_Service_Request</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Log an Activity</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/00T/e?title=Activity&amp;what_id={!ServiceRequest__c.Id}&amp;followup=1&amp;RecordType=012700000001iNR&amp;retURL=%2F{!ServiceRequest__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Portal_Note</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Portal Note</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/00T/e?title=Activity&amp;what_id={!Opportunity.Id}&amp;RecordType=012700000001iNS&amp;tsk4={!Today}&amp;retURL=%2F{!Opportunity.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>myfaxv3__SendMassFax</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Send Mass Fax &amp; Email</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/myfaxv3__MassFax?rtype={!IF(ISBLANK(Lead.Id), &apos;Contact&apos;, &apos;Lead&apos;)}&amp;retURL=/{!BLANKVALUE(myfaxv3__OutboundFax__c.Id, BLANKVALUE(myfaxv3__InboundFax__c.Id, BLANKVALUE(Case.Id, BLANKVALUE(Opportunity.Id, BLANKVALUE(Lead.Id, BLANKVALUE(Contact.Id, BLANKVALUE(Account.Id, &apos;&apos;)))))))}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>myfaxv3__SendOutboundFax</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Send a Fax</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/myfaxv3__FaxAuthor?p2_lkid={!BLANKVALUE(myfaxv3__OutboundFaxRecipient__c.myfaxv3__Lead__c, BLANKVALUE(myfaxv3__OutboundFaxRecipient__c.myfaxv3__Contact__c, BLANKVALUE(myfaxv3__InboundFax__c.myfaxv3__Lead__c, BLANKVALUE(myfaxv3__InboundFax__c.myfaxv3__Contact__c, BLANKVALUE(Case.ContactId, BLANKVALUE(Lead.Id, BLANKVALUE(Contact.Id, &apos;&apos;)))))))}&amp;p3_lkid={!BLANKVALUE(myfaxv3__OutboundFax__c.Id, BLANKVALUE(myfaxv3__InboundFax__c.Id, BLANKVALUE(Case.Id, BLANKVALUE(Opportunity.Id, BLANKVALUE(Account.Id, &apos;&apos;)))))}&amp;retURL=/{!BLANKVALUE(myfaxv3__OutboundFax__c.Id, BLANKVALUE(myfaxv3__InboundFax__c.Id, BLANKVALUE(Case.Id, BLANKVALUE(Opportunity.Id, BLANKVALUE(Lead.Id, BLANKVALUE(Contact.Id, BLANKVALUE(Account.Id, &apos;&apos;)))))))}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>myfaxv3__UpdateOutboundFax</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Update Fax Status</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/myfaxv3__FaxUpdate?retURL=/{!BLANKVALUE(myfaxv3__OutboundFax__c.Id, BLANKVALUE(myfaxv3__InboundFax__c.Id, BLANKVALUE(Case.Id, BLANKVALUE(Opportunity.Id, BLANKVALUE(Lead.Id, BLANKVALUE(Contact.Id, BLANKVALUE(Account.Id, &apos;&apos;)))))))}</url>
+    </webLinks>
+</CustomObject>

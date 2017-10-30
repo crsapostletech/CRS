@@ -1,0 +1,53 @@
+<apex:page controller="NTVDocumnetController"  renderAs="pdf" applyBodyTag="false">
+    <head>
+        <style>
+            @page{
+                margin:1in;
+            }
+        </style>
+    </head> 
+    <body>
+        <div style="float:Right;">
+            <apex:image url="{!$Resource.CRSHousingLogo}" style="width:145px;height:45px;"/>
+        </div><br/>
+        <apex:outputText style="font-size: 10pt;" value="{!toDay}"/><br/><br/>
+        <apex:outputText style="font-size: 10pt;" value="{!placementRecord.Selected_Search__r.NTV_Send_To__r.Account.Name}"/><br/>
+        <apex:outputText style="font-size: 10pt;" value="{!billingAddress}"/><br/>
+        <apex:outputText style="font-size: 10pt;" value="Phone:" /> &nbsp;<apex:outputText style="font-size: 10pt;" value="{!placementRecord.Selected_Search__r.NTV_Send_To__r.Account.Phone}"/><br/>
+        <apex:outputText style="font-size: 10pt;" value="Fax:" /> &nbsp;<apex:outputText style="font-size: 10pt;" value="{!placementRecord.Selected_Search__r.NTV_Send_To__r.Account.Fax}"/><br/>
+        <apex:outputText style="font-size: 10pt;" value="E-mail:" /> &nbsp;<apex:outputText style="font-size: 10pt;" value="{!placementRecord.Selected_Search__r.NTV_Send_To__r.Account.Email__c}"/><br/><br/>
+        
+        <apex:outputText style="font-size: 10pt;" value="Dear" />&nbsp;<apex:outputText style="font-size: 10pt;" value="{!placementRecord.Selected_Search__r.NTV_Send_To__r.Name}" /><apex:outputText style="font-size: 10pt;" value="," /> <br/>
+        
+        <p>
+            <apex:outputText style="font-size: 10pt;" value="Please accept this as a" />&nbsp;<apex:outputText style="font-size: 10pt;" value="{!placementRecord.Selected_Search__r.Days_Notice_Required__c}" />-<apex:outputText style="font-size: 10pt;" value="day notice for" />&nbsp;<apex:outputText style="font-size: 10pt;" value="{!serviceReqRec.Opportunity__r.Policyholder__r.Name}" />&nbsp;<apex:outputText style="font-size: 10pt;" value="to vacate the premises located at" />&nbsp;<apex:outputText style="font-size: 10pt;" value="{!placemnetTemporaryAddress}" />&nbsp;<apex:outputText style="font-size: 10pt;" value="on" />&nbsp;<apex:outputText style="font-size: 10pt;" value="{!moveOutDate}"/>.
+        </p>
+        
+        <p style="font-weight: bold;">
+            <apex:outputText style="font-size: 10pt;" value="Because our client's situation has so many variables, please contact us before re-renting this property so that we may contact our client to make sure everything is still moving forward as scheduled." />
+        </p>
+        <p>
+            <apex:outputText style="font-size: 10pt;" value="If CRS paid the refundable security deposit on behalf of {!serviceReqRec.Opportunity__r.Policyholder__r.Name}, please send the deposit refund, credits and disposition to the following address:" />
+        </p>
+        
+        <b><apex:outputText style="font-size: 10pt;" value="CRS Temporary Housing"/></b><br/>
+        <b><apex:outputText style="font-size: 10pt;" value="Ref #" /><apex:outputText style="font-size: 10pt;" value="{!serviceReqRec.Opportunity__r.Name}"/></b><br/>
+        <b><apex:outputText style="font-size: 10pt;" value="10851 N. Black Canyon Hwy, Ste. 700"/></b><br/>
+        <b><apex:outputText style="font-size: 10pt;" value="Phoenix, AZ 85029"/></b><br/>
+        
+        <p>
+            <apex:outputText style="font-size: 10pt;" value="If there are any deductions from the deposit, please include copies of receipts for repair of damages caused by the tenant along with the disposition (itemized description of deductions)." />
+        </p>
+        <p>
+            <apex:outputText style="font-size: 10pt;" value="Please note it is expected that you adhere to the statute of limitations and guidelines for the state of" />&nbsp;<apex:outputText style="font-size: 10pt;" value="{!placementTemporaryState}"/>&nbsp;<apex:outputText style="font-size: 10pt;" value="for refunding security deposits." />
+        </p>
+        <p><apex:outputText style="font-size: 10pt;" value="Thank you for the opportunity to do business with you." /></p>
+        <p><apex:outputText style="font-size: 10pt;" value="Sincerely," /></p>        
+        
+        <apex:outputText style="font-size: 10pt;" value="{!serviceReqRec.Opportunity__r.Customer_Care_Specialist__r.Name}"/><br/>
+        <apex:outputText style="font-size: 10pt;" value="CRS Temporary Housing"/><br/>
+        <apex:outputText style="font-size: 10pt;" value="Customer Care Specialist"/><br/>
+        <apex:outputText style="font-size: 10pt;" value="Phone:" /> &nbsp; <apex:outputText style="font-size: 10pt;" value="{!serviceReqRec.Opportunity__r.Customer_Care_Specialist__r.Phone}"/><br/>
+        <apex:outputText style="font-size: 10pt;" value="Fax:" /> &nbsp; <apex:outputText style="font-size: 10pt;" value="{!serviceReqRec.Opportunity__r.Customer_Care_Specialist__r.Fax}"/>
+    </body>
+</apex:page>

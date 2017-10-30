@@ -1,0 +1,56 @@
+<apex:page controller="NTVDocumnetPreviewController" sidebar="false">
+    <apex:form >
+       <apex:pageMessages />
+        <apex:iframe src="/apex/NTVDocumentPage?reqId={!servReqId}"/>
+        <br/><br/>
+     <apex:pageBlock >      
+           <br/>
+         
+           <center>
+                 <table> 
+                       <apex:outputPanel rendered="{!IF(contains(taskRecod.Subject, 'Email'), true, false)}">    
+                           <tr>
+                               <td> <b><apex:outputLabel value="Email"/></b> </td>
+                               <td> &nbsp;&nbsp; 
+                                   <apex:outputText value="{!toAddress}"/>
+                                   <apex:outputlabel style="color:red;" rendered="{!IF(toAddress == null || toAddress == '', true, false)}">Email not exist</apex:outputlabel>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td> <b><apex:outputLabel value="CC"/></b> </td>
+                               <td> &nbsp;&nbsp; 
+                                   <apex:inputText style="width:500px;" value="{!ccEmailString}"/>                                   
+                               </td>
+                           </tr>  
+                       </apex:outputPanel> 
+                       <apex:outputPanel rendered="{!IF(contains(taskRecod.Subject, 'Fax'), true, false)}">                
+                           <tr>
+                               <td> <b><apex:outputLabel value="Fax"/></b> </td>
+                               <td> &nbsp;&nbsp; 
+                                   <apex:outputText value="{!faxNumber}"/> 
+                                   <apex:outputlabel style="color:red;" rendered="{!IF(faxNumber == null || faxNumber == '', true, false)}">Fax not exist</apex:outputlabel>
+                               </td>
+                           </tr>
+                       </apex:outputPanel>     
+                       <tr>
+                           <td> <b><apex:outputLabel value="Subject"/></b> </td>
+                           <td> &nbsp;&nbsp; <apex:inputText style="width:500px;" value="{!subject}"/> </td>
+                       </tr>
+                       <apex:outputPanel rendered="{!IF(contains(taskRecod.Subject, 'Email'), true, false)}"> 
+                           <tr>
+                               <td> <b><apex:outputLabel value="Body"/></b> </td>
+                               <td> &nbsp;&nbsp; <apex:inputTextarea value="{!emailBody}" richText="true" cols="80" rows="4"/> </td>
+                           </tr>  
+                       </apex:outputPanel>                     
+               </table>
+           </center>
+           <center>
+               <apex:commandButton rendered="{!IF(toAddress != null && toAddress != '' && contains(taskRecod.Subject, 'Email'), true, false)}" value="Send Email" action="{!sendEmail}"/> &nbsp;
+               <apex:commandButton rendered="{!IF(faxNumber != null && faxNumber != '' && contains(taskRecod.Subject, 'Fax'), true, false)}" value="Send Fax" action="{!sendFax}"/> &nbsp;
+               <apex:commandButton value="Cancel" action="{!cancel}"/>
+           </center>            
+           
+      </apex:pageBlock>
+        
+    </apex:form>  
+</apex:page>

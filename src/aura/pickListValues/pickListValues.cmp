@@ -1,0 +1,16 @@
+<aura:component controller="pickListEntryController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:attribute name="sObjectName" type="string" default=""/>
+    <aura:attribute name="fieldName" type="string" default=""/>
+    <aura:attribute name="fieldStyle" type="string" default=""/>
+    <aura:attribute name="isRequired" type="boolean"/>
+    <aura:attribute name="labelName" type="String"/> 
+    <aura:attribute name="multiSelect" type="boolean" default="false"/>
+    
+    <aura:registerEvent name="pickListValuesEvent" type="c:pickListValuesEvent"/>
+    
+    <ui:inputSelect aura:id="dynamicSelect" class="{!v.fieldStyle}" value="{!v.fieldName}" change="{!c.changePickValue}" multiple="{!v.multiSelect}"/>
+	<span aura:id="originRequired" style="color:red;" class="slds-hide">Please select value</span>
+</aura:component>

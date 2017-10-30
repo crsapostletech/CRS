@@ -1,0 +1,389 @@
+<apex:page standardController="Opportunity" extensions="ClaimCreationControllerExt" tabStyle="Opportunity" title="New Claim">
+<script src="{!URLFOR($Resource.jquery)}"/>
+    <link type="text/css" rel="stylesheet" href="{!URLFOR($Resource.ClaimCreationCss)}" />  
+    <script type="text/javascript">
+        jQuery.noConflict();
+                
+        jQuery(document).ready(function() 
+        {
+            jQuery('[id$=btnAddLead]').show();
+        });
+
+        function setupLeadSection()
+        {
+            if (jQuery('[id$=leadLastName]').val() == '-*--*-')
+            {
+                jQuery('[id$=btnAddLead]').show();
+            }
+            else
+            {
+                jQuery('[id$=btnRemoveLead]').show();
+                jQuery('[id$=leadSection]').show();    
+            }
+        }
+
+        function addLead()
+        {
+            jQuery('[id$=btnAddLead]').hide();
+            jQuery('[id$=btnRemoveLead]').show();
+            jQuery('[id$=leadSection]').show();
+            jQuery('[id$=leadLastName]').val(jQuery('[id$=leadHidden]').val());
+            jQuery('[id$=leadHidden]').val('');
+            
+            return false;
+        }
+        
+        function removeLead()
+        {
+            jQuery('[id$=btnAddLead]').show();
+            jQuery('[id$=btnRemoveLead]').hide();
+            jQuery('[id$=leadSection]').hide();
+            jQuery('[id$=leadHidden]').val(jQuery('[id$=leadLastName]').val());
+            jQuery('[id$=leadLastName]').val('-*--*-');
+           
+            return false;
+        }
+        
+        function toggleLeadsPBS()
+        {
+            if (jQuery('[id$=adjuster]').val() != '')
+            {
+                jQuery('[id$=leadsPBS]').hide();
+                jQuery('[id$=leadSection]').hide();
+                jQuery('[id$=leadHidden]').val(jQuery('[id$=leadLastName]').val());
+                jQuery('[id$=leadLastName]').val('-*--*-');
+            }
+            else
+            {
+                jQuery('[id$=btnAddLead]').show();
+                jQuery('[id$=btnRemoveLead]').hide();
+                jQuery('[id$=leadsPBS]').show();
+            }
+
+            return false;
+        }
+
+        function toggleMonthlyRentalAmount()
+        {
+            if (jQuery('[id$=policyType]').val() == 'Renters')
+            {
+                jQuery('[id$=monthlyRentalAmount]').hide();
+                jQuery('[id$=reqMonthlyRentalAmount]').show();
+            }
+            else
+            {
+                jQuery('[id$=monthlyRentalAmount]').show();
+                jQuery('[id$=reqMonthlyRentalAmount]').hide();  
+            }
+            
+            return false;
+        }
+        
+        function noenter(ev)  
+        {
+            // checks to see if enter key was pressed.  If so we don't want anything to happen so just return false. 
+            if (window.event && window.event.keyCode == 13 || ev.which == 13) 
+            {
+                return false;
+            } 
+            else 
+            {
+                return true;
+            }
+        }
+
+        function checkInitialServiceRequest()
+        {
+            if (jQuery('[id$=initialSR]').val() == "FRV" || jQuery('[id$=initialSR]').val() == "Finders Fees") 
+            {
+                if (jQuery('[id$=damagedPropAddress]').val() == '')
+                {
+                    jQuery('[id$=damagedPropAddress]').val('No Address Given');  
+                }
+                if (jQuery('[id$=damagedPropCity]').val() == '')
+                {
+                    jQuery('[id$=damagedPropCity]').val('No City');   
+                }
+                if (jQuery('[id$=damagedPropZip]').val() == '')
+                {
+                    jQuery('[id$=damagedPropZip]').val('00000');  
+                }
+                if (jQuery('[id$=damagedPropType]').val() == '')
+                {
+                    jQuery('[id$=damagedPropType]').val('House');
+                }
+            }
+        }
+
+    </script>
+ 
+    <apex:sectionHeader title="New CRS Claim"/>
+   
+    <apex:form >
+  
+        <apex:pageMessages id="pagemessages" />     
+        
+        <apex:pageblock id="pageblock" mode="edit">
+           
+            <apex:pageblockButtons >
+                <apex:actionStatus id="saveStatus"> 
+                    <apex:facet name="stop">
+                        <apex:outputPanel >        
+                            <apex:commandButton action="{!initialServiceRequest}" value="Save" status="saveStatus" rerender="pagemessages,pageblock" oncomplete="setupLeadSection()"/>
+                            <apex:commandButton action="{!cancel}" immediate="true" value="Cancel"/>
+                        </apex:outputPanel>
+                    </apex:facet>
+                    <apex:facet name="start">
+                        <apex:outputPanel >       
+                            <apex:commandButton value="Saving..." disabled="true" status="saveStatus"/> 
+                            <apex:commandButton value="Saving..." disabled="true" status="saveStatus"/> 
+                        </apex:outputPanel>  
+                    </apex:facet>    
+                </apex:actionStatus>  
+            </apex:pageblockButtons>
+            
+            <apex:pageblockSection title="Leads" id="leadsPBS">   
+                <apex:pageblockSection columns="1"> 
+                    <input type="submit" value="Add Lead" id="btnAddLead" style="display:none" onclick="return addLead()"/>
+                    <input type="submit" value="Remove Lead" id="btnRemoveLead" style="display:none" onclick="return removeLead()"/>
+                </apex:pageblockSection>
+            </apex:pageblockSection>    
+            <apex:outputPanel id="leadSection" style="display:none">
+            <div class="columns">
+               
+                <apex:pageblockSection columns="1" id="leadsPBS1"> 
+                    <apex:inputField value="{!lead.FirstName}"/>
+                    <apex:inputField value="{!lead.LastName}" required="true" id="leadLastName"/>                  
+                    <apex:inputField value="{!lead.Company}" id="companyName"/>
+                    <apex:inputField value="{!lead.Adj_Type__c}"/>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Lead Source" for="leadSource"/>
+                        <apex:actionregion >
+                            <apex:inputField value="{!lead.LeadSource}" id="leadSource"> 
+                                <apex:actionSupport event="onchange" action="{!toggleLeadSourceFields}" rerender="leadReferedByOP,leadOtherSourceOP"/>
+                            </apex:inputField>
+                        </apex:actionregion>
+                    </apex:pageBlockSectionItem>
+                    <apex:inputField value="{!lead.Lead_Source_Description__c}"/>   
+                    <apex:pageBlockSectionItem > 
+                        <apex:outputLabel value="Refered By" for="leadReferedBy"/>
+                        <apex:outputPanel id="leadReferedByOP">   
+                            <apex:inputField value="{!lead.Refered_By__c}" id="leadReferedBy" required="{!IF(lead.LeadSource == 'Direct Referral',true,false)}"/>
+                            <script>document.getElementById('{!$Component.leadReferedBy}').disabled = {!IF(lead.LeadSource == 'Direct Referral',false,true)};</script>  
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem > 
+                        <apex:outputLabel value="Other Source" for="leadOtherSource"/>
+                        <apex:outputPanel id="leadOtherSourceOP">   
+                            <apex:inputField value="{!lead.Other_Source__c}" id="leadOtherSource" required="{!IF(lead.LeadSource == 'Other',true,false)}"/>
+                            <script>document.getElementById('{!$Component.leadOtherSource}').disabled = {!IF(lead.LeadSource == 'Other',false,true)};</script>  
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem> 
+                    <apex:inputField value="{!lead.Street}"/>
+                    <apex:inputField value="{!lead.City}"/> 
+                    <apex:inputField value="{!lead.State}"/>  
+                    <apex:inputField value="{!lead.PostalCode}"/> 
+                    <apex:inputField value="{!lead.Country}"/>       
+                </apex:pageblockSection>
+                <apex:pageblockSection columns="1" id="leadsPBS2">
+                    <apex:inputField value="{!lead.Phone}"/>
+                    <apex:inputField value="{!lead.Primary_Phone_Instructions__c}"/>
+                    <apex:inputField value="{!lead.Secondary_Phone__c}"/>
+                    <apex:inputField value="{!lead.Secondary_Phone_Instructions__c}"/>
+                    <apex:inputField value="{!lead.Alternate_Phone__c}"/>
+                    <apex:inputField value="{!lead.Alternate_Phone_Instructions__c}"/>
+                    <apex:inputField value="{!lead.Fax}"/> 
+                    <apex:inputField value="{!lead.Email}"/>
+                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem> 
+                    <apex:inputField value="{!lead.Other_Street__c}"/> 
+                    <apex:inputField value="{!lead.Other_City__c}"/>
+                    <apex:inputField value="{!lead.Other_State_Province__c}"/> 
+                    <apex:inputField value="{!lead.Other_Zip_Postal_Code__c}"/> 
+                    <apex:inputField value="{!lead.Other_Country__c}"/>
+                    <apex:inputHidden id="leadHidden"/>
+                     
+                </apex:pageblockSection>
+            </div>
+            </apex:outputPanel> 
+
+            <apex:pageblockSection title="Insurance Information"/>
+            <div class="columns"> 
+                <apex:pageblockSection columns="1"> 
+                    <apex:inputField value="{!claim.Adjuster__c}" id="adjuster" onchange="return toggleLeadsPBS()" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!claim.Called_In_By__c}" id="calledInBy" onkeypress="return noenter(event);"/>
+                </apex:pageblockSection>
+            </div>                  
+            
+                  
+            <apex:pageblockSection title="Claim Information"/>
+            <div class="columns"> 
+                <apex:pageblockSection columns="1"> 
+                    <apex:inputField value="{!claim.Claim__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!claim.Entity__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!claim.Date_of_Loss__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!claim.Type_of_Loss__c}" required="true"/>                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Policy Type" for="policyType"/>
+                        <apex:actionregion >
+                            <apex:inputField value="{!claim.Policy_Type__c}" id="policyType" required="true">
+                                <apex:actionSupport event="onchange" rerender="monthlyRentalAmountOP"/>
+                            </apex:inputField>
+                        </apex:actionregion>
+                    </apex:pageBlockSectionItem>
+                    <apex:inputField value="{!claim.CloseDate}" required="true" onkeypress="return noenter(event);"/>
+                </apex:pageblockSection>
+                <apex:pageblockSection columns="1"> 
+                    
+                    <apex:inputField value="{!claim.ALE_Limit_Amount__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!claim.ALE_Limit_Time__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!claim.Monthly_ALE_Billing__c}" onkeypress="return noenter(event);"/> 
+                    <apex:pageBlockSectionItem > 
+                        <apex:outputLabel value="Policyholder's Monthly Responsibility" for="monthlyRentalAmount"/>
+                        <apex:outputPanel id="monthlyRentalAmountOP">   
+                            <apex:inputField value="{!claim.Monthly_Rental_Amount__c}" id="monthlyRentalAmount" required="{!IF(claim.Policy_Type__c == 'Renters',true,false)}" onkeypress="return noenter(event);"/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:inputField value="{!claim.Pay_Direct__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!claim.Home_Insured_For__c}" onkeypress="return noenter(event);"/>
+                </apex:pageblockSection>
+               
+            </div>
+            
+            <apex:pageblockSection title="Policyholder Information" id="policyHolderPBS"/>
+            <div class="columns"> 
+                <apex:pageblockSection columns="1">
+                    <apex:inputField value="{!policyholderContact.FirstName}" required="true" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!policyholderContact.LastName}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!claim.Number_of_Adults__c}"/>
+                    <apex:inputField value="{!claim.Adult_Description__c}"/>
+                    <apex:inputField value="{!claim.Number_of_Children__c}"/>
+                    <apex:inputField value="{!claim.Children_s_Ages__c}"/>
+                    <apex:inputField value="{!claim.Number_of_Pets__c}"/>
+                    <apex:inputField value="{!claim.Pet_Type_and_Breed__c}"/>
+                </apex:pageblockSection>
+                <apex:pageblockSection columns="1"> 
+                    <apex:inputField value="{!policyholderContact.Phone}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!policyholderContact.Primary_Phone_Instructions__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!policyholderContact.Secondary_Phone__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!policyholderContact.Secondary_Phone_Instructions__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!policyholderContact.HomePhone}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!policyholderContact.Alternate_Phone_Instructions__c}" onkeypress="return noenter(event);"/>                    
+                    <apex:inputField value="{!policyholderContact.Primary_Email__c}" onkeypress="return noenter(event);"/>             
+                </apex:pageblockSection>
+            </div>
+           
+        
+             <apex:pageblockSection title="Initial Service Request"/>
+             <div class="columns">
+                <apex:pageblockSection columns="1">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Initial Service Request" for="initialSR"/>        
+                            <apex:actionregion >
+                                <apex:inputField value="{!claim.Initial_Service_Request__c}" id="initialSR" required="true" >
+                                    <apex:actionSupport event="onchange" rerender="areaSpecialistOP"/>
+                                </apex:inputField>
+                            </apex:actionregion>
+                    </apex:pageBlockSectionItem>        
+                </apex:pageblockSection>
+            </div>
+
+            <apex:pageblockSection title="Damaged Property Details"/>
+            <div class="columns">
+                <apex:pageblockSection id="damagedPropertyPBS" columns="1">
+                    <apex:inputField value="{!claim.Damaged_Property_Address__c}" id="damagedPropAddress" required="true" />
+                    <apex:inputField value="{!claim.Damaged_Property_City__c}" id="damagedPropCity" required="true" />
+                    <apex:inputField value="{!claim.Damaged_Property_State__c}" id="damagedPropState" required="true" />
+                    <apex:inputField value="{!claim.Damaged_Property_Zip__c}" id="damagedPropZip" required="true" />
+                    <apex:inputField value="{!claim.Damaged_Property_Country__c}" id="damagedPropCountry" required="true" />
+                </apex:pageblockSection>
+                <apex:pageblockSection columns="1">
+                    <apex:inputField value="{!claim.Damaged_Property_Type__c}" id="damagedPropType" required="true"/>
+                    <apex:inputField value="{!claim.Damaged_Property_Sq_Ft__c}" />
+                    <apex:inputField value="{!claim.Damaged_Property_BR__c}" />
+                    <apex:inputField value="{!claim.Damaged_Property_BTH__c}" />
+                    <apex:inputField value="{!claim.Year_Home_Was_Built__c}"/>
+                </apex:pageblockSection>
+            </div>
+            <apex:pageblockSection title="Housing Requirements" collapsible="false" />
+            <div class="columns">
+                <apex:pageblockSection columns="1">
+                    <apex:inputField value="{!claim.Est_Length_of_Stay_Months__c}"/>
+                    <apex:inputField value="{!claim.Number_of_Bedrooms__c}"/>
+                    <apex:inputField value="{!claim.Number_of_Bathrooms__c}"/>                    
+                </apex:pageblockSection>
+                <apex:pageblockSection columns="1">                    
+                    <apex:inputField value="{!claim.Housewares_Needed__c}"/>
+                    <apex:inputField value="{!claim.Furniture_Needed__c}"/>                    
+                </apex:pageblockSection>
+            </div>
+            <apex:pageblockSection title="Hotel Requirements" collapsible="false" />
+            <div class="columns">
+                <apex:pageblockSection columns="1">
+                    <apex:inputField value="{!claim.Estimated_Check_In__c}"/>
+                    <apex:inputField value="{!claim.Estimated_Check_Out__c}"/>
+                    <apex:inputField value="{!claim.Number_of_Rooms__c}"/>                    
+                </apex:pageblockSection>
+                <apex:pageblockSection columns="1">
+                    <apex:inputField value="{!claim.Already_in_Hotel__c}"/>
+                    <apex:inputField value="{!claim.Name_of_Hotel__c}"/>
+                    <apex:inputField value="{!claim.Hotel_Phone__c}"/>
+                    <apex:inputField value="{!claim.Current_Daily_Rate__c}"/>
+                </apex:pageblockSection>
+                <div class="clear"></div>
+            </div>
+          
+            <apex:pageblockSection title="Amenities Approved" collapsible="false"/>
+            <div class="columns">
+                <apex:pageblockSection columns="1">
+                    <apex:inputField value="{!claim.Microwave_Fridge__c}"/>
+                    <apex:inputField value="{!claim.Full_Kitchen__c}"/>                   
+                </apex:pageblockSection>
+                    <apex:pageblockSection columns="1" >
+                    <apex:inputField value="{!claim.Pet_Friendly__c}"/>
+                     <apex:inputField value="{!claim.Pet_Boarding__c}"/>
+                    <apex:inputField value="{!claim.Parking__c}"/>
+                    <apex:inputField value="{!claim.Internet__c}"/>
+                    <apex:inputField value="{!claim.ADA_Required__c}"/>
+                </apex:pageblockSection>
+           </div>       
+         
+           <apex:pageblockSection title="CRS Team"/>
+           <div class="columns">
+               <apex:pageblockSection columns="1">
+                   <apex:inputField value="{!claim.Regional_Manager__c}" required="true"/>
+                   <apex:inputField value="{!claim.Customer_Care_Specialist__c}" required="true"/>
+                   <apex:inputField value="{!claim.Hotel_Customer_Care_Specialist__c}" required="true"/>
+                   <apex:pageBlockSectionItem > 
+                        <apex:outputLabel value="Residence Specialist" for="areaSpecialist"/>
+                            <apex:outputPanel id="areaSpecialistOP">
+                                <apex:inputField value="{!claim.Area_Specialist__c}" id="areaSpecialist" required="{!IF(claim.Initial_Service_Request__c == 'Housing',true,false)}"/>
+                            </apex:outputPanel>
+                   </apex:pageBlockSectionItem>
+                   <apex:inputField value="{!claim.Housing_Coordinator__c}"/>
+                </apex:pageblockSection>
+            </div>
+
+            <apex:pageblockSection title="Comments"/>
+            <div class="columns2">
+               <apex:pageblockSection columns="1">
+                    <apex:inputTextArea value="{!claim.Special_Instructions__c}" cols="100" rows="5"/>
+               </apex:pageblockSection>
+            </div>
+            <div class="clear"></div>           
+ 
+            <apex:pageblockSection title="Contact Roles" columns="1">
+                <apex:pageBlockTable value="{!contactRoles}" var="contactRole" id="contactRoles" columnsWidth="16%,15%,69%">
+                    <apex:column />
+                    <apex:column headerValue="Contact">
+                    <apex:inputField value="{!contactRole.ContactId}" required="false" onkeypress="return noenter(event);"/>
+                    </apex:column>
+                    <apex:column headerValue="Role">
+                    <apex:inputField value="{!contactRole.Role}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageblockSection>
+
+        </apex:pageblock>
+    </apex:form> 
+</apex:page>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>38.0</apiVersion>
+    <availableInTouch>true</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>To preview CC Auth Form in pdf format(Data comes from external app) and option to send email or fax. Page calling from a link on &quot;Send Credit Card Authorization (CCA)&quot; Task record</description>
+    <label>CCAuthFormPreviewPage</label>
+</ApexPage>

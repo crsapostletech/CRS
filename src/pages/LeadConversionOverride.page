@@ -1,0 +1,1 @@
+<apex:page standardController="Lead" action="{!URLFOR($Action.Lead.Convert,Id,[nooppti=1,retURL=URLFOR($Action.Lead.View,Id,[retURL=null])],true)}"></apex:page>

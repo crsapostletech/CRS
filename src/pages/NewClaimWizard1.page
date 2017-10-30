@@ -1,0 +1,245 @@
+<apex:page standardController="Opportunity" extensions="NewClaimWizard" tabStyle="Opportunity" title="New Claim Wizard - Step 1">
+ <script src="{!URLFOR($Resource.jquery)}"/>
+    <link type="text/css" rel="stylesheet" href="{!URLFOR($Resource.NewClaimWizardCss)}" />  
+    <script type="text/javascript">
+        jQuery.noConflict();
+                
+        jQuery(document).ready(function() 
+        {
+            if (jQuery('[id$=lastName]').val() == '-*--*-' && jQuery('[id$=companyName]').val() == '-*--*-')
+            {
+                removeLead();   
+            }
+            toggleLeadsPBS();
+        });
+        
+        function addLead()
+        {
+            jQuery('[id$=btnAddLead]').hide();
+            jQuery('[id$=btnRemoveLead]').show();
+            jQuery('[id$=leadsPBS1]').show();
+            jQuery('[id$=leadsPBS2]').show();
+            jQuery('[id$=lastName]').val('');
+            jQuery('[id$=companyName]').val('');
+            return false;
+        }
+        
+        function removeLead()
+        {
+            jQuery('[id$=btnAddLead]').show();
+            jQuery('[id$=btnRemoveLead]').hide();
+            jQuery('[id$=leadsPBS1]').hide();
+            jQuery('[id$=leadsPBS2]').hide();
+            jQuery('[id$=lastName]').val('-*--*-');
+            jQuery('[id$=companyName]').val('-*--*-');
+            return false;
+        }
+        
+        function toggleLeadsPBS()
+        {
+            if (jQuery('[id$=adjuster]').val() != '')
+            {
+                jQuery('[id$=leadsPBS]').hide();
+            }
+            else
+            {
+                jQuery('[id$=leadsPBS]').show();
+            }
+            
+            return false;
+        }
+        
+        function toggleMonthlyRentalAmount()
+        {
+            if (jQuery('[id$=policyType]').val() == 'Renters')
+            {
+                jQuery('[id$=monthlyRentalAmount]').hide();
+                jQuery('[id$=reqMonthlyRentalAmount]').show();
+            }
+            else
+            {
+                jQuery('[id$=monthlyRentalAmount]').show();
+                jQuery('[id$=reqMonthlyRentalAmount]').hide();  
+            }
+            
+            return false;
+        }
+        
+        function radioButtonCheckBox(element, className)
+        {
+            var checkboxes = jQuery('.' + className);
+                        
+            checkboxes.each
+            ( 
+                jQuery.proxy( function( i, checkbox ) {
+                        if (this.id != checkbox.id && jQuery(checkbox).is(':checked') == true )
+                {
+                  jQuery(checkbox).removeAttr('checked');
+                }
+                }
+                , element )
+            );       
+        }
+        
+         function noenter(ev)  
+      {
+         // checks to see if enter key was pressed.  If so we don't want anything to happen so just return false. 
+         if (window.event && window.event.keyCode == 13 || ev.which == 13) 
+         {
+            return false;
+         } 
+         else 
+         {
+            return true;
+         }
+      }
+    </script>
+ 
+    <apex:sectionHeader title="New Claim Wizard" subtitle="Step 1 of 3" />
+   
+    <apex:form >
+        <apex:pageMessages id="pagemessages" />     
+        
+        <apex:pageblock id="pageblock" mode="edit">
+            <apex:pageblockButtons location="bottom">
+                <apex:commandButton action="{!step2}" value="Next" onclick="return next()"/>
+            </apex:pageblockButtons>
+            
+            <apex:pageblockSection title="Insurance Information" columns="1" >
+                <apex:inputField value="{!claim.Adjuster__c}" id="adjuster" onchange="return toggleLeadsPBS()" onkeypress="return noenter(event);"/>  
+            </apex:pageblockSection>
+            
+           
+            <apex:pageblockSection title="Leads" id="leadsPBS">   
+                <apex:pageblockSection columns="1"> 
+                    <input type="submit" value="Add Lead" id="btnAddLead" style="display:none" onclick="return addLead()"/>
+                    <input type="submit" value="Remove Lead" id="btnRemoveLead" onclick="return removeLead()"/>
+                </apex:pageblockSection>
+            </apex:pageblockSection>    
+                <div class="columns">
+                    <apex:pageblockSection columns="1" id="leadsPBS1"> 
+                        <apex:inputField value="{!lead.FirstName}"/>
+                        <apex:inputField value="{!lead.LastName}" required="true" id="lastName"/>                   
+                        <apex:inputField value="{!lead.Company}" id="companyName"/>
+                        <apex:inputField value="{!lead.Adj_Type__c}"/>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Lead Source" for="leadSource"/>
+                            <apex:actionregion >
+                                <apex:inputField value="{!lead.LeadSource}" id="leadSource"> 
+                                    <apex:actionSupport event="onchange" action="{!toggleLeadSourceFields}" rerender="leadReferedByOP,leadOtherSourceOP"/>
+                                </apex:inputField>
+                            </apex:actionregion>
+                        </apex:pageBlockSectionItem>
+                        <apex:inputField value="{!lead.Lead_Source_Description__c}"/>   
+                        <apex:pageBlockSectionItem > 
+                            <apex:outputLabel value="Refered By" for="leadReferedBy"/>
+                            <apex:outputPanel id="leadReferedByOP">   
+                                <apex:inputField value="{!lead.Refered_By__c}" id="leadReferedBy" required="{!IF(lead.LeadSource == 'Direct Referral',true,false)}"/>
+                                <script>document.getElementById('{!$Component.leadReferedBy}').disabled = {!IF(lead.LeadSource == 'Direct Referral',false,true)};</script>  
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem > 
+                            <apex:outputLabel value="Other Source" for="leadOtherSource"/>
+                            <apex:outputPanel id="leadOtherSourceOP">   
+                                <apex:inputField value="{!lead.Other_Source__c}" id="leadOtherSource" required="{!IF(lead.LeadSource == 'Other',true,false)}"/>
+                                <script>document.getElementById('{!$Component.leadOtherSource}').disabled = {!IF(lead.LeadSource == 'Other',false,true)};</script>  
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem ></apex:pageBlockSectionItem> 
+                        <apex:inputField value="{!lead.Street}"/>
+                        <apex:inputField value="{!lead.City}"/> 
+                        <apex:inputField value="{!lead.State}"/>  
+                        <apex:inputField value="{!lead.PostalCode}"/> 
+                        <apex:inputField value="{!lead.Country}"/>       
+                    </apex:pageblockSection>
+                    <apex:pageblockSection columns="1" id="leadsPBS2">
+                        <apex:inputField value="{!lead.Phone}"/>
+                        <apex:inputField value="{!lead.Primary_Phone_Instructions__c}"/>
+                        <apex:inputField value="{!lead.Secondary_Phone__c}"/>
+                        <apex:inputField value="{!lead.Secondary_Phone_Instructions__c}"/>
+                        <apex:inputField value="{!lead.Alternate_Phone__c}"/>
+                        <apex:inputField value="{!lead.Alternate_Phone_Instructions__c}"/>
+                        <apex:inputField value="{!lead.Fax}"/> 
+                        <apex:inputField value="{!lead.Email}"/>
+                        <apex:pageBlockSectionItem ></apex:pageBlockSectionItem> 
+                        <apex:inputField value="{!lead.Other_Street__c}"/> 
+                        <apex:inputField value="{!lead.Other_City__c}"/>
+                        <apex:inputField value="{!lead.Other_State_Province__c}"/> 
+                        <apex:inputField value="{!lead.Other_Zip_Postal_Code__c}"/> 
+                        <apex:inputField value="{!lead.Other_Country__c}"/>    
+                    </apex:pageblockSection>
+                    <div class="clear"></div>
+                </div>
+            
+            
+         
+            <apex:pageblockSection title="Contact Roles" columns="1">
+                <apex:pageBlockTable value="{!contactRoles}" var="contactRole" id="contactRoles" columnsWidth="8%,25%,67%">
+                    <apex:column headerValue="Primary">  
+                    <apex:inputField value="{!contactRole.IsPrimary}" styleClass="selectedContactRole" onclick="radioButtonCheckBox(this, 'selectedContactRole')" onkeypress="return noenter(event);"/>
+                    </apex:column>
+                    <apex:column headerValue="Contact"> 
+                    <apex:inputField value="{!contactRole.ContactId}" required="false" onkeypress="return noenter(event);"/>
+                    </apex:column>
+                    <apex:column headerValue="Role"> 
+                    <apex:inputField value="{!contactRole.Role}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageblockSection>
+            
+            <apex:pageblockSection title="Claim Information"/>
+            <div class="columns"> 
+                <apex:pageblockSection columns="1"> 
+                    <apex:inputField value="{!claim.Claim__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!claim.Entity__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!claim.Date_of_Loss__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!claim.Type_of_Loss__c}" required="true"/>                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Policy Type" for="policyType"/>
+                        <apex:actionregion >
+                            <apex:inputField value="{!claim.Policy_Type__c}" id="policyType" required="true">
+                                <apex:actionSupport event="onchange" rerender="monthlyRentalAmountOP"/>
+                            </apex:inputField>
+                        </apex:actionregion>
+                    </apex:pageBlockSectionItem>
+                    <apex:inputField value="{!claim.CloseDate}" required="true" onkeypress="return noenter(event);"/>
+                </apex:pageblockSection>
+                <apex:pageblockSection columns="1" > 
+                    
+                    <apex:inputField value="{!claim.ALE_Limit_Amount__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!claim.ALE_Limit_Time__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!claim.Monthly_ALE_Billing__c}" onkeypress="return noenter(event);"/> 
+                    <apex:pageBlockSectionItem > 
+                        <apex:outputLabel value="Policyholder's Monthly Responsibility" for="monthlyRentalAmount"/>
+                        <apex:outputPanel id="monthlyRentalAmountOP">   
+                            <apex:inputField value="{!claim.Monthly_Rental_Amount__c}" id="monthlyRentalAmount" required="{!IF(claim.Policy_Type__c == 'Renters',true,false)}" onkeypress="return noenter(event);"/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:inputField value="{!claim.Pay_Direct__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!claim.Home_Insured_For__c}" onkeypress="return noenter(event);"/>
+                </apex:pageblockSection>
+                <div class="clear"></div>
+            </div>
+            
+            <apex:pageblockSection title="Policyholder Information" id="policyHolderPBS"/>
+            <div class="columns"> 
+                <apex:pageblockSection columns="1">
+                    <apex:inputField value="{!policyholderContact.FirstName}" required="true" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!policyholderContact.LastName}" onkeypress="return noenter(event);"/>
+                </apex:pageblockSection>
+                <apex:pageblockSection columns="1"> 
+                    <apex:inputField value="{!policyholderContact.Phone}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!policyholderContact.Primary_Phone_Instructions__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!policyholderContact.Secondary_Phone__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!policyholderContact.Secondary_Phone_Instructions__c}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!policyholderContact.HomePhone}" onkeypress="return noenter(event);"/>
+                    <apex:inputField value="{!policyholderContact.Alternate_Phone_Instructions__c}" onkeypress="return noenter(event);"/>                    
+                    <apex:inputField value="{!policyholderContact.Primary_Email__c}" onkeypress="return noenter(event);"/>             
+                </apex:pageblockSection>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div> 
+        </apex:pageblock>
+       
+    </apex:form> 
+ </apex:page>

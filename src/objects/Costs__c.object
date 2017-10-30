@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Billable_Party__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Billable Party</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.Status__c</field>
+                <operation>equals</operation>
+                <value>Active</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Costs (Billable Party)</relationshipLabel>
+        <relationshipName>Costs1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( RecordType.Name  = &apos;Cost&apos;,Searches__r.Placement__r.Approved_Through_Date__c,Searches__r.Placement__r.Move_In_Date__c)</formula>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Landlord_Monthly_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Landlord Monthly Amount</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Monthly_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Prorate_Type__c ,&apos;Daily&apos;) ,  Amount__c * 30 , Amount__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Monthly Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Payable_Party_Is_Landlord_2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Payable Party Is Landlord 2</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Payable_Party__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Payable Party</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.Status__c</field>
+                <operation>equals</operation>
+                <value>Active</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Costs (Payable Party)</relationshipLabel>
+        <relationshipName>Costs</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payable_Party_is_Landlord__c</fullName>
+        <externalId>false</externalId>
+        <formula>Payable_Party__c ==  Searches__r.Landlord__c</formula>
+        <label>Payable Party is Landlord</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Prorate_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Frequency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Daily</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RecordTypeName__c</fullName>
+        <externalId>false</externalId>
+        <formula>RecordType.Name</formula>
+        <label>RecordTypeName</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Searches__c</fullName>
+        <externalId>false</externalId>
+        <label>Search</label>
+        <referenceTo>Searches__c</referenceTo>
+        <relationshipLabel>Costs</relationshipLabel>
+        <relationshipName>Costs</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Searches__r.Placement__r.Move_In_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Type_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ADA Accommodation Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Administration Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Amenity Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Application Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Break Lease Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Broker Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Certificate of Occupancy Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cleaning Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cleaning Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Delivery Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dozer Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Electric – A/C Hook Up Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Elevator Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>External Holding Tank Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fencing Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Furniture Deposit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Garage Remote Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HOA Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Houseware Kit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Houseware Set Up Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Injector Pump</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Insurance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Key Deposit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Landscaping</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Late Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Liberty Mutual CRS Moving Service Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Liberty Mutual Moving Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parking</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pet Deposit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pet Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PH Abatement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policyholder Rent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pool Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Re-Keying Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Remote Deposit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Removal Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Renters Insurance Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Security Deposit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Septic</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Septic Holding Tank Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Setup Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Site Inspection Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Site Rent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Skirting Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sure Deposit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Temporary Pole Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Trenching Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Utilities</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Utility Set Up Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Window Covering Fee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Winterization Fee</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Costs</label>
+    <nameField>
+        <displayFormat>Cost-{0000000}</displayFormat>
+        <label>Cost Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Costs</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Cost</fullName>
+        <active>true</active>
+        <label>Cost</label>
+        <picklistValues>
+            <picklist>Prorate_Type__c</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Cleaning Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landscaping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PH Abatement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policyholder Rent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pool Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Septic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site Rent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utilities</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Deposit</fullName>
+        <active>true</active>
+        <label>Deposit</label>
+        <picklistValues>
+            <picklist>Prorate_Type__c</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Key Deposit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Deposit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remote Deposit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Deposit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Fee</fullName>
+        <active>true</active>
+        <label>Fee</label>
+        <picklistValues>
+            <picklist>Prorate_Type__c</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>ADA Accommodation Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Administration Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amenity Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Break Lease Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certificate of Occupancy Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cleaning Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dozer Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electric %E2%80%93 A%2FC Hook Up Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elevator Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Holding Tank Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fencing Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Garage Remote Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HOA Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Houseware Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Houseware Set Up Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Injector Pump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Late Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liberty Mutual CRS Moving Service Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liberty Mutual Moving Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Re-Keying Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Removal Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renters Insurance Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Septic Holding Tank Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Setup Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site Inspection Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skirting Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sure Deposit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Pole Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trenching Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utility Set Up Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Window Covering Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Winterization Fee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Furniture_Deposit</fullName>
+        <active>true</active>
+        <label>Furniture Deposit</label>
+        <picklistValues>
+            <picklist>Prorate_Type__c</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Furniture Deposit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Furniture_Fee</fullName>
+        <active>true</active>
+        <label>Furniture Fee</label>
+        <picklistValues>
+            <picklist>Prorate_Type__c</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Delivery Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Fee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Setup Fee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

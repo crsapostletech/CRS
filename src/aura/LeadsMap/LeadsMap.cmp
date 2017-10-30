@@ -1,0 +1,5 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <div style="height: 80%;width: 90%;margin: auto;margin-top: 5%;">
+    	<iframe src = "/apex/OpportunityMap" style="width:100%;height:100%;"/>
+    </div>
+</aura:component>

@@ -1,0 +1,4 @@
+<apex:page standardController="Placement__c" 
+extensions="PlacementDispatcherExtension" 
+action="{!getEditPlacement}">
+</apex:page>

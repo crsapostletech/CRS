@@ -1,0 +1,49 @@
+<apex:page standardController="Opportunity" extensions="NewClaimWizard" tabStyle="Opportunity" title="New Claim Wizard - Step 3">
+	<script src="{!URLFOR($Resource.jquery)}"/>
+	<script type="text/javascript">
+		jQuery.noConflict();
+		
+		jQuery(document).ready(function() {
+			jQuery("option[value='Hotel into Housing']").remove();
+		});
+	</script>
+	<style type="text/css">
+		.freeText { width: 50%; height: 3em; }
+	</style>
+
+    <apex:sectionHeader title="New Claim Wizard" subtitle="Step 3 of 3" />
+    <apex:form >
+        <apex:pageMessages id="pagemessages" />
+        
+        <apex:pageblock id="pageblock" mode="edit">
+            <apex:pageblockButtons location="bottom">
+                <apex:actionStatus id="saveStatus"> 
+                	<apex:facet name="stop">
+                		<apex:outputPanel >        
+	                		<apex:commandButton action="{!step2}" value="Previous"/>
+	                		<apex:commandButton action="{!initialServiceRequest}" value="Finish" status="saveStatus" rerender="pagemessages,pageblock"/>
+                		</apex:outputPanel>
+                	</apex:facet>
+                	<apex:facet name="start">
+                		<apex:outputPanel >       
+                 			<apex:commandButton value="Saving..." disabled="true"/>
+                			<apex:commandButton value="Saving..." disabled="true" status="saveStatus"/> 
+                		</apex:outputPanel>	 
+                	</apex:facet>    
+                </apex:actionStatus>  
+            </apex:pageblockButtons>
+            <apex:pageblockSection title="CRS Team" columns="1" >
+                <apex:inputField value="{!claim.Regional_Manager__c}" required="true"/>
+                <apex:inputField value="{!claim.Customer_Care_Specialist__c}" required="true"/>
+                <apex:inputField value="{!claim.Hotel_Customer_Care_Specialist__c}" required="true"/>
+				<apex:inputField value="{!claim.Area_Specialist__c}"/>
+				<apex:inputField value="{!claim.Housing_Coordinator__c}"/>
+            </apex:pageblockSection>
+            <apex:pageblockSection title="Comments" columns="1" >
+				<apex:inputTextArea value="{!claim.Special_Instructions__c}" cols="100" rows="5" />
+            </apex:pageblockSection>
+          
+        </apex:pageblock>
+    </apex:form>
+     <apex:relatedList subject="{!claim}" list="OpenActivities" id="tasks"/>   
+</apex:page>

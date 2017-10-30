@@ -1,0 +1,30 @@
+<apex:page controller="VPayCardInquiry" showHeader="true" sidebar="true" title="VPayment Inquiry Page">
+<br></br>
+<h1>VPayment Card Inquiry</h1>
+
+<apex:form id="VPayCardInquiry"> 
+<br></br>
+    <apex:pageBlock id="vpaymentCardInquiry"> 
+       <apex:pageBlockButtons location="top">
+           <apex:actionStatus >
+              <apex:facet name="start">
+                  <apex:image url="{!URLFOR($Resource.ajaxPics, 'smallSpinner.gif')}"></apex:image>		            
+              </apex:facet>
+           </apex:actionStatus> 
+           <apex:commandButton value="Inquire" status="saveStatus" id="btnInquire" rerender="VPaymentCardInquiryPBS"/>
+       </apex:pageBlockButtons>
+       <apex:pageBlockSection id="VPaymentCardInquiryPBS" columns="1">
+       <apex:pageBlockSectionItem > 
+           <apex:outputLabel value="Credit Card Number" for="vPayCardNumber"/>
+           <apex:inputText value="{!CardNumber}" id="vPayCardNumber" style="width:120px"/> 
+       </apex:pageBlockSectionItem>
+       <apex:pageBlockSectionItem >
+           <apex:outputLabel value="Returned XML" for="returnedXML"/>
+           <apex:outputPanel > 
+           		<apex:outputText id="returnedXML" rendered="{!CardNumber!=null}" value="{!CreditCardInfo}"/>
+           </apex:outputPanel>  
+       </apex:pageBlockSectionItem>
+       </apex:pageBlockSection> 
+       </apex:pageBlock>
+</apex:form>     
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page standardController="Opportunity" extensions="ClaimALETimeGaugeController">
+<script>
+    ALETimeChart.on('beforeconfig', function(config) {
+    config.axes[0].margin=-10;
+    });
+</script>
+	<apex:chart name="ALETimeChart" height="150" width="250" animate="true" data="{!gaugeData}">
+    	<apex:axis type="Gauge" position="gauge" title="ALE Months" minimum="0" maximum="24" steps="1"/>
+    	<apex:gaugeSeries dataField="data" donut="50" colorSet="Green,Red"/>
+	</apex:chart>
+	<apex:outputText escape="false" value="<b>ALE Days Remaining:</b> {!daysRemaining}" rendered="{!displayDays}"/>
+</apex:page>

@@ -1,0 +1,60 @@
+<apex:page showHeader="false" standardStylesheets="false" controller="OpportunityMapCon">
+    <html>
+        <head>
+            <style>
+                #map {height: 100%;}
+                html, body {height: 100%;margin: 0;padding: 0;}
+            </style>
+             <script src="https://maps.google.com/maps/api/js?key=AIzaSyCcty3a_nb9WvzYTTBmhARJsJ5-7SSxBPI" 
+          type="text/javascript"></script>
+        </head>
+        <body>
+            <div id="map"></div>
+            <script type="text/javascript"> 
+                var addressArr = ['25 Bedford St, New York,USA','United States Fund for UNICEF 125 Maiden Lane, New York'];
+                Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.OpportunityMapCon.getOpportunities}',function(result, event)
+                {
+                    if(event.status) 
+                    {
+                        console.log('init Opportunitites : ',result);
+                        loadGoogleMap(result);
+                    } 
+                    else alert(event.message);
+                },{escape: true});
+                
+                function loadGoogleMap(data)
+                {
+                    var map = new google.maps.Map(document.getElementById('map'), { 
+                        mapTypeId: google.maps.MapTypeId.TERRAIN,
+                        zoom: 3
+                    });
+                    var geocoder = new google.maps.Geocoder();
+                    for(var i=0;i<data.length;i++)
+                    {
+                        geocoder.geocode({'address': data[i].Damaged_Property_Full_Address__c},function(results, status) 
+                        {
+                            console.log(results);
+                            if(status == google.maps.GeocoderStatus.OK)
+                            {
+                                var Marker = new google.maps.Marker({
+                                    position: results[0].geometry.location,
+                                    map: map
+                                });
+                                map.setCenter(results[0].geometry.location);
+                                var infowindow = new google.maps.InfoWindow({
+                                    content: results[0].formatted_address
+                                });
+                                Marker.addListener('mouseover', function(){
+                                    infowindow.open(map, Marker);
+                                });
+                                Marker.addListener('mouseout', function(){
+                                    infowindow.close();
+                                });
+                            }
+                        });
+                    }
+                }
+            </script>
+        </body>
+    </html>
+</apex:page>

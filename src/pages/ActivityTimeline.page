@@ -1,0 +1,352 @@
+<apex:page Standardcontroller="Opportunity" extensions="ActivityTimeline" showHeader="false" sidebar="false" readOnly="true">
+<apex:stylesheet value="{!URLFOR($Resource.DataTableResponsive, '/bootstrap.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.DataTableResponsive, '/dataTables.bootstrap.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.DataTableResponsive, '/responsive.bootstrap.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.DataTableResponsive, '/css/bootstrap.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.DataTableResponsive, '/css/style.css')}"/>
+<script type="text/javascript" language="javascript" src="{!URLFOR($Resource.DataTableResponsive, '/jquery-1.12.3.min.js')}"> </script>
+<script type="text/javascript" language="javascript" src="{!URLFOR($Resource.DataTableResponsive, '/jquery.dataTables.min.js')}"> </script>
+<script type="text/javascript" language="javascript" src="{!URLFOR($Resource.DataTableResponsive, '/dataTables.bootstrap.min.js')}"> </script>
+<script type="text/javascript" language="javascript" src="{!URLFOR($Resource.DataTableResponsive, '/dataTables.responsive.min.js')}"> </script>
+<script type="text/javascript" language="javascript" src="{!URLFOR($Resource.DataTableResponsive, '/responsive.bootstrap.min.js')}"> </script>
+<style>
+    @font-face
+     {
+        font-family: 'Glyphicons Halflings';
+        src: url("{!URLFOR($Resource.DataTableResponsive, '/fonts/glyphicons-halflings-regular.eot')}");
+        src: url("{!URLFOR($Resource.DataTableResponsive, '/fonts/glyphicons-halflings-regular.eot?#iefix')}") format('embedded-opentype'), 
+        url("{!URLFOR($Resource.DataTableResponsive, '/fonts/glyphicons-halflings-regular.woff2')}") format('woff2'),
+        url("{!URLFOR($Resource.DataTableResponsive, '/fonts/glyphicons-halflings-regular.woff')}") format('woff'),
+        url("{!URLFOR($Resource.DataTableResponsive, '/fonts/glyphicons-halflings-regular.ttf')}") format('truetype'),
+        url("{!URLFOR($Resource.DataTableResponsive, '/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular')}") format('svg');
+      }
+.table-striped>tbody>tr:nth-of-type(even) { background-color: #fff;}
+table.dataTable.nowrap td {white-space: normal !important;}
+.dtr-data{white-space: normal !important;}
+body{font-size:12px;}
+
+div.dataTables_wrapper div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: left;
+}
+.dataTables_filter{
+       margin-top: -1.5%;  
+}
+.dataTables_length{
+float: right;
+margin-top: 3px;
+}
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 10px;
+    white-space: nowrap;
+}
+div.dataTables_info {
+    padding-top: 12px;
+    white-space: nowrap;
+    margin-right: 4px;
+    float: right;
+}
+div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    margin-right: -22px;
+}
+div.dataTables_wrapper div.dataTables_filter label {
+    
+   margin-top: -1.0%;
+}
+.btn1{
+   border: 2px solid #ddd;
+   background-color: #f0f0f0;
+       padding: 1px 5px;
+   font-weight: 600;
+    -o-transition: background-color .2s ease-in; 
+    -moz-transition: background-color .2s ease-in;
+    -webkit-transition: background-color .2s ease-in; 
+    transition: background-color .2s ease-in; 
+}
+</style>
+
+      <Apex:form >
+        <Apex:pageBlock >
+             <br/>
+               <div style="margin-top: -0.5%;">
+                    <b style="font-size: 20px;">Activity Timeline: {!claim}</b>
+               </div>
+
+                   <!--Active tasks-->
+                      <apex:outputpanel id="counter">
+                        <table class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%" id="example" >
+                <thead>
+                        <tr style="background-color: #fff;">
+                            <th>Origin</th>
+                            <th>Related To</th>
+                            <th>Subject</th>
+                            <th>Type</th>
+                            <th>Name</th>
+                            <th>Assigned To</th>
+                            <th>Created Date</th>
+                            <th>Last Modified</th>
+                            <th>Due Date</th>
+                            <th class="none">Comments</th>
+                            
+                        </tr>
+                </thead>
+                <tbody>
+                    <apex:repeat value="{!wraplist}" var="Tk">
+                        <tr>
+                           <td>  
+                               <apex:outputPanel rendered="{!Tk.isTask}">
+                                    <apex:outputText value="{!Tk.origin}" /> 
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isevent}">
+                                    <apex:outputText value="{!Tk.origin}" /> 
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isNote}">
+                                    <apex:outputText value="{!Tk.origin}" /> 
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.incoming}">
+                                    <apex:outputText value="{!Tk.origin}" /> 
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.smshis}">
+                                    <apex:outputText value="{!Tk.origin}" /> 
+                               </apex:outputPanel>
+                           </td>
+                           <td>  
+                               <apex:outputPanel rendered="{!Tk.isTask}">
+                                   <apex:outputPanel >
+                                       <a href="/{!Tk.taskInfo.whatId}" style="text-decoration:none;" target="_blank"><u>{!Tk.taskInfo.what.name}</u></a>
+                                   </apex:outputPanel>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isevent}">
+                                   <apex:outputPanel >
+                                        <a href="/{!Tk.eventInfo.whatId}" style="text-decoration:none;" target="_blank"><u>{!Tk.eventInfo.what.name}</u></a>
+                                   </apex:outputPanel>
+                               </apex:outputPanel>
+                                <apex:outputPanel rendered="{!Tk.isNote}">
+                                    <a href="/{!Tk.notinfo.parentId}" style="text-decoration:none;" target="_blank"><u>{!Tk.notinfo.Parent.name}</u></a>
+                                </apex:outputPanel>
+                                <apex:outputPanel rendered="{!Tk.incoming}">
+                                    <a href="/{!Tk.inInfo.Id}" style="text-decoration:none;" target="_blank"><u>{!Tk.inInfo.name}</u></a>
+                                </apex:outputPanel>
+                                <apex:outputPanel rendered="{!Tk.smshis}">
+                                    <a href="/{!Tk.smsInfo.Id}" style="text-decoration:none;" target="_blank"><u>{!Tk.smsInfo.name}</u></a>
+                                </apex:outputPanel>
+                           </td>
+                            <td>  
+                               <apex:outputPanel rendered="{!Tk.isTask}">
+                                   <a href="/{!Tk.taskInfo.Id}" style="text-decoration:none;" target="_blank"><u>{!Tk.taskInfo.Subject}</u></a>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isevent}">
+                                   <a href="/{!Tk.eventInfo.Id}" style="text-decoration:none;" target="_blank"><u>{!Tk.eventInfo.Subject}</u></a>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isNote}">
+                                   <a href="/{!Tk.notinfo.Id}" style="text-decoration:none;" target="_blank"><u>{!Tk.notinfo.title}</u></a>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.incoming}">
+                                   <a href="/{!Tk.inInfo.Id}" style="text-decoration:none;" target="_blank"><u>{!Tk.inInfo.Name}</u></a>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.smshis}">
+                                   <a href="/{!Tk.smsInfo.Id}" style="text-decoration:none;" target="_blank"><u>{!Tk.smsInfo.Name}</u></a>
+                               </apex:outputPanel>
+                           </td>
+                            
+                           <td>  
+                               <apex:outputPanel rendered="{!Tk.isTask}">
+                                 <apex:outputText value="{!Tk.taskInfo.type}" /> 
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isevent}">
+                                    <apex:outputText value="{!Tk.eventInfo.type}" /> 
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isNote}">
+                                    <apex:outputText value="{!Tk.notinfo.body}" /> 
+                               </apex:outputPanel>
+                           </td>
+                           
+                           <td>
+                               <apex:outputPanel rendered="{!Tk.isTask}">
+                                    <a href="/{!Tk.taskInfo.whoId}" style="text-decoration:none;" target="_blank"><u>{!Tk.taskInfo.who.name}</u></a>
+                                 
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isevent}">
+                                     <a href="/{!Tk.eventInfo.whoId}" style="text-decoration:none;" target="_blank"><u>{!Tk.eventInfo.who.name}</u></a>
+                               </apex:outputPanel>
+                           </td>
+                           
+                          <td>  
+                               <apex:outputPanel rendered="{!Tk.isTask}">
+                                  <apex:outputText value="{!Tk.taskInfo.owner.name}" />  
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isevent}">
+                                  <apex:outputText value="{!Tk.eventInfo.owner.name}" /> 
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isNote}">
+                                     <apex:outputText value="{!Tk.notinfo.owner.Name}"/>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.incoming}">
+                                     <apex:outputText value="{!Tk.inInfo.owner.Name}"/>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.smshis}">
+                                     <apex:outputText value="{!Tk.smsInfo.owner.Name}"/>
+                               </apex:outputPanel>
+                           </td>
+                           <td data-order="{!Tk.cNumber}">  
+                               <apex:outputPanel rendered="{!Tk.isTask}">
+                                  <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}">
+                                     <apex:param value="{!Tk.taskInfo.createdDate - 0.291666666}"/>
+                                  </apex:outputText>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isevent}">
+                                   <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}">
+                                     <apex:param value="{!Tk.eventInfo.createdDate - 0.291666666}"/>
+                                  </apex:outputText>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isNote}">
+                                   <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}">
+                                     <apex:param value="{!Tk.notinfo.createdDate - 0.291666666}"/>
+                                  </apex:outputText>
+                               </apex:outputPanel>
+                                <apex:outputPanel rendered="{!Tk.incoming}">
+                                   <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}">
+                                     <apex:param value="{!Tk.inInfo.createdDate - 0.291666666}"/>
+                                  </apex:outputText>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.smshis}">
+                                   <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}">
+                                     <apex:param value="{!Tk.smsInfo.createdDate - 0.291666666}"/>
+                                  </apex:outputText>
+                               </apex:outputPanel>
+                           </td>
+                           
+                            <td data-order="{!Tk.lNumber}">  
+                               <apex:outputPanel rendered="{!Tk.isTask}">
+                                   <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}">
+                                     <apex:param value="{!Tk.taskInfo.LastModifiedDate - 0.291666666}"/>
+                                  </apex:outputText>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isevent}">
+                                   <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}">
+                                     <apex:param value="{!Tk.eventInfo.LastModifiedDate - 0.291666666}"/>
+                                  </apex:outputText>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isNote}">
+                                   <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}">
+                                     <apex:param value="{!Tk.notinfo.LastModifiedDate - 0.291666666}"/>
+                                  </apex:outputText>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.incoming}">
+                                   <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}">
+                                     <apex:param value="{!Tk.inInfo.LastModifiedDate - 0.291666666}"/>
+                                  </apex:outputText>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.smshis}">
+                                   <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}">
+                                     <apex:param value="{!Tk.smsInfo.LastModifiedDate - 0.291666666}"/>
+                                  </apex:outputText>
+                               </apex:outputPanel>
+                           </td>
+                           <td data-order="{!Tk.dNumber}">  
+                               <apex:outputPanel rendered="{!Tk.isTask}">
+                                        <apex:outputPanel rendered="{!if(Tk.taskInfo.Due_Time__c != null && Tk.taskInfo.Completed_Date__c != null,( Tk.taskInfo.Due_Time__c < Tk.taskInfo.Completed_Date__c),false)}">
+                                            <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}" style="color:{!If(Tk.taskInfo.Due_Time__c < Tk.taskInfo.Completed_Date__c,'red','black')};">
+                                                <apex:param value="{!Tk.taskInfo.Due_Time__c}"></apex:param>
+                                            </apex:outputtext>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel rendered="{!if(Tk.taskInfo.Due_Time__c != null && Tk.taskInfo.Completed_Date__c = null,( Tk.taskInfo.Due_Time__c < now()),false)}">
+                                            <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}" style="color:{!If(Tk.taskInfo.Due_Time__c < now(),'red','black')};">
+                                                <apex:param value="{!Tk.taskInfo.Due_Time__c}"></apex:param>
+                                            </apex:outputtext>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel rendered="{!if(Tk.taskInfo.Due_Time__c = null,( Tk.taskInfo.ActivityDate < today()),false)}">
+                                            <apex:outputtext value=" {0,date,MM/dd/yy}" style="color:{!If(Tk.taskInfo.ActivityDate < today(),'red','black')};">
+                                                <apex:param value="{!Tk.taskInfo.ActivityDate}"></apex:param>
+                                            </apex:outputtext>
+                                        </apex:outputPanel>
+                                            <apex:outputPanel rendered="{!if(Tk.taskInfo.Due_Time__c != null && Tk.taskInfo.Completed_Date__c != null,( Tk.taskInfo.Due_Time__c >= Tk.taskInfo.Completed_Date__c),false)}">
+                                                <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}"  style="color:{!If(Tk.taskInfo.Due_Time__c >= Tk.taskInfo.Completed_Date__c,'black','red')};">
+                                                     <apex:param value="{!Tk.taskInfo.Due_Time__c - 0.291666666}"/>
+                                                </apex:outputText>
+                                           </apex:outputPanel>
+                                           <apex:outputPanel rendered="{!if(Tk.taskInfo.Due_Time__c != null && Tk.taskInfo.Completed_Date__c = null,( Tk.taskInfo.Due_Time__c >= now()),false)}">
+                                                <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}"  style="color:{!If(Tk.taskInfo.Due_Time__c >= now(),'black','red')};">
+                                                     <apex:param value="{!Tk.taskInfo.Due_Time__c - 0.291666666}"/>
+                                                </apex:outputText>
+                                           </apex:outputPanel>
+                                           <apex:outputPanel rendered="{!if(Tk.taskInfo.Due_Time__c = null,( Tk.taskInfo.ActivityDate >= today()),false)}">
+                                                <apex:outputtext value=" {0,date,MM/dd/yy}"  style="color:{!If(Tk.taskInfo.ActivityDate >= today(),'black','red')};">
+                                                     <apex:param value="{!Tk.taskInfo.ActivityDate}"/>
+                                                </apex:outputText>
+                                           </apex:outputPanel>
+                                       <!--<apex:outputText value="{!Tk.taskInfo.ActivityDate}" style="color:{!If(Tk.taskInfo.ActivityDate < Today(),'red','black')};"/>-->
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isevent}">
+                                  <apex:outputPanel rendered="{!if(Tk.eventInfo.EndDateTime != null,( Tk.eventInfo.EndDateTime < now()),false)}">
+                                            <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}" style="color:{!If(Tk.eventInfo.EndDateTime < now(),'red','black')};">
+                                                <apex:param value="{!Tk.eventInfo.EndDateTime}"></apex:param>
+                                            </apex:outputtext>
+                                        </apex:outputPanel>
+                                            <apex:outputPanel rendered="{!if(Tk.eventInfo.EndDateTime != null,( Tk.eventInfo.EndDateTime >= now()),false)}">
+                                                <apex:outputtext value=" {0,date,MM/dd/yy HH:mm a}" style="color:{!If(Tk.eventInfo.EndDateTime >= now(),'black','black')};">
+                                                    <apex:param value="{!Tk.eventInfo.EndDateTime - 0.291666666}"/>
+                                                </apex:outputText>
+                                            </apex:outputPanel>
+                               </apex:outputPanel>
+                           </td>
+                           
+                           <td>  
+                               <apex:outputPanel rendered="{!Tk.isTask}">
+                                  <apex:outputText value="{!Tk.taskInfo.description}" />  
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.isevent}">
+                                  <apex:outputText value="{!Tk.eventInfo.description}" />  
+                               </apex:outputPanel>
+                                <apex:outputPanel rendered="{!Tk.incoming}">
+                                   <apex:outputtext value="{!Tk.inInfo.smagicinteract__SMS_Text__c}"/>
+                               </apex:outputPanel>
+                               <apex:outputPanel rendered="{!Tk.smshis}">
+                                   <apex:outputtext value="{!Tk.smsInfo.smagicinteract__SMSText__c}"/>
+                               </apex:outputPanel>
+                           </td>
+                           
+                            
+                        </tr>
+                    </apex:repeat>
+                   
+               </tbody>
+            </table>
+                      </apex:outputpanel>
+        </Apex:pageBlock>
+             
+      </Apex:form>
+  
+      <script>
+     function JqReload()
+      {
+           $(document).ready(function() {
+            $('#example').DataTable({
+            "order": [[ 6, "desc" ]],
+            "bPaginate": true,
+            "responsive": true,
+            "bInfo": true,
+            "bFilter": false,
+            "bLengthChange": true,
+            "searching": true,
+             "columnDefs": [
+                { "searchable": false, "targets": 2 }
+              ],
+                    "bDestroy": true,
+                    "dom": '<lf<t>ip>',
+                    dom: 'frtlip',
+                     aLengthMenu: [
+                        [20, 50, 100, -1],
+                        [20, 50, 100, "All"]
+                     ],
+                     iDisplayLength: 20
+                     
+             });
+        } );
+      }
+      JqReload();
+  </script>
+</apex:page>

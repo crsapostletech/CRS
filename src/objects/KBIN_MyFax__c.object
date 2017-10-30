@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>KnowledgeBin fax, file. form, snippet or folder</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>MyDocuments</relationshipLabel>
+        <relationshipName>R00N30000001IsKHEA0</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>MyFaxes</relationshipLabel>
+        <relationshipName>MyFaxes</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>MyFaxes</relationshipLabel>
+        <relationshipName>R00N30000001IsTlEAK</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Created__c</fullName>
+        <description>when this item was created</description>
+        <externalId>false</externalId>
+        <label>Created</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>only one at a time</description>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>MyDocuments</relationshipLabel>
+        <relationshipName>R00N30000001IsKGEA0</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(URL__c,Name)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Link</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Modified__c</fullName>
+        <description>When this item was last modified</description>
+        <externalId>false</externalId>
+        <label>Modified</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>only one opportunity</description>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>MyDocuments</relationshipLabel>
+        <relationshipName>R00N30000001IsKIEA0</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pages__c</fullName>
+        <externalId>false</externalId>
+        <label>Pages</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>type of material</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FaxScan</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>File</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Form</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Snippet</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Folder</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Canvas</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>URL__c</fullName>
+        <description>connects to KnowledgeBin object</description>
+        <externalId>false</externalId>
+        <label>URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <label>MyFax</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>Pages__c</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>OldMyFaxes</fullName>
+        <columns>NAME</columns>
+        <columns>Pages__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>lessThan</operation>
+            <value>5/1/2008 12:00 AM</value>
+        </filters>
+        <label>Old MyFaxes</label>
+    </listViews>
+    <listViews>
+        <fullName>Unneededtests</fullName>
+        <columns>NAME</columns>
+        <columns>Created__c</columns>
+        <columns>Pages__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Created__c</field>
+            <operation>greaterThan</operation>
+            <value>11/1/2007 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Created__c</field>
+            <operation>lessThan</operation>
+            <value>3/1/2008 12:00 AM</value>
+        </filters>
+        <label>Unneeded tests</label>
+    </listViews>
+    <nameField>
+        <label>MyFax Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>MyFaxes</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Link__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Pages__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <listViewButtons>Delete</listViewButtons>
+        <lookupDialogsAdditionalFields>Pages__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LAST_UPDATE</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Pages__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Created__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Pages__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <webLinks>
+        <fullName>Delete</fullName>
+        <availability>online</availability>
+        <description>mass delete from list views</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Delete</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>JavaScript // Include and initialize the AJAX Toolkit javascript library 
+{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)} 
+
+// Get the list of accounts that should be deleted. 
+// Use the $ObjectType merge field to indicate the type of 
+// record Ids that are expected. 
+var idsToDelete = {!GETRECORDIDS( $ObjectType.KBIN_MyFax__c )}; 
+var deleteWarning = &apos;Are you sure you wish to delete &apos; + idsToDelete.length + &apos; faxes?&apos;; 
+
+if (idsToDelete.length &amp;&amp; (window.confirm(deleteWarning))) { 
+
+// Delete the records, and pass a function into the call 
+// so that the toolkit refreshes the current page 
+// asynchronously when the call succeeds. 
+sforce.connection.deleteIds(idsToDelete, function() {navigateToUrl(window.location.href);}); 
+
+} else if (idsToDelete.length == 0) { 
+alert(&quot;Please select the faxes you wish to delete.&quot;); 
+}</url>
+    </webLinks>
+</CustomObject>

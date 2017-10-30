@@ -1,0 +1,11 @@
+<apex:page StandardController="Furniture_Order__c" showHeader="true" sidebar="true" tabStyle="Furniture_Order__c">
+    <apex:form >
+<apex:pageBlock title="Furniture Order"> 
+<apex:pageBlockSection title="A Furniture Order Request Already Exist" columns="1" collapsible="false">
+<apex:pageBlockSectionItem >
+<apex:outputLabel >A Furniture Order Request Already Exist</apex:outputLabel>
+</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

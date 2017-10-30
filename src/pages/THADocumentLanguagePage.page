@@ -1,0 +1,27 @@
+<apex:page controller="THADocumentLanguageController">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Document Language</apex:outputLabel>
+                    <apex:selectList value="{!selectedLanguageVersion}" size="1">
+                        <apex:selectOption itemLabel="English" itemValue="English" rendered="{!IF(ISCanada, false,true)}"/>
+                        <apex:selectOption itemLabel="Spanish" itemValue="Spanish" rendered="{!IF(ISCanada, false,true)}"/>
+                        <apex:selectOption itemLabel="Canada"  itemValue="Canada" rendered="{!IF(ISCanada, true,false)}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Send Method</apex:outputLabel>
+                    <apex:selectList value="{!selectedMethod}" size="1">
+                        <apex:selectOption itemLabel="Email" itemValue="Email" />
+                        <apex:selectOption itemLabel="Fax" itemValue="Fax" />
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>            
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Continue" action="{!redirectToEchosignPage}"/> &nbsp;
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>            
+        </apex:pageBlock>
+    </apex:form>      
+</apex:page>
