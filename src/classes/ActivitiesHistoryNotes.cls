@@ -119,9 +119,9 @@ Public Class ActivitiesHistoryNotes
         EventList = new List<Event>();
          Datetime dt = system.now();
           Date d = system.today();
-         String TaskHistoryQuery = 'SELECT id, createdDate,Completed_Date__c, Owner_Role__c, Placement__c, Owner.profile.Name, Due_Time__c, Placement__r.Name, Subject, Status, Sales_Task__c, OwnerId, type, Owner.Name, Who.Name, WhoId, What.Name, WhatId, ActivityDate, Description, LastModifiedDate FROM Task where whoId =: ConId And (isclosed = true) And ActivityDate = LAST_N_DAYS:365';
+         String TaskHistoryQuery = 'SELECT id, createdDate,Completed_Date__c, Owner_Role__c, Placement__c, Owner.profile.Name, Due_Time__c, Placement__r.Name, Subject, Status, Sales_Task__c, OwnerId, type, Owner.Name, Who.Name, WhoId, What.Name, WhatId, ActivityDate, Description, LastModifiedDate FROM Task where whoId =: ConId And (isclosed = true) And createdDate = LAST_N_DAYS:365';
         
-         String EventHistoryQuery = 'SELECT id, createdDate,Completed_Date__c, Owner_Role__c, Placement__c, Placement__r.Name, Owner.profile.Name, Subject, description, Sales_Task__c, OwnerId, type, Owner.Name, Who.Name, WhoId, What.Name, WhatId, ActivityDate, EndDateTime, LastModifiedDate FROM Event where whoId =: ConId And ActivityDate<= : d And ActivityDate = LAST_N_DAYS:365'; 
+         String EventHistoryQuery = 'SELECT id, createdDate,Completed_Date__c, Owner_Role__c, Placement__c, Placement__r.Name, Owner.profile.Name, Subject, description, Sales_Task__c, OwnerId, type, Owner.Name, Who.Name, WhoId, What.Name, WhatId, ActivityDate, EndDateTime, LastModifiedDate FROM Event where whoId =: ConId And ActivityDate<= : d And CreatedDate = LAST_N_DAYS:365'; 
          
         if(ProfileSelection == 'sales')
         {
