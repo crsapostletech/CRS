@@ -82,9 +82,9 @@ Public Class ActivityTimeline
         
          Datetime dt = system.now();
          Date d = system.today();
-         String TaskHistoryQuery = 'SELECT id, createdDate,Completed_Date__c, Owner_Role__c, Placement__c, Owner.profile.Name, Due_Time__c, Placement__r.Name, Subject, Status, Sales_Task__c, OwnerId, type, Owner.Name, Who.Name, WhoId, What.Name, WhatId, ActivityDate, Description, LastModifiedDate FROM Task where (whatId =: opId or whatId =: srids) and (Status = \'Completed\' or Status = \'Cancelled\')'; 
+         String TaskHistoryQuery = 'SELECT id, createdDate,Completed_Date__c, Owner_Role__c, Placement__c, Owner.profile.Name, Due_Time__c, Placement__r.Name, Subject, Status, Sales_Task__c, OwnerId, type, Owner.Name, Who.Name, WhoId, What.Name, WhatId, ActivityDate, Description, LastModifiedDate FROM Task where (whatId =: opId or whatId =: srids) And (isclosed = true) And createdDate = LAST_N_DAYS:365'; 
         
-         String EventHistoryQuery = 'SELECT id, createdDate,Completed_Date__c, Owner_Role__c, Placement__c, Placement__r.Name, Owner.profile.Name, Subject, description, Sales_Task__c, OwnerId, type, Owner.Name, Who.Name, WhoId, What.Name, WhatId, ActivityDate, EndDateTime, LastModifiedDate FROM Event where (whatId =: opId or whatId =: srids) And ActivityDate<= : d'; 
+         String EventHistoryQuery = 'SELECT id, createdDate,Completed_Date__c, Owner_Role__c, Placement__c, Placement__r.Name, Owner.profile.Name, Subject, description, Sales_Task__c, OwnerId, type, Owner.Name, Who.Name, WhoId, What.Name, WhatId, ActivityDate, EndDateTime, LastModifiedDate FROM Event where (whatId =: opId or whatId =: srids) And ActivityDate<= : d And CreatedDate = LAST_N_DAYS:365'; 
          
          String NotesHistoryQuery = 'SELECT id, ParentID, LastModifiedDate, title,Parent.Name, Owner.Name, createdDate, Body FROM Note WHERE (ParentID =: opId or ParentID =: srids)';
          
