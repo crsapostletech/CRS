@@ -25,7 +25,7 @@ public class OwnerResetUpdate{
         {
             if(c.accountId <> null){
                accIds.add(c.AccountId);
-               System.debug('*****12323');
+              
             }
         }
         List<Account> AcctToUpdate = new List<Account>();
